@@ -1,0 +1,83 @@
+# Blender MTL File: 'project.blend'
+# Material Count: 7
+
+newmtl FLOOR
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd source\\floor.jpg
+
+newmtl Metal_01
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Bump source\\metal01_Normal.jpg
+map_Kd source\\metal_01.jpg
+
+newmtl Metal_02
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Bump source\\Metal_02_Normal.jpg
+map_Kd source\\Metal_02.jpg
+
+newmtl Rope
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Bump source\\Rope_Normal.jpg
+map_Kd source\\Rope_01.jpg
+
+newmtl WALLS_ROOF
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Bump source\\white_concrete_normal.jpg
+map_Kd source\\white_concrete_diffuse.jpg
+
+newmtl WOOD
+Ns 10.000002
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Bump source\\wood_diffuse.jpg
+map_Kd source\\wood_color.jpg
+
+newmtl metal2
+Ns 71.999991
+Ka 1.000000 1.000000 1.000000
+Kd 0.070600 0.070600 0.070600
+Ks 0.621000 0.621000 0.621000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2

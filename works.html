@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Ræptor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="scripts/script.js"></script>
+  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
+  <meta property="og:description" 
+    content="Le site officiel de RÆPTOR." />
+  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/" />
+  <meta property="og:title" content="Ræptor" />
+  <meta property="og:site_name" content="Estorc" />
+  <link rel="icon" href="images/RaptorProdIcon.png" />
+</head>
+
+<body style="background: white;">
+
+
+
+<div class="top" id="topBar" style='z-index: 2;background: linear-gradient(#000000, #00000000);'>
+	<strong>
+		<div id='phoneMenu'>
+			<a href="javascript:phoneMenu();" style="color:white;">
+			<img alt="phoneMenu" src="images/menu-svgrepo-com.svg" />
+			</a>
+			<nav id='phoneMenuList'>
+				<a href=".">ACCUEIL</a><br>
+				<a href="works" style="color:white;">TRAVAUX</a><br>
+				<a href="about">À PROPOS</a><br>
+				<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a><br>
+			</nav>
+		</div>
+	
+		<div id='pcMenu'>
+			<a href=".">ACCUEIL</a>
+			<span>|</span>
+			<a href="works" style="color:white;">TRAVAUX</a>
+			<span>|</span>
+			<a href="about">À PROPOS</a>
+			<span>|</span>
+			<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a>
+		</div>
+	</div>
+	</strong>
+	
+</div>
+
+
+<div class='radialDark' id="page" style="margin-top: 0;z-index: 0;height:100vh;background: radial-gradient(#111 50%, #000);">
+		<h2 style="font-family: 'PT Sans Narrow', sans-serif;">TRAVAUX :</h2><br>
+		
+<div id="news" style='z-index: 2;'>
+
+	<div class="newbackframe" id="new0">
+		<a style='height:0px;' href="2DFluidSimulation">
+		  <img style="aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/FluidSimulation.png">
+		</a>
+		<div class="newDescription">
+			<a style="position:relative;display:block;height:auto;" href="2DFluidSimulation"> 
+			  <h4 class="newtitle" style="position:relative;margin-top:0;">2D Fluid Simulation</h4> 
+			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.</h4>
+			</a>
+		</div>
+	</div>
+	
+	<div class="newbackframe" id="new1">
+		<a style='height:0px;' href="3DSoftBody">
+		  <img style="aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/SoftBodySimulation.png">
+		</a>
+		<div class="newDescription">
+			<a style="position:relative;display:block;height:auto;" href="3DSoftBody"> 
+			  <h4 class="newtitle" style="position:relative;margin-top:0;">3D Soft Body</h4> 
+			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Une simulation de Soft Body réalisé avec la librairie Three.JS.</h4>
+			</a>
+		</div>
+	</div>
+	
+</div>
+
+
+<footer id="indexFooter" style='z-index: 2;background: linear-gradient(#00000000, #000000);'>
+	<span>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION</span><br>
+	<span>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION</span><br>
+	<span>~~~ ~~~</span><br>
+	<span>ME CONTACTER : </span><a href="mailto:nag.raptorprod@gmail.com" style="color:grey; text-decoration: none;">nag.raptorprod@gmail.com</a>
+</footer>
+
+
+</body>
+
+<a class="top-link hide" onclick="scrollToTop()" id="js-top">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
+	<span class="screen-reader-text">Back to top</span>
+</a>
+
+</html>
