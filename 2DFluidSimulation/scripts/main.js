@@ -260,6 +260,32 @@ class Particle {
 
 
 
+
+function handleOrientation(event) {
+  var x = event.beta;  // In degree in the range [-180,180], x, 'front to back'
+  var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
+  var z = event.alpha; // 0-360, z, compass orientation
+
+  // coord 1: 0,0
+  // coord 2: x,y
+  // calculate the angle
+  var rad = Math.atan2(y, x);
+  var deg = rad * (180 / Math.PI);
+
+  // take into account if phone is held sideways / in landscape mode
+  var screenOrientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+  // 90, -90, or 0
+  var angle = screenOrientation.angle || window.orientation || 0; 
+  
+  deg = deg + angle; 
+
+  screenAngle = deg*Math.PI/180+Math.PI/2;
+}
+
+window.addEventListener('deviceorientation', handleOrientation);
+
+
+
 QUALITY = 8;
 var canvas = document.getElementById("simulation");
 var ctx = canvas.getContext("2d");
@@ -270,7 +296,7 @@ var clicked = 0;
 var lastCalledTime;
 var fps;
 var tries = 20;
-var screenAngle = 0;
+var screenAngle = Math.PI/2;
 onmousemove = function(e){mouseX = e.clientX; mouseY = e.clientY}
 
 canvas.width = document.body.clientWidth; //document.width is obsolete
@@ -304,8 +330,6 @@ function update() {
 	
 	canvas.width = document.body.clientWidth; //document.width is obsolete
 	canvas.height = document.body.clientHeight; //document.height is obsolete
-	
-	screenAngle = screen.orientation.angle*Math.PI/180+Math.PI/2;
 	
 	if(!lastCalledTime) {
 		lastCalledTime = Date.now();
