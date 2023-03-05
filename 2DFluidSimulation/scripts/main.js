@@ -264,7 +264,7 @@ var mouseY = 0;
 var clicked = 0;
 var lastCalledTime;
 var fps;
-var tries = 20;
+var tries = 80;
 onmousemove = function(e){mouseX = e.clientX; mouseY = e.clientY}
 
 canvas.width = document.body.clientWidth; //document.width is obsolete
@@ -310,7 +310,7 @@ function update() {
 	
 	
 	let size = (1+Math.random())*QUALITY;
-	if (fps >= 50 && tries > 0) {tries = 20; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1}
+	if (fps >= 50 && tries > 0) {tries = 80; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1}
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	let color = 0;
