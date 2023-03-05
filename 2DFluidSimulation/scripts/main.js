@@ -344,7 +344,7 @@ function update() {
 	}
 	
 	  setTimeout(() => {
-		requestAnimationFrame(animate);
+		requestAnimationFrame(update);
 	  }, 1000 / 60);
 }
 
