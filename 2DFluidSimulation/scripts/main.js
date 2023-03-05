@@ -261,7 +261,7 @@ class Particle {
 
 
 
-function handleOrientation(event) {
+/*function handleOrientation(event) {
   var x = event.beta;  // In degree in the range [-180,180], x, 'front to back'
   var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
   var z = event.alpha; // 0-360, z, compass orientation
@@ -279,10 +279,10 @@ function handleOrientation(event) {
   
   deg = z + angle; 
 
-  screenAngle = z*Math.PI/180+Math.PI/2;
+  screenAngle = deg*Math.PI/180+Math.PI/2;
 }
 
-window.addEventListener('deviceorientation', handleOrientation);
+window.addEventListener('deviceorientation', handleOrientation);*/
 
 
 
