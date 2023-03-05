@@ -117,8 +117,8 @@ class Particle {
 	
 	appliedVelocity() {
 		
-		this.x += this.direction.x * this.velocity;
-		this.y += this.direction.y * this.velocity;
+		this.x += this.direction.x * this.velocity * delta;
+		this.y += this.direction.y * this.velocity * delta;
 		
 	}
 	
@@ -264,7 +264,7 @@ var mouseY = 0;
 var clicked = 0;
 var lastCalledTime;
 var fps;
-var tries = 80;
+var tries = 20;
 onmousemove = function(e){mouseX = e.clientX; mouseY = e.clientY}
 
 canvas.width = document.body.clientWidth; //document.width is obsolete
@@ -304,13 +304,13 @@ function update() {
 		lastCalledTime = Date.now();
 		fps = 0;
 	}
-	delta = (Date.now() - lastCalledTime)/1000;
+	delta = ((Date.now() - lastCalledTime)/1000)*60;
 	lastCalledTime = Date.now();
-	fps = 1/delta;
+	fps = 60/delta;
 	
 	
 	let size = (1+Math.random())*QUALITY;
-	if (fps >= 50 && tries > 0) {tries = 80; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1}
+	if (fps >= 50 && tries > 0) {tries = 20; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1}
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	let color = 0;
@@ -343,9 +343,7 @@ function update() {
 		
 	}
 	
-	  setTimeout(() => {
-		requestAnimationFrame(update);
-	  }, 1000 / 60);
+	requestAnimationFrame(update);
 }
 
 
