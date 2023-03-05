@@ -277,9 +277,9 @@ function handleOrientation(event) {
   // 90, -90, or 0
   var angle = screenOrientation.angle || window.orientation || 0; 
   
-  deg = deg + angle; 
+  deg = z + angle; 
 
-  screenAngle = deg*Math.PI/180+Math.PI/2;
+  screenAngle = z*Math.PI/180+Math.PI/2;
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
