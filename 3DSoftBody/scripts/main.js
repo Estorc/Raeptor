@@ -346,7 +346,9 @@ function createRigidBody( threeObject, physicsShape, mass, pos, quat ) {
 
 function loopBegin() { // Executed at the begin of each frames
 	
-	requestAnimationFrame(animate);
+	  setTimeout(() => {
+		requestAnimationFrame(animate);
+	  }, 1000 / 60);
 	
 }
 

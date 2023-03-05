@@ -5,12 +5,10 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color( 0x111111 );
 var camera
 const renderer = new THREE.WebGLRenderer();
-let clock = new THREE.Clock();
 var timer;
 var points = [];
 var text;
 var charId;
-var delta;
 var freeList = [];
 
 
@@ -85,17 +83,9 @@ scene.add(cube);
 
 function loopBegin() { // Executed at the begin of each frames
 	
-	if (delta>1) {
-		
-		setTimeout(() => {
-		  requestAnimationFrame(animate);
-		}, (delta-1));
-		
-	} else {
-		
-		requestAnimationFrame(animate);
-		
-	}
+  setTimeout(() => {
+    requestAnimationFrame(animate);
+  }, 1000 / 60);
 	timer += 1;
 	
 }
@@ -215,8 +205,6 @@ function loopEnd() { // Executed at the end of each frames
 
 
 function animate() { // The main loop
-
-	delta = 1/(clock.getDelta()*60);
 
 	loopBegin();
 	loopStep();
