@@ -104,7 +104,8 @@ class Particle {
 	
 	appliedGravity() {
 		
-		this.direction.y += this.gravity;
+		this.direction.y += Math.sin(screenAngle)*this.gravity;
+		this.direction.x += Math.cos(screenAngle)*this.gravity;
 		
 	}
 	
@@ -138,19 +139,23 @@ class Particle {
 				k.x += Math.cos(d) * (a-b)/2;
 				k.y += Math.sin(d) * (a-b)/2;
 				
-				if (this.y > k.y) {
+				if (Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x > Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x) {
 					
-					k.direction.y *= Math.abs(this.x - k.x)/b;
+					k.direction.y *= Math.cos(screenAngle) + Math.sin(screenAngle)*(Math.abs((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/b);
+					k.direction.x *= Math.sin(screenAngle) + Math.cos(screenAngle)*(Math.abs((Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x) - (Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x))/b);
 					
 					
 				} else {
 					
-					this.direction.y *= Math.abs(this.x - k.x)/b;
+					this.direction.y *= Math.cos(screenAngle) + Math.sin(screenAngle)*(Math.abs((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/b);
+					this.direction.x *= Math.sin(screenAngle) + Math.cos(screenAngle)*(Math.abs((Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x) - (Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x))/b);
 					
 				}
 				
-				k.direction.x += (k.x - this.x)/(b*8);
-				this.direction.x += (this.x - k.x)/(b*8);
+				k.direction.x += Math.cos(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x) - (Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x))/(b*8));
+				k.direction.y += Math.cos(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x) - (Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x))/(b*8));
+				this.direction.x += Math.cos(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/(b*8));
+				this.direction.y += Math.sin(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/(b*8));
 				k.lastX = k.x;
 				k.lastY = k.y;
 				
@@ -239,14 +244,14 @@ class Particle {
 	bounceX(x) {
 		
 		this.x = x;
-		this.direction.x = 0-this.direction.x;
+		this.direction.x = Math.cos(screenAngle)*this.mass-this.direction.x;
 		
 	}
 	
 	bounceY(y) {
 		
 		this.y = y;
-		this.direction.y = this.mass-this.direction.y;
+		this.direction.y = Math.sin(screenAngle)*this.mass-this.direction.y;
 		
 	}
 	
@@ -265,6 +270,7 @@ var clicked = 0;
 var lastCalledTime;
 var fps;
 var tries = 20;
+var screenAngle = 0;
 onmousemove = function(e){mouseX = e.clientX; mouseY = e.clientY}
 
 canvas.width = document.body.clientWidth; //document.width is obsolete
@@ -299,6 +305,7 @@ function update() {
 	canvas.width = document.body.clientWidth; //document.width is obsolete
 	canvas.height = document.body.clientHeight; //document.height is obsolete
 	
+	screenAngle = screen.orientation.angle*Math.PI/180+Math.PI/2;
 	
 	if(!lastCalledTime) {
 		lastCalledTime = Date.now();
