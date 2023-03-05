@@ -4,6 +4,7 @@
 const renderer = new THREE.WebGLRenderer();
 const scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+let clock = new THREE.Clock();
 var arrows = [false,false,false,false];
 const SPEED = 2;
 const ANGLE_SPEED = 20;
@@ -16,6 +17,7 @@ var light = [];
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 var startCube;
 var museum;
+var delta;
 var museumTex;
 
 
@@ -146,7 +148,17 @@ function loopBegin() { // Executed at the begin of each frames
 	} else if (museum && museumTex.materials['FLOOR'].opacity >= 1) {
 		startCube.material.opacity -= 0.1;
 	}
-	requestAnimationFrame(animate);
+	if (delta>1) {
+		
+		setTimeout(() => {
+		  requestAnimationFrame(animate);
+		}, (delta-1));
+		
+	} else {
+		
+		requestAnimationFrame(animate);
+		
+	}
 	
 }
 
@@ -255,6 +267,8 @@ function loopEnd() { // Executed at the end of each frames
 
 
 function animate() { // The main loop
+
+	delta = 1/(clock.getDelta()*60);
 
 	loopBegin();
 	loopStep();
