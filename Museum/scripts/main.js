@@ -361,7 +361,9 @@ function loopEnd() { // Executed at the end of each frames
 			paintings.forEach((item) => item.material.opacity -= 0.01)
 		
 		} else {
-			window.open(link,"_self")
+			openWindowWithPost(link, {
+				origin: "museum"
+			})
 		}
 	}
 	

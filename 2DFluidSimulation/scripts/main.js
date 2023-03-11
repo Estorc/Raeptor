@@ -344,6 +344,8 @@ function update() {
 	let size = (1+Math.random())*QUALITY;
 	if (fps >= 50 && tries > 0) {tries = 20; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1} // x,y,radius,dir,velocity,gravity,friction,mass
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = `rgb(255,255,255)`;
+	ctx.fillRect(0,0,canvas.width,canvas.height)
 	
 	let color = 0;
 	for (const item of particles.sort((a,b) => b.y - 	a.y)) {
@@ -370,7 +372,7 @@ function update() {
 		}
 		
 		let speed = Math.abs(item.x-item.lastX) + Math.abs(item.y-item.lastY);
-		ctx.fillStyle = "rgb("+(color+speed+5)+", "+(color+speed+20)+", "+(color+speed+50)+")";
+		ctx.fillStyle = `rgb(${(color+speed+5)}, ${(color+speed+20)}, ${(color+speed+50)})`;
 		item.draw();
 		
 	}

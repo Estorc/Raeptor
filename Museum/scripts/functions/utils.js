@@ -24,3 +24,22 @@ getDistance = function(p1,p2) {
 easeInSine = function(t, b, c, d) {
     return -c * Math.cos(t / d * (Math.PI / 2)) + c + b;
 }
+
+openWindowWithPost = function (url, data) {
+    var form = document.createElement("form");
+    form.target = "_self";
+    form.method = "GET";
+    form.action = url;
+    form.style.display = "none";
+
+    for (var key in data) {
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
+    }
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+}

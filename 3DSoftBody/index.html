@@ -5,9 +5,10 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta charset="utf-8">
 	  <title>Ræptor</title>
-	  <link rel="stylesheet" href="style.css">
+	  <link rel="stylesheet" href="../works.css">
 	  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 	  <script src="scripts/script.js"></script>
+	  <script src="../scripts/works-utils.js"></script>
 	  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
 	  <meta property="og:description" 
 		content="Le site officiel de RÆPTOR." />
@@ -16,7 +17,7 @@
 	  <meta property="og:site_name" content="Estorc" />
 	  <link rel="icon" href="../images/RaptorProdIcon.png" />
 		<style>
-			body { margin: 0;}
+			body { background:black;margin: 0;overflow: hidden;}
 		</style>
 	</head>
 	<body>
@@ -26,5 +27,9 @@
 		<script src="libraries/ammo.wasm.js"></script>
 		<script src="scripts/functions/utils.js"></script>
 		<script src="scripts/init.js"></script>
+		<a id='exitButton' href="javascript:exitPage(this)">
+		<div id="exit"></div>
+		<div id='raptorProdLogo'></div>
+		</a>
 	</body>
 </html>
