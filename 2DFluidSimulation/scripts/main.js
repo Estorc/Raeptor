@@ -141,14 +141,14 @@ class Particle {
 				
 				if (Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x > Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x) {
 					
-					k.direction.y *= Math.cos(screenAngle) + Math.sin(screenAngle)*(Math.abs((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/b);
-					k.direction.x *= Math.sin(screenAngle) + Math.cos(screenAngle)*(Math.abs((Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x) - (Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x))/b);
-					
+					k.direction.y *= -Math.abs(Math.sin(screenAngle)) + 1 + Math.abs(Math.sin(screenAngle))*(Math.abs((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/b);
+					k.direction.x *= -Math.abs(Math.cos(screenAngle)) + 1 + Math.abs(Math.cos(screenAngle))*(Math.abs((Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x) - (Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x))/b);
+
 					
 				} else {
 					
-					this.direction.y *= Math.cos(screenAngle) + Math.sin(screenAngle)*(Math.abs((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/b);
-					this.direction.x *= Math.sin(screenAngle) + Math.cos(screenAngle)*(Math.abs((Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x) - (Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x))/b);
+					this.direction.y *= -Math.abs(Math.sin(screenAngle)) + 1 + Math.abs(Math.sin(screenAngle))*(Math.abs((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/b);
+					this.direction.x *= -Math.abs(Math.cos(screenAngle)) + 1 + Math.abs(Math.cos(screenAngle))*(Math.abs((Math.sin(screenAngle)*this.y + Math.cos(screenAngle)*this.x) - (Math.sin(screenAngle)*k.y + Math.cos(screenAngle)*k.x))/b);
 					
 				}
 				
@@ -156,6 +156,7 @@ class Particle {
 				k.direction.y += Math.cos(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x) - (Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x))/(b*8));
 				this.direction.x += Math.cos(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/(b*8));
 				this.direction.y += Math.sin(screenAngle-Math.PI/2)*(((Math.sin(screenAngle-Math.PI/2)*this.y + Math.cos(screenAngle-Math.PI/2)*this.x) - (Math.sin(screenAngle-Math.PI/2)*k.y + Math.cos(screenAngle-Math.PI/2)*k.x))/(b*8));
+				
 				k.lastX = k.x;
 				k.lastY = k.y;
 				
@@ -341,7 +342,7 @@ function update() {
 	
 	
 	let size = (1+Math.random())*QUALITY;
-	if (fps >= 50 && tries > 0) {tries = 20; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1}
+	if (fps >= 50 && tries > 0) {tries = 20; particles.push(new Particle(80,60,size,new Degree(0+Math.random()*10,'deg'),2+Math.random()*10,0.1,0.995,1))} else {tries -= 1} // x,y,radius,dir,velocity,gravity,friction,mass
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	let color = 0;

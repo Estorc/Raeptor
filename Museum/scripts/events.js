@@ -1,10 +1,14 @@
 addEventListener('resize', (event) => {});
 
 onresize = (event) => {
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	
+	ui.width  = window.innerWidth;
+	ui.height = window.innerHeight;
+	UI.scale.set(window.innerWidth/750, window.innerHeight/750, 1)
 };
 
 
@@ -32,10 +36,15 @@ document.addEventListener('keydown', ({ code }) =>
 			arrows[3] = true;
 		break;
 		
+		case 'Space':
+			warp = link !== null;
+		break;
+		
+		case 'KeyR':
+			placer.rotation.y += Math.PI/2
+		break;
+		
 	}
-
-
-
 
 });
 

@@ -66,11 +66,11 @@ const geometry = new THREE.PlaneGeometry( 0.4, 0.4 );
 const material = new THREE.MeshBasicMaterial({
     map: uiTex,
   })
-const plane = new THREE.Mesh( geometry, material );
-plane.position.z = camera.position.z-0.1;
-plane.material.transparent = true;
-plane.material.opacity = 1;
-scene.add( plane );
+const UI = new THREE.Mesh( geometry, material );
+UI.position.z = camera.position.z-0.1;
+UI.material.transparent = true;
+UI.material.opacity = 1;
+scene.add( UI );
 
 const cube = createCubeArmature(1,1,1,0xffffff);
 scene.add(cube);
@@ -186,16 +186,16 @@ function loopEnd() { // Executed at the end of each frames
 		document.getElementById('topBar').style.opacity -= 0.05;
 		document.getElementById('indexFooter').style.opacity -= 0.05;
 		if (t > 0.8) {
-			plane.position.z = camera.position.z-0.1;
-			plane.material.opacity += 0.05;
+			UI.position.z = camera.position.z-0.1;
+			UI.material.opacity += 0.05;
 			ctx.fillStyle = "black";
 			ctx.fillRect(0, 0, ui.width, ui.height);
-			if (plane.material.opacity >= 1) window.open("Museum/index.html","_self")
+			if (UI.material.opacity >= 1) window.open("Museum","_self")
 		} else {
-			plane.position.z = camera.position.z-0.1;
-			plane.scale.x += 0.01;
-			plane.scale.y += 0.01;
-			plane.material.opacity -= 0.02;
+			UI.position.z = camera.position.z-0.1;
+			UI.scale.x += 0.01;
+			UI.scale.y += 0.01;
+			UI.material.opacity -= 0.02;
 		}
 	}
 	
