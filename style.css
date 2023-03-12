@@ -596,3 +596,14 @@ footer {
 	
 	
 }
+
+@media only screen and (max-width: 700px) {
+	
+  #homeText {
+	  
+	  visibility:hidden;
+	  
+  }
+	
+	
+}
