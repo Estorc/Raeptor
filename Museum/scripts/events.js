@@ -21,23 +21,32 @@ document.addEventListener('keydown', ({ code }) =>
 	switch (code) {
 		
 		case 'ArrowUp':
+		case 'KeyW':
 			arrows[0] = true;
+			haveMove = true;
 		break;
 		
 		case 'ArrowDown':
+		case 'KeyS':
 			arrows[1] = true;
+			haveMove = true;
 		break;
 		
 		case 'ArrowRight':
+		case 'KeyD':
 			arrows[2] = true;
+			haveMove = true;
 		break;
 		
 		case 'ArrowLeft':
+		case 'KeyA':
 			arrows[3] = true;
+			haveMove = true;
 		break;
 		
 		case 'Space':
 			warp = link !== null;
+			haveMove = true;
 		break;
 		
 		case 'KeyR':
@@ -57,18 +66,22 @@ document.addEventListener('keyup', ({ code }) =>
 	switch (code) {
 		
 		case 'ArrowUp':
+		case 'KeyW':
 			arrows[0] = false;
 		break;
 		
 		case 'ArrowDown':
+		case 'KeyS':
 			arrows[1] = false;
 		break;
 		
 		case 'ArrowRight':
+		case 'KeyD':
 			arrows[2] = false;
 		break;
 		
 		case 'ArrowLeft':
+		case 'KeyA':
 			arrows[3] = false;
 		break;
 		

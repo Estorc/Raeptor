@@ -21,12 +21,13 @@ var museumTex;
 var UI;
 var link = null;
 var warp = false;
+var haveMove = false;
 
 var paintings = []
 var paintingsContent = [
-{image:"images/FluidSimulation.png",link:"../2DFluidSimulation",text:"“2D Fluid Simulation”\n~ 2023 - Estorc ~\n\nAppuyez sur Espace pour explorer.",posx:7.75,posy:3.25,posz:59,rot:Math.PI},
-{image:"images/SoftBodySimulation.png",link:"../3DSoftBody",text:"“3D Soft Body Simulation”\n~ 2022 - Estorc ~\n\nAppuyez sur Espace pour explorer.",posx:51.75,posy:3.25,posz:59,rot:Math.PI},
-{image:"images/exit.png",link:"../",text:"Appuyez sur Espace pour quitter la vue interactive.",posx:85,posy:3.25,posz:-170,rot:Math.PI/2}]
+{image:"images/FluidSimulation.png",link:"../2DFluidSimulation",text:"“2D Fluid Simulation”\n~ 2023 - Estorc ~\n\SIZE30\end\“Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.”\n\SIZE30\end\(Instructions : Clique gauche pour attirer les particules, Clique droit pour créer une bulle d'air, Clique molette pour éloigner les particules.)\n\nAppuyez sur Espace pour explorer.",posx:7.75,posy:3.25,posz:59,rot:Math.PI},
+{image:"images/SoftBodySimulation.png",link:"../3DSoftBody",text:"“3D Soft Body Simulation”\n~ 2022 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:51.75,posy:3.25,posz:59,rot:Math.PI},
+{image:"images/exit.png",link:"../",text:"Appuyez sur Espace pour quitter la vue interactive.\n\SIZE30\end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2}]
 
 
 
@@ -209,21 +210,61 @@ function loopStep() { // Executed each frames
 	ctx.fillStyle = "rgba(0, 0, 0, .5)";
 	ctx.fillRect(20, 20, ui.width-40, ui.height-40)
 	
-	let paintingsActive = paintings.filter((item) => Math.abs(camera.rotation.y % (2*Math.PI)-(Math.atan2(item.position.x - camera.position.x, item.position.z - camera.position.z ) + Math.PI)% (2*Math.PI)) < 0.5 && Math.sqrt(Math.pow(item.position.z-camera.position.z,2)+Math.pow(item.position.x-camera.position.x,2)) < 50)
+	let paintingsActive = paintings.filter((item) => Math.abs((2*Math.PI + camera.rotation.y % (2*Math.PI)) % (2*Math.PI)-(Math.atan2(item.position.x - camera.position.x, item.position.z - camera.position.z ) + Math.PI)% (2*Math.PI)) < 0.5 && Math.sqrt(Math.pow(item.position.z-camera.position.z,2)+Math.pow(item.position.x-camera.position.x,2)) < 50)
+	
+	if (!haveMove && museum && museumTex.materials['FLOOR'].opacity >= 1) {
+		paintingsActive[0] = {text:'Déplacez-vous avec les flèches directionnelles. (Ou avec ZQSD)',link:null};
+	}
 	
 	if (paintingsActive.length > 0) {
 		
 		let min = paintingsActive.sort((a, b) => Math.min(Math.sqrt(Math.pow(a.position.z-camera.position.z,2)+Math.pow(a.position.x-camera.position.x,2)), Math.sqrt(Math.pow(b.position.z-camera.position.z,2)+Math.pow(b.position.x-camera.position.x,2))))[0]
 		
-		ctx.fillStyle = "rgba(255, 255, 255, 255)";
-		ctx.font = "48px serif";
-		ctx.textAlign = "center";
 		let text = min.text.split('\n');
+
 		let y = -text.length*12;
 		text.forEach((item) => {
+			ctx.fillStyle = "rgba(255, 255, 255, 255)";
+			let height;
 			
-			ctx.fillText(item, ui.width/2, ui.height/2+y);
-			y += 48;
+			if (item.substring(0, 4) == '\SIZE') {	
+				item = item.substring(4);
+				item = item.split('\end');
+				height = eval(item[0]);
+				ctx.font = `${height}px serif`;
+				item = item[1];
+				
+			} else {
+			
+				height = 48;
+				ctx.font = "48px serif";
+				
+			}
+			ctx.textAlign = "center";
+			
+			
+			item = item.split(' ');
+			let fText = ['']
+			let i = 0
+			item.forEach ((sItem) => {
+				
+				if (ctx.measureText(`${fText[i]}${sItem} `).width < ui.width-80) {
+					
+					fText[i] += `${sItem} `;
+					
+				} else {
+					
+					i++;
+					fText[i] = `${sItem} `;
+					
+				}
+				
+			})
+			
+			fText.forEach ((item) => {
+				ctx.fillText(item, ui.width/2, ui.height/2+y);
+				y += height;
+			})
 			
 		})
 		
