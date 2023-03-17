@@ -27,6 +27,8 @@ var paintings = []
 var paintingsContent = [
 {image:"images/FluidSimulation.png",link:"../2DFluidSimulation",text:"“2D Fluid Simulation”\n~ 2023 - Estorc ~\n\SIZE30\end\“Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.”\n\SIZE30\end\(Instructions : Clique gauche pour attirer les particules, Clique droit pour créer une bulle d'air, Clique molette pour éloigner les particules.)\n\nAppuyez sur Espace pour explorer.",posx:7.75,posy:3.25,posz:59,rot:Math.PI},
 {image:"images/SoftBodySimulation.png",link:"../3DSoftBody",text:"“3D Soft Body Simulation”\n~ 2022 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:51.75,posy:3.25,posz:59,rot:Math.PI},
+{image:"images/Genos.png",link:"https://estorc.github.io/You-gonna-have-a-Genophobia/",text:"“Paper Professeur Genos Simulator”\n~ 2021 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:54,posy:3.25,posz:-102,rot:0},
+{image:"images/KingKong.png",link:"https://estorc.github.io/In-the-hall-of-the-King-Kong/",text:"“King Kong Simulator”\n~ 2022 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:201,posy:3.25,posz:-98,rot:0},
 {image:"images/exit.png",link:"../",text:"Appuyez sur Espace pour quitter la vue interactive.\n\SIZE30\end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2}]
 
 
@@ -49,7 +51,7 @@ function init() { // Initializing the scene
 	let pgeometry = new THREE.PlaneGeometry( 32.25, 26.25 );
 	let pmaterial = new THREE.MeshBasicMaterial( {color: 0xccffaa, side: THREE.DoubleSide} );
 	placer = new THREE.Mesh( pgeometry, pmaterial );
-	//scene.add(placer)
+	scene.add(placer)
 
 
 	light[0] = new THREE.PointLight(0xffffff,0.9, 300)
@@ -364,7 +366,7 @@ function loopStep() { // Executed each frames
 	placer.position.x -= Math.sin(camera.rotation.y) * 50;
 	placer.position.z -= Math.cos(camera.rotation.y) * 50;
 
-	//console.log(placer.position.x, placer.position.z)
+	console.log(placer.position.x, placer.position.z)
 	
 	
 	for (let i=0;i<scene.children.length;i++) {
