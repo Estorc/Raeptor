@@ -73,7 +73,7 @@ var paintingsContent = [
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-14,posy:3.25,posz:-101.5,rot:0,type:2},
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:7,posy:3.25,posz:-101.5,rot:0,type:2},
 
-{image:"images/exit.png",link:"../",text:"Appuyez sur Espace pour quitter la vue interactive.\n%SIZE30%end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2,type:1}]
+{image:"images/exit.png",link:"..",text:"Appuyez sur Espace pour quitter la vue interactive.\n%SIZE30%end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2,type:1}]
 
 
 
