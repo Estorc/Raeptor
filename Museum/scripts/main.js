@@ -25,11 +25,55 @@ var haveMove = false;
 
 var paintings = []
 var paintingsContent = [
-{image:"images/FluidSimulation.png",link:"../2DFluidSimulation",text:"“2D Fluid Simulation”\n~ 2023 - Estorc ~\n\SIZE30\end\“Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.”\n\SIZE30\end\(Instructions : Clique gauche pour attirer les particules, Clique droit pour créer une bulle d'air, Clique molette pour éloigner les particules.)\n\nAppuyez sur Espace pour explorer.",posx:7.75,posy:3.25,posz:59,rot:Math.PI},
-{image:"images/SoftBodySimulation.png",link:"../3DSoftBody",text:"“3D Soft Body Simulation”\n~ 2022 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:51.75,posy:3.25,posz:59,rot:Math.PI},
-{image:"images/Genos.png",link:"https://estorc.github.io/You-gonna-have-a-Genophobia/",text:"“Paper Professeur Genos Simulator”\n~ 2021 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:54,posy:3.25,posz:-102,rot:0},
-{image:"images/KingKong.png",link:"https://estorc.github.io/In-the-hall-of-the-King-Kong/",text:"“King Kong Simulator”\n~ 2022 - Estorc ~\n\SIZE30\end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n\SIZE30\end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:201,posy:3.25,posz:-98,rot:0},
-{image:"images/exit.png",link:"../",text:"Appuyez sur Espace pour quitter la vue interactive.\n\SIZE30\end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2}]
+{image:"images/FluidSimulation.png",link:"../2DFluidSimulation",text:"“2D Fluid Simulation”\n~ 2023 - Estorc ~\n%SIZE30%end\“Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.”\n%SIZE30%end\(Instructions : Clique gauche pour attirer les particules, Clique droit pour créer une bulle d'air, Clique molette pour éloigner les particules.)\n\nAppuyez sur Espace pour explorer.",posx:7.75,posy:3.25,posz:59,rot:Math.PI,type:1},
+{image:"images/SoftBodySimulation.png",link:"../3DSoftBody",text:"“3D Soft Body Simulation”\n~ 2022 - Estorc ~\n%SIZE30%end\“Une simulation de Soft Body réalisé avec la librairie Three.JS.”\n%SIZE30%end\(Instructions : Clique gauche pour tourner la caméra, Clique droit pour déplacer la caméra, Molette pour zoomer ou dézoomer.)\n\nAppuyez sur Espace pour explorer.",posx:51.75,posy:3.25,posz:59,rot:Math.PI,type:1},
+{image:"images/Genos.png",link:"https://estorc.github.io/You-gonna-have-a-Genophobia/",text:"“Paper Professeur Genos Simulator”\n~ 2021 - Estorc ~\n%SIZE30%end\“Un combat parodique contre un antagoniste mêlant plusieurs personnages fictifs. Le jeu reprend le système de combat de Undertale.”\n%SIZE16%end\n%SIZE30%end\(Instructions : Flèches de direction pour se déplacer et sauter, Espace pour sauter/valider, Echap pour retourner au menu.)\n\nAppuyez sur Espace pour explorer.",posx:54,posy:3.25,posz:-102,rot:0,type:1},
+{image:"images/KingKong.png",link:"https://estorc.github.io/In-the-hall-of-the-King-Kong/",text:"“King Kong Simulator”\n~ 2022 - Estorc ~\n%SIZE30%end\“Un combat parodique contre King Kong (Un personnage crée par Jadusable parodiant Link Goron de Zelda Majora's Mask). Le jeu reprend le système de combat de Undertale.”\n%SIZE16%end\n%SIZE30%end\(Instructions : Flèches de direction pour se déplacer et sauter, Espace pour sauter/valider, Echap pour retourner au menu.)\n\nAppuyez sur Espace pour explorer.",posx:201,posy:3.25,posz:-98,rot:0,type:1},
+{image:"images/LVDE.png",link:"../OldProjects/Les%20voleurs%20d'esprit",text:"“Les voleurs d'esprit”\n~ 2012 - Estorc ~\n%SIZE30%end\“Le plus vieux jeu retrouvé dans mes archives. Un jeu réalisé sur RPG MAKER XP à l'âge de 6-7ans. C'est comme ça que j'ai appris l'algorithmique et tant d'autres choses. Idéal à mettre en rétrospective avec mes travaux actuels.”\n%SIZE16%end\n%SIZE30%end\(Avertissement : Le projet est assez instable, RPG MAKER XP n'est pas fait pour un support web.)\n\nAppuyez sur Espace pour explorer.",posx:125.1,posy:3.25,posz:-181.5,rot:0,type:1},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:165,posy:3.25,posz:-131.5,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:257,posy:3.25,posz:-98,rot:0,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:297,posy:3.25,posz:-67,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:297,posy:3.25,posz:-18,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:297,posy:3.25,posz:30,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:253.5,posy:3.25,posz:55,rot:Math.PI,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:195.5,posy:3.25,posz:55,rot:Math.PI,type:1},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:167,posy:3.25,posz:92,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:167,posy:3.25,posz:135,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:119,posy:3.25,posz:162,rot:Math.PI,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:79,posy:3.25,posz:89,rot:Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:79,posy:3.25,posz:136.25,rot:Math.PI/2,type:1},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-19,posy:3.25,posz:92,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-19,posy:3.25,posz:139.75,rot:-Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-65,posy:3.25,posz:167.5,rot:Math.PI,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-107,posy:3.25,posz:89.2,rot:Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-107,posy:3.25,posz:138,rot:Math.PI/2,type:1},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-248,posy:3.25,posz:-70,rot:Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-248,posy:3.25,posz:-24,rot:Math.PI/2,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-248,posy:3.25,posz:24.2,rot:Math.PI/2,type:1},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-207,posy:3.25,posz:-102,rot:0,type:1},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-81.5,posy:3.25,posz:-102,rot:0,type:1},
+
+
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-132.5,posy:3.25,posz:59,rot:Math.PI,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-161.75,posy:3.25,posz:59,rot:Math.PI,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-189.5,posy:3.25,posz:59,rot:Math.PI,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-217,posy:3.25,posz:59,rot:Math.PI,type:2},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-163,posy:3.25,posz:-101.5,rot:0,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-142,posy:3.25,posz:-101.5,rot:0,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-121.5,posy:3.25,posz:-101.5,rot:0,type:2},
+
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-34.75,posy:3.25,posz:-101.5,rot:0,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-14,posy:3.25,posz:-101.5,rot:0,type:2},
+{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:7,posy:3.25,posz:-101.5,rot:0,type:2},
+
+{image:"images/exit.png",link:"../",text:"Appuyez sur Espace pour quitter la vue interactive.\n%SIZE30%end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2,type:1}]
 
 
 
@@ -48,10 +92,10 @@ function init() { // Initializing the scene
 	renderer.setSize(window.innerWidth,window.innerHeight ); // Make Three.js Canvas take all window
 	document.body.appendChild( renderer.domElement ); // Add Three.js Canvas to the html <body>
 	
-	let pgeometry = new THREE.PlaneGeometry( 32.25, 26.25 );
+	let pgeometry = new THREE.PlaneGeometry( 16, 26.25 );
 	let pmaterial = new THREE.MeshBasicMaterial( {color: 0xccffaa, side: THREE.DoubleSide} );
 	placer = new THREE.Mesh( pgeometry, pmaterial );
-	scene.add(placer)
+	//scene.add(placer)
 
 
 	light[0] = new THREE.PointLight(0xffffff,0.9, 300)
@@ -149,9 +193,17 @@ function init() { // Initializing the scene
 	
 	
 	for (item of paintingsContent) {
-		let geometry = new THREE.PlaneGeometry( 32.25, 26.25 );
+		let geometry
+		switch (item.type) {
+			case 1:
+				geometry = new THREE.PlaneGeometry( 32.25, 26.25 );
+				break;
+			case 2:
+				geometry = new THREE.PlaneGeometry( 16.125, 26.25 );
+				break;
+		}
 		let map = new THREE.TextureLoader().load( item.image );
-		let material = new THREE.MeshBasicMaterial( {map: map, side: THREE.FrontSide} );
+		let material = new THREE.MeshStandardMaterial( {map: map, side: THREE.FrontSide, roughness: 0.8, metalness: 0.2} );
 		paintings.push(new THREE.Mesh( geometry, material ));
 		let id = paintings.length-1
 		paintings[id].text = item.text;
@@ -229,9 +281,9 @@ function loopStep() { // Executed each frames
 			ctx.fillStyle = "rgba(255, 255, 255, 255)";
 			let height;
 			
-			if (item.substring(0, 4) == '\SIZE') {	
-				item = item.substring(4);
-				item = item.split('\end');
+			if (item.substring(0, 5) == '%SIZE') {	
+				item = item.substring(5);
+				item = item.split('%end');
 				height = eval(item[0]);
 				ctx.font = `${height}px serif`;
 				item = item[1];
@@ -366,7 +418,7 @@ function loopStep() { // Executed each frames
 	placer.position.x -= Math.sin(camera.rotation.y) * 50;
 	placer.position.z -= Math.cos(camera.rotation.y) * 50;
 
-	console.log(placer.position.x, placer.position.z)
+	//console.log(placer.position.x, placer.position.z)
 	
 	
 	for (let i=0;i<scene.children.length;i++) {
