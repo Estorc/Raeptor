@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A" />
+	  <meta charset="utf-8">
+	  <title>Ræptor</title>
+	  <link rel="stylesheet" href="../works.css">
+	  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	  <script src="scripts/script.js"></script>
+	  <script src="../scripts/works-utils.js"></script>
+	  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
+	  <meta property="og:description" 
+		content="Le site officiel de RÆPTOR." />
+	  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/" />
+	  <meta property="og:title" content="Ræptor" />
+	  <meta property="og:site_name" content="Estorc" />
+	  <link rel="icon" href="../images/RaptorProdIcon.png" />
+		<style>
+			html { margin: 0; height:100%;width:100%}
+			body { opacity:0; background:black;overflow: hidden;margin: 0; height:100%;width:100%}
+		</style>
+	</head>
+	<body oncontextmenu="return false;">
+		<iframe style='z-index:-1' id="game"
+			width="1280"
+			height="720"
+			frameBorder="0"
+			src="https://estorc.github.io/You-gonna-have-a-Genophobia/">
+		</iframe>
+		<script>
+		
+			game = document.getElementById("game");
+		
+			game.width = document.body.clientWidth; //document.width is obsolete
+			game.height = document.body.clientHeight; //document.height is obsolete
+			
+			window.addEventListener("resize", (event) => {
+				
+				game.width = document.body.clientWidth; //document.width is obsolete
+				game.height = document.body.clientHeight; //document.height is obsolete
+
+			});
+		
+		</script>
+		<a id='exitButton' href="javascript:exitPage(this)">
+		<div id="exit"></div>
+		<div id='raptorProdLogo'></div>
+		</a>
+	</body>
+</html>

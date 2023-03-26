@@ -10,6 +10,9 @@
     <script src="js/drive.js"></script>
     <script src="js/dpad.js"></script>
     <script src="gameasync/mapping.js"></script>
+	<link rel="stylesheet" href="../../style.css">
+	<link rel="stylesheet" href="../../works.css">
+	<script src="../works-utils.js"></script>
 
     <title>MKXP</title>
     <style>
@@ -17,7 +20,9 @@
     	    margin: 0;
     	    padding: 0;
     	    background-color: black;
-    	    height: 100vh
+    	    height: 100vh;
+			opacity: 0;
+			overflow: hidden;
     	}
         #main {
             height: 100%;
@@ -143,6 +148,10 @@
     </style>
   </head>
   <body>
+ 	<a id='exitButton' href="javascript:exitPage(this)">
+	<div id="exit"></div>
+	<div id='raptorProdLogo'></div>
+	</a>
     <div id="main">
         <div style="overflow:visible;" id="spinner">
             <div class="spinner"></div>

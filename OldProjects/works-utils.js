@@ -1,7 +1,7 @@
 const searchParams = new URLSearchParams(window.location.search);
 
 
-onload = (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
 	
 	if  (searchParams.get("origin") === "museum") {
 			
@@ -14,7 +14,7 @@ onload = (event) => {
 		
 	}
 
-}
+});
 
 
 exitPage = function (item) {
@@ -26,12 +26,12 @@ exitPage = function (item) {
 		document.body.style.opacity = 0;
 		
 		document.body.addEventListener("animationend", () => {
-			window.open("../Museum","_self")
+			window.open("../../Museum","_self")
 		});
 		
 	} else {
 		
-		window.open("../works","_self")
+		window.open("../../works","_self")
 		
 	}
 	
