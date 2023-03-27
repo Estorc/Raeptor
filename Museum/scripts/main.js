@@ -73,7 +73,7 @@ var paintingsContent = [
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-14,posy:3.25,posz:-101.5,rot:0,type:2},
 {image:"images/bh.png",link:null,text:"“BulletHell Engine”\n~ 2021 - Estorc ~\n%SIZE30%end\“Un plugin pour RPG MAKER MZ écrit en Javascript. Il permet de créer des scènes de Bullet Hell dans un jeu RPG MAKER MZ.”",posx:7,posy:3.25,posz:-101.5,rot:0,type:2},
 
-{image:"images/exit.png",link:"..",text:"Appuyez sur Espace pour quitter la vue interactive.\n%SIZE30%end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:Math.PI/2,type:1}]
+{image:"images/exit.png",link:"..",text:"Appuyez sur Espace pour quitter la vue interactive.\n%SIZE30%end\(Retour à la page d'accueil de Ræptor)",posx:85,posy:3.25,posz:-170,rot:-Math.PI/2,type:1}]
 
 
 
@@ -270,7 +270,7 @@ function loopStep() { // Executed each frames
 		paintingsActive[0] = {text:'Déplacez-vous avec les flèches directionnelles. (Ou avec ZQSD)',link:null};
 	}
 	
-	if (paintingsActive.length > 0) {
+	if (paintingsActive.length > 0 && !warp) {
 		
 		let min = paintingsActive.sort((a, b) => Math.min(Math.sqrt(Math.pow(a.position.z-camera.position.z,2)+Math.pow(a.position.x-camera.position.x,2)), Math.sqrt(Math.pow(b.position.z-camera.position.z,2)+Math.pow(b.position.x-camera.position.x,2))))[0]
 		

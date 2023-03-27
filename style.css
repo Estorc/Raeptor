@@ -558,7 +558,7 @@ footer {
   
   #profile {
 	  
-	  display:flex;
+	  display:flex;	
 	  
   }
   
@@ -570,7 +570,7 @@ footer {
 	margin: 100px auto;
 	text-align:left;
 	color:white;
-	width:40%;
+	width:45%;
 	  
   }
   
@@ -584,6 +584,31 @@ footer {
 	
 	
 }
+
+
+
+@media only screen and (max-width: 1675px) {
+	
+  #about {
+	  
+	  width:50%;
+	  
+  }
+	
+	
+}
+
+@media only screen and (max-width: 1550px) {
+	
+  #about {
+	  
+	  width:60%;
+	  
+  }
+	
+	
+}
+
 
 
 @media only screen and (max-width: 600px) {

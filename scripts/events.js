@@ -6,7 +6,7 @@ onresize = (event) => {
 };
 
 document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 32 || event.keyCode == 13) {
+    if((event.keyCode == 32 || event.keyCode == 13) && !windowChangeAsked) {
 		windowChangeAsked = true;
 		t = 0;
     }
