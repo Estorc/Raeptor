@@ -84,6 +84,7 @@ ui.width  = window.innerWidth;
 ui.height = window.innerHeight;
 ui.style.position = "absolute";
 var ctx = ui.getContext("2d");
+var loopBreak = false;
 
 
 
@@ -457,6 +458,7 @@ function loopEnd() { // Executed at the end of each frames
 		
 		} else {
 			window.open(`${link}/?origin=museum`,"_self")
+			loopBreak = true;
 		}
 	}
 	
@@ -468,9 +470,11 @@ function loopEnd() { // Executed at the end of each frames
 
 function animate() { // The main loop
 
-	loopBegin();
-	loopStep();
-	loopEnd();
+	if (!loopBreak) {
+		loopBegin();
+		loopStep();
+		loopEnd();
+	}
 
 };
 

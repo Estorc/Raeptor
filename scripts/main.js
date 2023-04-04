@@ -46,6 +46,7 @@ init();
 
 
 const ui = document.createElement('canvas');
+var loopBreak = false;
 ui.id     = "User Interface";
 ui.width  = 1920;
 ui.height = 1920;
@@ -190,7 +191,10 @@ function loopEnd() { // Executed at the end of each frames
 			UI.material.opacity += 0.05;
 			ctx.fillStyle = "black";
 			ctx.fillRect(0, 0, ui.width, ui.height);
-			if (UI.material.opacity >= 1) window.open("Museum","_self")
+			if (UI.material.opacity >= 1) { 
+				window.open("Museum","_self");
+				loopBreak = true;
+			}
 		} else {
 			UI.position.z = camera.position.z-0.1;
 			UI.scale.x += 0.01;
@@ -206,9 +210,11 @@ function loopEnd() { // Executed at the end of each frames
 
 function animate() { // The main loop
 
-	loopBegin();
-	loopStep();
-	loopEnd();
+	if (!loopBreak) {
+		loopBegin();
+		loopStep();
+		loopEnd();
+	}
 
 };
 
