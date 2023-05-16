@@ -28,6 +28,7 @@ function init() { // Initializing the scene
 	initPhysics();
 
 	renderer.setSize(window.innerWidth,window.innerHeight ); // Make Three.js Canvas take all window
+	renderer.setPixelRatio(window.devicePixelRatio);
 	document.body.appendChild( renderer.domElement ); // Add Three.js Canvas to the html <body>
 	
 	scene.add(createCubeArmature(10,10,10,0xffffff))

@@ -2,6 +2,7 @@ addEventListener('resize', (event) => {});
 
 onresize = (event) => {
 	renderer.setSize( window.innerWidth, window.innerHeight ); // Reset Camera on window resize
+	renderer.setPixelRatio(window.devicePixelRatio);
 	cameraReset();
 };
 

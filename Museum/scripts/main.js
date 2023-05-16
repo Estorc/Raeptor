@@ -91,6 +91,7 @@ var loopBreak = false;
 function init() { // Initializing the scene
 	
 	renderer.setSize(window.innerWidth,window.innerHeight ); // Make Three.js Canvas take all window
+	renderer.setPixelRatio(window.devicePixelRatio);
 	document.body.appendChild( renderer.domElement ); // Add Three.js Canvas to the html <body>
 	
 	let pgeometry = new THREE.PlaneGeometry( 16, 26.25 );

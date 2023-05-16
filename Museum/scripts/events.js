@@ -5,6 +5,7 @@ onresize = (event) => {
 	camera.updateProjectionMatrix();
 
 	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setPixelRatio(window.devicePixelRatio);
 	
 	ui.width  = window.innerWidth;
 	ui.height = window.innerHeight;

@@ -329,8 +329,12 @@ function init() {
 
 function update() {
 	
-	canvas.width = document.body.clientWidth; //document.width is obsolete
-	canvas.height = document.body.clientHeight; //document.height is obsolete
+	let ratio = Math.ceil(window.devicePixelRatio);
+	canvas.width = document.body.clientWidth * ratio;
+	canvas.height = document.body.clientHeight * ratio;
+	canvas.style.width = `${document.body.clientWidth}px`;
+	canvas.style.height = `${document.body.clientHeight}px`;
+    canvas.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
 	
 	if(!lastCalledTime) {
 		lastCalledTime = Date.now();

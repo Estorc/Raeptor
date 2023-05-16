@@ -37,6 +37,8 @@ function init() { // Initializing the scene
 	}
 
 	renderer.setSize( window.innerWidth, window.innerHeight ); // Make Three.js Canvas take all window
+	renderer.setPixelRatio(window.devicePixelRatio);
+	
 	document.getElementById("page").appendChild( renderer.domElement ); // Add Three.js Canvas to the html <body>
 	
 }
