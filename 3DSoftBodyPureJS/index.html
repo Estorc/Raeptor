@@ -5,7 +5,7 @@
 	  <meta charset="utf-8">
 	  <title>Ræptor</title>
 	  <link rel="stylesheet" href="../works.css">
-	  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	  <link rel="stylesheet" href="style.css">
 	  <script src="../scripts/works-utils.js"></script>
 	  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
 	  <meta property="og:description" 
@@ -15,12 +15,14 @@
 	  <meta property="og:site_name" content="Estorc" />
 	  <link rel="icon" href="../images/RaptorProdIcon.png" />
 		<style>
-			html { margin: 0; height:100%;width:100%}
-			body { background:black;overflow: hidden;margin: 0; height:100%;width:100%}
+			body { background:black;margin: 0;overflow: hidden;opacity:0;}
 		</style>
 	</head>
 	<body oncontextmenu="return false;">
-		<canvas id="simulation" width="1280" height="720"></canvas>
+		<h1 style="color:white">Essai de simulation de Soft Body</h1>
+		<p>Cliquez sur la fenêtre ci-dessous pour déplacer la caméra.</p>
+		<canvas style='position:relative;' id="simulation" width="1280" height="720"></canvas>
+		<script src="scripts/events.js"></script>
 		<script src="scripts/main.js"></script>
 		<a id='exitButton' href="javascript:exitPage(this)">
 		<div id="exit"></div>

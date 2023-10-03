@@ -52,7 +52,7 @@ var paintingsContent = [
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-107,posy:3.25,posz:138,rot:Math.PI/2,type:1},
 
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-248,posy:3.25,posz:-70,rot:Math.PI/2,type:1},
-{image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-248,posy:3.25,posz:-24,rot:Math.PI/2,type:1},
+{image:"images/SoftBodySimulation2.png",link:"../3DSoftBodyPureJS",text:"“3D Soft Body Simulation PureJS”\n~ 2023 - Estorc ~\n%SIZE30%end\“Une simulation de Soft Body réalisé sans librairies en utilisant les canvas 2D du JS.”\n%SIZE30%end\(Instructions : Clique gauche pour focaliser la fenêtre, déplacez-vous avec les flèches directionnelles (ou avec ZQSD). \n%SIZE30%end\V pour activer/désactiver le mode \"Wireframe\")\n\nAppuyez sur Espace pour explorer.",posx:-248,posy:3.25,posz:-24,rot:Math.PI/2,type:1},
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-248,posy:3.25,posz:24.2,rot:Math.PI/2,type:1},
 
 {image:"images/empty.png",link:null,text:"C'est bien vide pour le moment, bientôt je serai remplacé par un super projet !",posx:-207,posy:3.25,posz:-102,rot:0,type:1},

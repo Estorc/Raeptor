@@ -220,4 +220,12 @@ function animate() { // The main loop
 
 };
 
+
+onload = (event) => {
+
+	document.body.style.animation = 'appear 1s ease-in-out';
+	document.body.style.opacity = 1;
+
+}
+
 animate();
