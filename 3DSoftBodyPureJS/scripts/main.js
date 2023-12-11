@@ -632,13 +632,14 @@ cubes[0].color = {red:Math.random()*(255-ctx.backColor.red),green:Math.random()*
 	//cubes.push(new Polyhedron(0,-5,2+i/10,2,2,2,5));
 	cubes.push(new Cube(0+i*3,-5-Math.random()*5,0,1+Math.random()*2,1+Math.random()*7,1+Math.random()*2,0));
 	cubes[i].color = {red:Math.random()*(255-ctx.backColor.red),green:Math.random()*(255-ctx.backColor.green),blue:Math.random()*(255-ctx.backColor.blue)};
-}*/
+}
 
 for (let i = 0; i<5; i++) {
-	//cubes.push(new Polyhedron(0,-5,2+i/10,2,2,2,5));
-	//cubes.push(new Cube(0+i*3,-5-Math.random()*5,0,1+Math.random()*2,1+Math.random()*7,1+Math.random()*2,2));
-	//cubes[i].color = {red:Math.random()*(255-ctx.backColor.red),green:Math.random()*(255-ctx.backColor.green),blue:Math.random()*(255-ctx.backColor.blue)};
+	cubes.push(new Polyhedron(0,-5,2+i/10,2,2,2,5));
+	cubes.push(new Cube(0+i*3,-5-Math.random()*5,0,1+Math.random()*2,1+Math.random()*7,1+Math.random()*2,2));
+	cubes[i].color = {red:Math.random()*(255-ctx.backColor.red),green:Math.random()*(255-ctx.backColor.green),blue:Math.random()*(255-ctx.backColor.blue)};
 }
+*/
 
 canvas.addEventListener("click", async () => {
   await canvas.requestPointerLock();
