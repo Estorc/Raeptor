@@ -1,0 +1,92 @@
+#phone-button {
+	
+	position: relative;
+	left: 10px;
+	height: 50px;
+	width: 50px;
+	display: none;
+	margin: 4px;
+	
+}
+
+#phone-button img {
+	
+	filter: invert(100%);
+	height: 50px;
+	width: 50px;
+	
+}
+
+#menu a {
+
+	position:relative;
+	color: #ccc;
+	text-decoration: none;
+	transition-duration: 0.4s;
+	padding: 0 1vw;
+	
+}
+
+@media only screen and (min-width: 600px) {
+	
+	#menu a:hover {
+
+		font-size: 18px;
+		color: white;
+		
+	}
+	
+}
+
+#menu {
+	
+	visibility: visible;
+	
+}
+
+#menu .selected {
+	
+	color: white;
+	
+}
+
+@media only screen and (max-width: 600px) {
+	
+	#phone-button {
+		
+		display: block;
+		
+	}
+	
+	#menu span {
+		
+		display: none;
+		
+	}
+	
+	#menu {
+		
+		height: 0px;
+		position:absolute;
+		top: 0;
+		width: 350px;
+		max-width: 95%;
+		margin: 8px;
+		display: grid;
+		border-radius: 4px;
+		transition: ease-in-out 0.2s;
+		overflow: hidden;
+		font-size: 32px;
+		background: rgb(0,0,0);
+		background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(31,31,31,1) 100%);
+		
+	}
+	
+	
+	#phone-button:hover + #menu, #menu:hover {
+		
+		height: 230px;
+		padding: 10px;
+		
+	}
+}

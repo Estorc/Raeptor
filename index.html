@@ -2,40 +2,35 @@
 <html lang="fr" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A" />
+  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Ræptor</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style-fx.css">
+  <link rel="stylesheet" href="styles/style-main.css">
+  <link rel="stylesheet" href="styles/style-menu.css">
+  <link rel="stylesheet" href="styles/style-scrollbar.css">
+  <link rel="icon" href="images/RaptorProdIcon.png">
+  <style>
+	::-webkit-scrollbar {
+		width: 0px;
+	}
+  </style>
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="scripts/script.js"></script>
-  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
-  <meta property="og:description" 
-    content="Le site officiel de RÆPTOR." />
-  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/" />
-  <meta property="og:title" content="Ræptor" />
-  <meta property="og:site_name" content="Estorc" />
-  <link rel="icon" href="images/RaptorProdIcon.png" />
+  
+  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true">
+  <meta property="og:description" content="Le site officiel de RÆPTOR.">
+  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/">
+  <meta property="og:title" content="Ræptor">
+  <meta property="og:site_name" content="Estorc">
 </head>
 
-<body style='background:black;opacity: 0;'>
-<div class="top" id="topBar" style='background: linear-gradient(#000000, #00000000);'>
-	<strong>
-		<div id='phoneMenu'>
-			<a href="javascript:phoneMenu();" style="color:white;">
-			<img alt="phoneMenu" src="images/menu-svgrepo-com.svg" />
-			</a>
-			<nav id='phoneMenuList'>
-				<a href="javascript:returnHome();" style="color:white;">ACCUEIL</a><br>
-				<a href="about">À MON SUJET</a><br>
-				<a href="works">TRAVAUX</a><br>
-				<a href="Museum">VUE INTERACTIVE</a></br>
-				<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a><br>
-			</nav>
-		</div>
-	
-		<div id='pcMenu'>
-			<a href="javascript:returnHome();" style="color:white;">ACCUEIL</a>
+<body class="zero-opacity">
+	<header>
+		<div id='phone-button'><img alt="" src="images/menu-svgrepo-com.svg"></div>
+		<div id='menu'>
+			<a href="javascript:returnHome();" class="selected">ACCUEIL</a>
 			<span>|</span>
 			<a href="about">À MON SUJET</a>
 			<span>|</span>
@@ -45,30 +40,29 @@
 			<span>|</span>
 			<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a>
 		</div>
-	</strong>
-	
-</div>
+	</header>
 
-<div id="page" style="margin-top: 0;z-index: -2;">
-		<div class='radialDark'>
-		<script src="libraries/three.js"></script>
-		<script src="scripts/functions/utils.js"></script>
-		<script src="scripts/init.js"></script>
-		<strong><span id='homeText' style="font-size:32px;font-family: 'PT Sans Narrow', sans-serif;z-index: 0;color:white;position:absolute; top:75%; left:50%;transform:translate(-50%,0)">Appuyez sur "Espace" pour entrer dans la vue interactive.</span></strong>
-</div>
-
-<footer id="indexFooter" style='background: linear-gradient(#00000000, #000000);'>
-	<span>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION</span><br>
-	<span>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION</span><br>
-	<span>~~~ ~~~</span><br>
-	<span>ME CONTACTER : </span><a href="mailto:nag.raptorprod@gmail.com" style="color:grey; text-decoration: none;">nag.raptorprod@gmail.com</a>
-</footer>
+	<div id="page" class='radialbg-dark'>
+			<script src="libraries/three.js"></script>
+			<script src="scripts/functions/utils.js"></script>
+			<script src="scripts/init.js"></script>
+			<canvas id="three-js"></canvas>
+			<span id='museum-starting-text'>Appuyez sur "Espace" pour entrer dans la vue interactive.</span>
+			<footer>
+				<p>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION
+				<br>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION
+				<br>~~~ ~~~
+				<br>ME CONTACTER : <a href="mailto:nag.raptorprod@gmail.com">nag.raptorprod@gmail.com</a></p>
+			</footer>
+	</div>
+	<div id="page2" style="position:relative;
+				background:url('images/background.jpg');
+				background-position: center;
+				background-attachment: fixed;
+				background-size: cover;
+				min-height: 100vh;">
+	</div>
 
 </body>
-
-<a class="top-link hide" onclick="scrollToTop()" id="js-top">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
-	<span class="screen-reader-text">Back to top</span>
-</a>
 
 </html>

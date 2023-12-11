@@ -2,164 +2,128 @@
 <html lang="fr" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A" />
+  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Ræptor</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style-fx.css">
+  <link rel="stylesheet" href="styles/style-main.css">
+  <link rel="stylesheet" href="styles/style-menu.css">
+  <link rel="stylesheet" href="styles/style-works.css">
+  <link rel="stylesheet" href="styles/style-scrollbar.css">
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="scripts/script.js"></script>
-  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
-  <meta property="og:description" 
-    content="Le site officiel de RÆPTOR." />
-  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/" />
-  <meta property="og:title" content="Ræptor" />
-  <meta property="og:site_name" content="Estorc" />
-  <link rel="icon" href="images/RaptorProdIcon.png" />
+  
+  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true">
+  <meta property="og:description" content="Le site officiel de RÆPTOR.">
+  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/">
+  <meta property="og:title" content="Ræptor">
+  <meta property="og:site_name" content="Estorc">
 </head>
 
-<body style="background: black;">
-
-
-
-<div class="top" id="topBar" style='z-index: 2;background: linear-gradient(#000000, #00000000);'>
-	<strong>
-		<div id='phoneMenu'>
-			<a href="javascript:phoneMenu();" style="color:white;">
-			<img alt="phoneMenu" src="images/menu-svgrepo-com.svg" />
-			</a>
-			<nav id='phoneMenuList'>
-				<a href="javascript:returnHome();">ACCUEIL</a><br>
-				<a href="about">À MON SUJET</a><br>
-				<a href="works" style="color:white;">TRAVAUX</a><br>
-				<a href="Museum">VUE INTERACTIVE</a></br>
-				<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a><br>
-			</nav>
-		</div>
-	
-		<div id='pcMenu'>
+<body>
+	<header>
+		<div id='phone-button'><img alt="" src="images/menu-svgrepo-com.svg"></div>
+		<div id='menu'>
 			<a href="javascript:returnHome();">ACCUEIL</a>
 			<span>|</span>
 			<a href="about">À MON SUJET</a>
 			<span>|</span>
-			<a href="works" style="color:white;">TRAVAUX</a>
+			<a href="works" class="selected">TRAVAUX</a>
 			<span>|</span>
 			<a href="Museum">VUE INTERACTIVE</a>
 			<span>|</span>
 			<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a>
 		</div>
-	</div>
-	</strong>
-	
-</div>
+	</header>
 
+	<div class='radialbg-dark' id="page">
 
-<div class='radialDark' id="page" style="position:relative;margin-top: 0;z-index: 0;background: radial-gradient(#111 50%, #000);">
+	<div>		
+	<div id="works">
 
-<div style='min-height:100vh'>		
-<div id="news" style='z-index: 2;margin-top:100px;'>
+		<div class="frame-work">
+			<a href="2DFluidSimulation">
+				<img src="images/FluidSimulation.png" alt="2D Fluid Simulation">
+				<div class="text">
+					<h2>2D Fluid Simulation</h2>
+					<h3>Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.</h3>
+				</div>
+			</a>
+		</div>
+		
+		<div class="frame-work">
+			<a href="3DSoftBody">
+				<img src="images/SoftBodySimulation.png" alt="3D Soft Body">
+				<div class="text">
+					<h2>3D Soft Body</h2> 
+					<h3>Une simulation de Soft Body réalisé avec la librairie Three.JS.</h3>
+				</div>
+			</a>
+		</div>
+		
+		<div class="frame-work">
+			<a href="YGHAG">
+			  <img src="images/Genos.png" alt="Paper Professeur Genos Simulator">
+				<div class="text">
+					<h2>Paper Professeur Genos Simulator</h2> 
+					<h3>Un combat parodique contre un antagoniste mêlant plusieurs personnages fictifs. Le jeu reprend le système de combat de Undertale.</h3>
+				</div>
+			</a>
+		</div>
+		
+		<div class="frame-work">
+			<a href="ITHOTKK">
+			  <img src="images/KingKong.png" alt="King Kong Simulator">
+				<div class="text">
+					<h2>King Kong Simulator</h2> 
+					<h3>Un combat parodique contre King Kong (Un personnage crée par Jadusable parodiant Link Goron de Zelda Majora's Mask). Le jeu reprend le système de combat de Undertale.</h3>
+				</div>
+			</a>
+		</div>
+		
+		<div class="frame-work">
+			<a href="OldProjects/The%20Dark%20Storm">
+			  <img src="images/TDS.png" alt="The Dark Storm">
+				<div class="text">
+					<h2>The Dark Storm</h2> 
+					<h3>Un vieux jeu inachevé. Il s'inspire des jeux RPG/Hack 'n' Slash et propose un vaste monde de Dark Fantasy à explorer.</h3>
+				</div>
+			</a>
+		</div>
+		
+		<div class="frame-work">
+			<a href="OldProjects/Oujnish%20Game">
+			  <img src="images/OG1.png" alt="Oujnish Game 1">
+				<div class="text">
+					<h2>Oujnish Game 1</h2> 
+					<h3>Un vieux jeu. Il est assez archaïque dans ses contrôles, mais reste un projet intéressant à explorer, bien que bien moins impressionnant que son successeur.</h3>
+				</div>
+			</a>
+		</div>
+		
+		<div class="frame-work">
+			<a href="3DSoftBodyPureJS">
+			  <img src="images/SoftBodySimulation2.png" alt="3D Soft Body PureJS">
+				<div class="text">
+					<h2>3D Soft Body PureJS</h2> 
+					<h3>Une simulation de Soft Body réalisé sans librairies en utilisant les canvas 2D du JS.</h3>
+				</div>
+			</a>
+		</div>
+		
+	</div>
+	</div>
 
-	<div class="newbackframe" id="new0">
-		<a style='height:0px;' href="2DFluidSimulation">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/FluidSimulation.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="2DFluidSimulation"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">2D Fluid Simulation</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.</h4>
-			</a>
-		</div>
-	</div>
-	
-	<div class="newbackframe" id="new1">
-		<a style='height:0px;' href="3DSoftBody">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/SoftBodySimulation.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="3DSoftBody"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">3D Soft Body</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Une simulation de Soft Body réalisé avec la librairie Three.JS.</h4>
-			</a>
-		</div>
-	</div>
-	
-	<div class="newbackframe" id="new2">
-		<a style='height:0px;' href="YGHAG">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/Genos.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="YGHAG"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">Paper Professeur Genos Simulator</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Un combat parodique contre un antagoniste mêlant plusieurs personnages fictifs. Le jeu reprend le système de combat de Undertale.</h4>
-			</a>
-		</div>
-	</div>
-	
-	<div class="newbackframe" id="new3">
-		<a style='height:0px;' href="ITHOTKK">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/KingKong.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="ITHOTKK"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">King Kong Simulator</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Un combat parodique contre King Kong (Un personnage crée par Jadusable parodiant Link Goron de Zelda Majora's Mask). Le jeu reprend le système de combat de Undertale.</h4>
-			</a>
-		</div>
-	</div>
-	
-	<div class="newbackframe" id="new4">
-		<a style='height:0px;' href="OldProjects/The%20Dark%20Storm">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/TDS.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="OldProjects/The%20Dark%20Storm"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">The Dark Storm</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Un vieux jeu inachevé. Il s'inspire des jeux RPG/Hack 'n' Slash et propose un vaste monde de Dark Fantasy à explorer.</h4>
-			</a>
-		</div>
-	</div>
-	
-	<div class="newbackframe" id="new5">
-		<a style='height:0px;' href="OldProjects/Oujnish%20Game">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/OG1.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="OldProjects/Oujnish%20Game"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">Oujnish Game 1</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Un vieux jeu. Il est assez archaïque dans ses contrôles, mais reste un projet intéressant à explorer, bien que bien moins impressionnant que son successeur.</h4>
-			</a>
-		</div>
-	</div>
-	
-	<div class="newbackframe" id="new6">
-		<a style='height:0px;' href="3DSoftBodyPureJS">
-		  <img style="object-fit: cover;aspect-ratio: 1 / 1;vertical-align: bottom;position:relative;width:100%;" src="images/SoftBodySimulation2.png">
-		</a>
-		<div class="newDescription">
-			<a style="position:relative;display:block;height:auto;" href="3DSoftBodyPureJS"> 
-			  <h4 class="newtitle" style="position:relative;margin-top:0;">3D Soft Body PureJS</h4> 
-			  <h4 class="newtext" style="position:relative;margin-bottom:0;">Une simulation de Soft Body réalisé sans librairies en utilisant les canvas 2D du JS.</h4>
-			</a>
-		</div>
-	</div>
-	
-</div>
-</div>
-
-<footer style='position:relative;bottom:0px;z-index: 2;background: linear-gradient(#00000000, #000000);'>
-	<span>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION</span><br>
-	<span>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION</span><br>
-	<span>~~~ ~~~</span><br>
-	<span>ME CONTACTER : </span><a href="mailto:nag.raptorprod@gmail.com" style="color:grey; text-decoration: none;">nag.raptorprod@gmail.com</a>
-</footer>
+	<footer style='position:relative;bottom:0px;z-index: 2;background: linear-gradient(#00000000, #000000);'>
+		<span>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION</span><br>
+		<span>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION</span><br>
+		<span>~~~ ~~~</span><br>
+		<span>ME CONTACTER : </span><a href="mailto:nag.raptorprod@gmail.com" style="color:grey; text-decoration: none;">nag.raptorprod@gmail.com</a>
+	</footer>
 </div>
 
 
 </body>
-
-<a class="top-link hide" onclick="scrollToTop()" id="js-top">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
-	<span class="screen-reader-text">Back to top</span>
-</a>
 
 </html>

@@ -2,45 +2,30 @@
 <html lang="fr" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A">
   <meta charset="utf-8">
   <title>Ræptor</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style-fx.css">
+  <link rel="stylesheet" href="styles/style-main.css">
+  <link rel="stylesheet" href="styles/style-menu.css">
+  <link rel="stylesheet" href="styles/style-scrollbar.css">
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="scripts/script.js"></script>
-  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
-  <meta property="og:description" 
-    content="Le site officiel de RÆPTOR." />
-  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/" />
-  <meta property="og:title" content="Ræptor" />
-  <meta property="og:site_name" content="Estorc" />
-  <link rel="icon" href="images/RaptorProdIcon.png" />
+  
+  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true">
+  <meta property="og:description" content="Le site officiel de RÆPTOR.">
+  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/">
+  <meta property="og:title" content="Ræptor">
+  <meta property="og:site_name" content="Estorc">
 </head>
 
-<body style="background: black;">
-
-
-
-<div class="top" id="topBar" style='z-index: 2;background: linear-gradient(#000000, #00000000);'>
-	<strong>
-		<div id='phoneMenu'>
-			<a href="javascript:phoneMenu();" style="color:white;">
-			<img alt="phoneMenu" src="images/menu-svgrepo-com.svg" />
-			</a>
-			<nav id='phoneMenuList'>
-				<a href="javascript:returnHome();">ACCUEIL</a><br>
-				<a href="about" style="color:white;">À MON SUJET</a><br>
-				<a href="works">TRAVAUX</a><br>
-				<a href="Museum">VUE INTERACTIVE</a></br>
-				<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a><br>
-			</nav>
-		</div>
-	
-		<div id='pcMenu'>
+<body>
+	<header>
+		<div id='phone-button'><img alt="" src="images/menu-svgrepo-com.svg"></div>
+		<div id='menu'>
 			<a href="javascript:returnHome();">ACCUEIL</a>
 			<span>|</span>
-			<a href="about" style="color:white;">À MON SUJET</a>
+			<a href="about" class="selected">À MON SUJET</a>
 			<span>|</span>
 			<a href="works">TRAVAUX</a>
 			<span>|</span>
@@ -48,107 +33,95 @@
 			<span>|</span>
 			<a href="https://estorc.github.io/RAPTOR-PRODUCTION/">RAPTOR PRODUCTION</a>
 		</div>
+	</header>
+
+	<div id="page" class='radialbg-dark'>
+		<div id="about">
+
+			<div id='profile'>
+				<img alt="Photo d'Estorc" src="images/estorc.png"><br>
+				<div>
+					<h2>Profil</h2>
+					<dl>
+						<dt>Estorc</dt>
+						<dd>Je suis un développeur autodidacte passionné par l'audiovisuel et les vieilles technologies. Je programme depuis mon plus jeune âge, par passion et dans l'envie de réaliser des projets mêlant dessin, musique et interactivité. <br><br>J'ai toujours aimé chercher et expérimenter dans divers domaines pour trouver des réponses, d'où mon grand intérêt pour les Mathématiques et la Philosophie.</dd>
+					</dl>
+				</div>
+			</div>
+			<h2>Compétences et intérets</h2>
+			<ul>
+				<li>Développement</li>
+				<li><ul>
+					<li>C++ (SDL2, OpenGL)</li>
+					<li>C# (.NET)</li>
+					<li>C</li>
+					<li>JS</li>
+					<li>Java</li>
+					<li>Python</li>
+					<li>Ruby</li>
+					<li>Node.JS</li>
+					<li>Basic</li>
+					<li>Visual Basic</li>
+					<li>HTML5</li>
+					<li>CSS3</li>
+					<li>PHP</li>
+					<li>LUA</li>
+					<li>Assembleur x86-64</li>
+					<li>GML</li>
+				</ul></li>
+				<li>Mathématiques</li>
+				<li>Développement Web Frontend</li>
+				<li>Développement Web Backend</li>
+				<li>Développement de physiques</li>
+				<li>Pixel Art</li>
+				<li>Dessin Digital</li>
+				
+				<li>Développement de jeu</li>
+				<li><ul>
+					<li>Gamemaker Studio</li>
+					<li>Unity</li>
+					<li>Unreal Engine 4</li>
+					<li>Godot</li>
+				</ul></li>
+				<li>Montage Vidéo</li>
+				<li>Philosophie</li>
+				<li>Écriture</li>
+				<li><ul>
+					<li>Analyse</li>
+					<li>Théorie</li>
+					<li>Fiction</li>
+				</ul></li>
+				<li>Violon</li>
+			</ul>
+			<h2>Connexions</h2>
+			<ul>
+				<li><a href="https://github.com/Estorc">Github</a> - C'est ici que je répertorie mes projets publics.</li>
+				<li><a href="https://raeptor.raptorproduction.net">Ræptor</a> - Mon espace web où j'affiche mes démos techniques et mon profil.</li>
+				<li><a href="https://nag.raptorproduction.net">Raptor Production</a> - Mon blog. J'y publie occasionnellement des articles sur mes travaux.</li>
+			</ul>
+			<h2>Travaux notables</h2>
+			<ul>
+				<li>Traduction de Jenka's Nightmare (Modification du code en Assembleur x86-64) - 2022-2023</li>
+				<li>Développement de "plugins" privés pour RPG Maker MZ/MV/VX Ace/XP - 2015-2023</li>
+				<li>Commissions de développement d'applications - 2017-2023</li>
+				<li>Analyse en trois parties de Undertale - <a href="https://www.youtube.com/watch?v=ICBZVp5OiTw">Voir ici</a> - 2023</li>
+			</ul>
+			<h2>Expériences professionnelles</h2>
+			<ul>
+				<li>Équipier polyvalent à McDonald's - 2022</li>
+			</ul>
+				
+		</div>
+		
+		<footer>
+			<p>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION
+			<br>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION
+			<br>~~~ ~~~
+			<br>ME CONTACTER : <a href="mailto:nag.raptorprod@gmail.com">nag.raptorprod@gmail.com</a></p>
+		</footer>
 	</div>
-	</strong>
-	
-</div>
-
-
-<div class='radialDark' id="page" style="margin-top: 0;z-index: 0;height:100vh;background: radial-gradient(#111 50%, #000);">
-
-	<div id='about' style="">
-		<div id='profile'>
-		<div style="text-align: center; margin-top: 0;margin-right:25px;">
-			<img src="images/estorc.png" height="250px"/><br>
-		</div>
-		<div>
-			<h2>Profil</h2>
-			<dl>
-				<span style='margin-left:20px'>Estorc</span><br><br>
-				<dd><span>Je suis un développeur autodidacte passionné par l'audiovisuel et les vieilles technologies. Je programme depuis mon plus jeune âge, par passion et dans l'envie de réaliser des projets mêlant dessin, musique et interactivité. <br><br>J'ai toujours aimé chercher et expérimenter dans divers domaines pour trouver des réponses, d'où mon grand intérêt pour les Mathématiques et la Philosophie.</span></dd><br>
-			</dl>
-		</div>
-		</div>
-		<h2>Compétences et intérets</h2>
-			<dl>
-				<dd><span>Développement</span>
-				<dl>
-					<dd><span>C++ (SDL2, OpenGL)</span></dd>
-					<dd><span>C# (.NET)</span></dd>
-					<dd><span>C</span></dd>
-					<dd><span>JS</span></dd>
-					<dd><span>Java</span></dd>
-					<dd><span>Python</span></dd>
-					<dd><span>Ruby</span></dd>
-					<dd><span>Node.JS</span></dd>
-					<dd><span>Basic</span></dd>
-					<dd><span>Visual Basic</span></dd>
-					<dd><span>HTML5</span></dd>
-					<dd><span>CSS3</span></dd>
-					<dd><span>PHP</span></dd>
-					<dd><span>LUA</span></dd>
-					<dd><span>Assembleur x86-64</span></dd>
-					<dd><span>GML</span></dd>
-				</dl>
-				</dd>
-				<dd><span>Mathématiques</span></dd>
-				<dd><span>Développement Web Frontend</span></dd>
-				<dd><span>Développement Web Backend</span></dd>
-				<dd><span>Développement de physiques</span></dd>
-				<dd><span>Pixel Art</span></dd>
-				<dd><span>Dessin Digital</span></dd>
-				<dd><span>Développement de jeu</span>
-				<dl>
-					<dd><span>Gamemaker Studio</span></dd>
-					<dd><span>Unity</span></dd>
-					<dd><span>Unreal Engine 4</span></dd>
-					<dd><span>Godot</span></dd>
-				</dl>
-				<dd><span>Montage Vidéo</span></dd>
-				<dd><span>Philosophie</span></dd>
-				<dd><span>Écriture</span>
-				<dl>
-					<dd><span>Analyse</span></dd>
-					<dd><span>Théorie</span></dd>
-					<dd><span>Fiction</span></dd>
-				</dl>
-				</dd>
-				<dd><span>Violon</span></dd>
-				</dd>
-			</dl><br>
-		<h2>Connexions</h2>
-			<dl>
-				<dd><a style='text-decoration:none' href="https://github.com/Estorc"><strong><span>Github</span></strong></a><span> - C'est ici que je répertorie mes projets publics.</span></dd>
-				<dd><a style='text-decoration:none' href="https://raeptor.raptorproduction.net"><strong><span>Ræptor</span></strong></a><span> - Mon espace web où j'affiche mes démos techniques et mon profil.</span></dd>
-				<dd><a style='text-decoration:none' href="https://nag.raptorproduction.net"><strong><span>Raptor Production</span></strong></a><span> - Mon blog. J'y publie occasionnellement des articles sur mes travaux.</span></dd>
-			</dl><br>
-		<h2>Travaux notables</h2>
-			<dl>
-				<dd><span>Traduction de Jenka's Nightmare (Modification du code en Assembleur x86-64) - 2022-2023</span></dd>
-				<dd><span>Développement de "plugins" privés pour RPG Maker MZ/MV/VX Ace/XP - 2015-2023</span></dd>
-				<dd><span>Commissions de développement d'applications - 2017-2023</span></dd>
-				<dd><span>Analyse en trois parties de Undertale - </span><a style='text-decoration:none' href="https://www.youtube.com/watch?v=ICBZVp5OiTw"><strong><span>Voir ici</span></strong></a><span> - 2023</span></dd>
-			</dl><br>
-		<h2>Expériences professionnelles</h2>
-			<dl>
-				<dd><span>Équipier polyvalent à McDonald's - 2022</span></dd>
-			</dl><br>
-	</div>
-	
-<footer style='position:relativez-index: 2;background: linear-gradient(#00000000, #000000);'>
-	<span>RÆPTOR EST UN SOUS DOMAINE DE LA RAPTOR PRODUCTION</span><br>
-	<span>Site développé par Estorc. ~ La RAPTOR PRODUCTION ainsi que ses sous domaines sont affiliés à la N.A.G. CORPORATION</span><br>
-	<span>~~~ ~~~</span><br>
-	<span>ME CONTACTER : </span><a href="mailto:nag.raptorprod@gmail.com" style="color:grey; text-decoration: none;">nag.raptorprod@gmail.com</a>
-</footer>
-</div>
 
 
 </body>
-
-<a class="top-link hide" onclick="scrollToTop()" id="js-top">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path d="M12 6H0l6-6z"/></svg>
-	<span class="screen-reader-text">Back to top</span>
-</a>
 
 </html>
