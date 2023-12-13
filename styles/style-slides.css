@@ -1,0 +1,83 @@
+.showcase-slide {
+	
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	backdrop-filter: blur(10px);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	text-shadow:2px 2px 3px #000000a0;
+	flex-wrap: wrap;
+	
+}
+
+.showcase-slide img {
+	
+	position: relative;
+	width: 500px;
+	max-width:90%;
+	height:auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	box-shadow: 10px 10px 20px #00000050;
+	border-radius: 10px;
+	
+}
+
+.showcase-slide .text {
+	
+	margin: 0 2%;
+	border-radius:20px;
+	padding:60px;
+	background-color:#00000050;
+	min-width:30%;
+	width:700px;
+	max-width:90%;
+	
+}
+
+.showcase-slide .buttons {
+	
+	display:flex;
+	gap:10px;
+	
+}
+
+.showcase-slide .buttons a {
+	
+	position:relative;
+	text-shadow:0 0 3px black;
+	font-weight: bold;
+	border-radius:100px;
+	border:2px solid white;
+	padding:15px 35px;
+	background-color:#5060c0;
+	color: white;
+	text-decoration: none;
+	transition:150ms ease-in-out;
+	
+}
+
+.showcase-slide .buttons a:hover {
+	
+	border:2px solid #5060c0;
+	background-color:white;
+	color: #5060c0;
+	transform: scale(1.1);
+	
+}
+
+.showcase-slide .buttons .icon-button {
+
+	position:relative;
+	text-shadow:0 0 3px black;
+	font-weight: bold;
+	border-radius:100px;
+	border:2px solid white;
+	padding: 15px;
+	background-color:#6070b0;
+	
+}

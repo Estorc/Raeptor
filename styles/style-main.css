@@ -1,5 +1,6 @@
 body {
  
+	position: relative;
 	top: 0;
 	margin: 0%;
 	background-color: black;
@@ -24,8 +25,9 @@ header {
 
 footer {
 
-	position:absolute;
-	width:100%;
+	position:relative;
+	left:10%;
+	width:80%;
 	background: linear-gradient(#00000000, #000000);
 	text-align: center;
 	bottom:0;
@@ -56,7 +58,7 @@ footer a {
 	top: 0;
 	width: 100%;
 	min-height: 100vh;
-	display: table;
+	display: inline-block;
 
 }
 
@@ -118,11 +120,21 @@ li a:visited {
 	margin: 100px auto;
 	text-align:left;
 	color:white;
-	width:1000px;
-	min-width:45%;
-	max-width:80%;
-	padding-bottom:100px;
+	width:80%;
+	max-width:1000px;
   
+}
+  
+  
+@media only screen and (max-width: 1000px) {
+	
+	footer {
+
+		font-size:10px;
+		padding-bottom: 50px;
+		
+	}
+	
 }
   
 @media only screen and (max-width: 1300px) {
