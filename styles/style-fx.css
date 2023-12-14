@@ -16,6 +16,12 @@
   100% { opacity: 0; }
 }
 
+.blackbg {
+	
+	background-color:black;
+	
+}
+
 .radialbg-dark {
 	
 	background: radial-gradient(#111 50%, #000);

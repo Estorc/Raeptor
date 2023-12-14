@@ -28,6 +28,8 @@ addEventListener("load", function(){
 		item.style.position = 'relative';
 		item.style.display = "flex";
 		item.style.width = `${item.children.length}00%`;
+		item.setAttribute("slideLength",item.children.length);
+		item.setAttribute("slideId", 0);
 		item.childNodes.forEach(a => {
 			if (a.nodeName === 'DIV') {
 				a.style.height = "100%";
@@ -61,6 +63,33 @@ function changeSlide(mode) {
 	
 }
 
+function changeHSlide(item) {
+	
+	if (!isScrolling) {
+		if (item.state == 1)
+			item.setAttribute('slideId', eval(item.getAttribute('slideId'))+1);
+			isScrolling = true;
+		if (item.state == -1)
+			item.setAttribute('slideId', eval(item.getAttribute('slideId'))-1);
+			isScrolling = true;
+		if (item.getAttribute('slideId') < 0) {
+			item.setAttribute('slideId', 0);
+			isScrolling = false;
+		}
+		if (item.getAttribute('slideLength') <= item.getAttribute('slideId')) {
+			item.setAttribute('slideId', item.getAttribute('slideLength')-1);
+			isScrolling = false;
+		}
+		if (isScrolling)
+			setTimeout(() => {isScrolling = false}, 500);
+	}
+	item.state = 0;
+	item.active = false;
+	item.style.transform = `translateX(${-(item.getAttribute('slideId')/item.getAttribute('slideLength'))*100}%)`;
+	item.style.transition = "transform 0.5s ease-in-out";
+	
+}
+
 function scrollUp() {
 	
 	if (isScrolling) return 0;
@@ -81,10 +110,12 @@ function touchStart(id, x, y) {
 	
 	touchesFirstPos[id] = {x:x,y:y};
 	touchesLastPos[id] = {x:x,y:y};
+	touchResult = -2;
 	for (let item of horizontalSlides) {
 		let rect = item.getBoundingClientRect();
 		if (rect.top < y && rect.bottom > y && rect.left < x && rect.right > x) {
 			selectedHSlide[id] = item;
+			item.state = 0;
 			item.style.transition = "none";
 			item.style.transform = `translateX(${rect.x}px)`;
 			item.lastX = rect.x;
@@ -106,9 +137,16 @@ function touchMove(id, x, y) {
 	} else {
 		document.body.style["user-select"] = "none";
 		
-		if (touchState) {
+		if (touchState && selectedHSlide[id]) {
+			selectedHSlide[id].active = true;
+			touchResult = 0;
+			selectedHSlide[id].state = 0;
 			if (selectedHSlide[id]) selectedHSlide[id].style.transform = `translateX(${parseInt(selectedHSlide[id].lastX)+(x - touchesFirstPos[id].x)}px)`;
 			scrollTo({ left: 0, behavior: "instant" });
+			if ((x - touchesFirstPos[id].x < -window.innerWidth/2) || (x - touchesLastPos[id].x < -window.innerWidth/100))
+				selectedHSlide[id].state = 1;
+			else if ((x - touchesFirstPos[id].x > window.innerWidth/2) || (x - touchesLastPos[id].x > window.innerWidth/100))
+				selectedHSlide[id].state = -1;
 		} else {
 			scrollTo({ top: lastScrollPos.y + (touchesFirstPos[id].y - y), behavior: "instant" });
 			touchResult = 0;
@@ -116,8 +154,8 @@ function touchMove(id, x, y) {
 				touchResult = 1;
 			else if ((y - touchesFirstPos[id].y > window.innerHeight/2) || (y - touchesLastPos[id].y > window.innerHeight/100))
 				touchResult = -1;
-			touchesLastPos[id] = {x:x,y:y};
 		}
+		touchesLastPos[id] = {x:x,y:y};
 	}
 	
 }
@@ -126,9 +164,8 @@ function touchEnd() {
 	
 	document.body.style["user-select"] = "auto";
 	selectedHSlide.forEach(item => {
-		if (item) {
-			item.style.transform = "translateX(0)";
-			item.style.transition = "transform 0.5s ease-in-out";
+		if (item && item.active) {
+			changeHSlide(item);
 		}
 	});
 	if (touchResult === 0)
@@ -137,7 +174,7 @@ function touchEnd() {
 		scrollDown();
 	if (touchResult === -1)
 		scrollUp();
-	
+	if (touchState == 1) isScrolling = false;
 	touchState = -2;
 	
 }
@@ -168,9 +205,21 @@ window.addEventListener("keydown", (event) => {
 		scrollUp();
 	if (event.key === 'ArrowDown')
 		scrollDown();
+	
+	if (slides[slideId].getElementsByClassName("slidejs-horizontal").length === 1) {
+		let item = slides[slideId].getElementsByClassName("slidejs-horizontal")[0];
+		if (event.key === 'ArrowRight') {
+			item.state = 1;
+			changeHSlide(item);
+		}
+		if (event.key === 'ArrowLeft') {
+			item.state = -1;
+			changeHSlide(item);
+		}
+	}
 });
 
-addEventListener("touchstart", (event) => {
+window.addEventListener("touchstart", (event) => {
 	touchResult = 0;
 	touchState = -1;
 	for (let i = 0; i < event.touches.length; i++) {
@@ -188,7 +237,7 @@ window.addEventListener("touchend", (event) => {
 	touchEnd();
 });
 
-addEventListener("mousedown", (event) => {
+window.addEventListener("mousedown", (event) => {
 	touchResult = 0;
 	touchState = -1;
 	touchStart(0,event.clientX,event.clientY);

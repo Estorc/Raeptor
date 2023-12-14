@@ -1,3 +1,11 @@
+.fullslide {
+	
+	position:relative;
+	width:100%;
+	height:100%;
+	
+}
+
 .showcase-slide {
 	
 	position:absolute;
@@ -79,5 +87,38 @@
 	border:2px solid white;
 	padding: 15px;
 	background-color:#6070b0;
+	
+}
+
+
+@media (max-width:500px) {
+	
+	.showcase-slide .text {
+		
+		padding:30px;
+		
+	}
+	
+}
+
+@media (max-width:440px) {
+	
+	.showcase-slide .buttons {
+		
+		display:flex;
+		gap:5px;
+		
+	}
+	.showcase-slide .buttons a {
+		
+		padding:10px 10px;
+		
+		
+	}
+	.showcase-slide .buttons .icon-button {
+
+		padding: 10px;
+		
+	}
 	
 }
