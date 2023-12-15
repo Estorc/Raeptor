@@ -1,3 +1,5 @@
+@import url("style-fx.css");
+
 body {
  
 	position: relative;
@@ -57,7 +59,7 @@ footer a {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100dvh;
 	display: inline-block;
 
 }
@@ -131,7 +133,6 @@ li a:visited {
 	footer {
 
 		font-size:10px;
-		padding-bottom: 50px;
 		
 	}
 	

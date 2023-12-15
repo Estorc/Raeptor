@@ -3,7 +3,7 @@ addEventListener('resize', (event) => {});
 onresize = (event) => {
 	let pageElem = document.getElementById("page");
 	canvas.style.width = `${pageElem.clientWidth}px`;
-	canvas.style.height = `${pageElem.innerHeight}px`;
+	canvas.style.height = `100dvh`;
 	canvas.width = window.innerWidth*window.devicePixelRatio;
 	canvas.height = window.innerHeight*window.devicePixelRatio;
 	plane.set(canvas.width/2,canvas.height/2,300,0,0,0);

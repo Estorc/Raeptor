@@ -854,7 +854,7 @@ const ctx = canvas.getContext("2d");
 canvas.style.display = `block`;
 let pageElem = document.getElementById("page");
 canvas.style.width = `${pageElem.clientWidth}px`;
-canvas.style.height = `${pageElem.innerHeight}px`;
+canvas.style.height = `100dvh`;
 canvas.width = window.innerWidth*window.devicePixelRatio;
 canvas.height = window.innerHeight*window.devicePixelRatio;
 const camera = new Camera(0,0,-40,0,0,0);
@@ -955,6 +955,13 @@ function update() {
 	let operand = typeof t === 'undefined' ? 0 : t;
 	document.getElementById('museum-starting-text').style.opacity = (Math.sin(timer/50)+1)/2-operand*2;
 	if (windowChangeAsked && !loopBreak) {
+		if (!SlideJSpauseSlide) {
+			scrollTo({ top: 2000, left:0, behavior: 'smooth' });
+			isScrolling = true;
+			SlideJSpauseSlide = true;
+			document.getElementById(`slidejs-body-pointer-0`).parentNode.style.transform = "translateX(100px)";
+			document.getElementById(`slidejs-body-pointer-0`).parentNode.style.transition = "0.5s ease-in-out";
+		}
 		camera.rot.y += (0-camera.rot.y)/20;
 		camera.rot.x += (0-camera.rot.x)/20;
 		camera.pos.z = easeInSine(t, -40, 40, 1);
