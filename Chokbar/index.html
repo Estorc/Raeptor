@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta name="google-site-verification" content="v59COEI73kZCWXH13MtFP7oqdemr2uV4nI9cVkNHs1A" />
+	  <meta charset="utf-8">
+	  <title>Ræptor</title>
+	  <link rel="stylesheet" href="../works.css">
+	  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	  <script src="../scripts/works-utils.js"></script>
+	  <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.png?raw=true" />
+	  <meta property="og:description" 
+		content="Le site officiel de RÆPTOR." />
+	  <meta property="og:url" content="https://estorc.github.io/RAPTOR-PRODUCTION/" />
+	  <meta property="og:title" content="Ræptor" />
+	  <meta property="og:site_name" content="Estorc" />
+	  <link rel="icon" href="../images/RaptorProdIcon.png" />
+		<style>
+			html { margin: 0; height:100%;width:100%}
+			body { background:black;overflow: hidden;margin: 0; height:100%;width:100%}
+		</style>
+	</head>
+	<body oncontextmenu="return false;">
+		<video id="macron">
+			<source src="https://cdn.discordapp.com/attachments/689402741247836180/1198259262758064128/tf.mp4?ex=65be40e6&is=65abcbe6&hm=47541d3376d68dbd91f3298e8077cd5bd3243995a815217af0840b583f8b6d1a&">
+		</video>
+		<video id="zemmour">
+			<source src="https://cdn.discordapp.com/attachments/1099274067753836684/1173048494039257108/Zemmour_si_le_UNO_existait_dans_la_vrai_vie_.mp4?ex=65bed28b&is=65ac5d8b&hm=c094b50db9e9a608aab8226b452170fdf020c857ce9e13b622843cf4622858d5&">
+		</video>
+		<img class="chokbar" id="originalChokbar" src="https://pbs.twimg.com/media/F1gf_JVXwAA33JO.jpg" style="left:0;top:0;height:20%;position:absolute">
+		<script>
+		
+			onmousemove = function(e){
+			
+				document.body.style.transform = `rotate3d(0,1,0, ${(e.clientX-document.body.clientWidth/2)/20}deg) rotate3d(1,0,0,${-(e.clientY-document.body.clientHeight/2)/10}deg)`;
+			
+			}
+			
+			let chokbar = document.getElementsByClassName("chokbar");
+			let timer = 0;
+			for (const item of chokbar) {
+					item.velY = Math.random()*20 - 10;
+					item.velX = Math.random()*20 - 10;
+					item.style.height = `${Math.random()*40+5}%`
+			}
+			function update() {
+				let vid = document.getElementById("macron");
+				vid.play();
+				vid = document.getElementById("zemmour");
+				vid.play();
+				
+				timer++;
+				if (timer%20 === 0) {
+					let item = document.body.appendChild(document.getElementById("originalChokbar").cloneNode(true));
+					item.style.top = `${Math.random()*(document.body.clientHeight-item.height)}px`;
+					item.style.left = `${Math.random()*(document.body.clientWidth-item.width)}px`;
+					item.velY = Math.random()*20 - 10;
+					item.velX = Math.random()*20 - 10;
+					item.style.height = `${Math.random()*40+5}%`
+					chokbar = document.getElementsByClassName("chokbar");
+				}
+				for (const item of chokbar) {
+					item.style.left = `${parseInt(item.style.left)+item.velX}px`;
+					item.style.top = `${parseInt(item.style.top)+item.velY}px`;
+					if (parseInt(item.style.top) > document.body.clientHeight-item.height || parseInt(item.style.top) < 0) item.velY *= -1;
+					if (parseInt(item.style.left) > document.body.clientWidth-item.width || parseInt(item.style.left) < 0) item.velX *= -1;
+				}
+				requestAnimationFrame(update);
+			}
+			
+			requestAnimationFrame(update);
+		</script>
+		<a id='exitButton' href="javascript:exitPage(this)">
+		<div id="exit"></div>
+		<div id='raptorProdLogo'></div>
+		</a>
+	</body>
+</html>
