@@ -36,7 +36,8 @@ function createSlideBody() {
 	slidePointerRect.style.right = 0;
 	slidePointerRect.style.top = 0;
 	slidePointerRect.style.bottom = 0;
-	for (let i = 0; i < slideBody.children.length; i++) {
+	let slideBodyDIVS = [... slideBody.children].filter(a => a.nodeName === 'DIV');
+	for (let i = 0; i < slideBodyDIVS.length; i++) {
 		
 		const slidePointerPoint = document.createElement("a");
 		slidePointerPoint.href = `javascript:changeSlide("smooth", ${i})`
@@ -49,7 +50,7 @@ function createSlideBody() {
 		slidePointerPoint.style.border = "5px solid grey";
 		slidePointerPoint.style.transition = "0.5s ease-in-out";
 		slidePointerRect.appendChild(slidePointerPoint);
-		slides.push(slideBody.children[i]);
+		slides.push(slideBodyDIVS[i]);
 		
 	};
 	
