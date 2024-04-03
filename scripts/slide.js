@@ -11,6 +11,7 @@ let slideId = -1;
 let lastSlideId = 1;
 let isScrolling;
 let SlideJSpauseSlide;
+let slideTarget = {x:0,y:0};
 
 function clamp(a,b,c) {
 	
@@ -120,7 +121,8 @@ addEventListener("load", function(){
 	
 	createSlideBody();
 	createHorizontalSlides();
-	changeSlide()
+	changeSlide();
+	updateSlideJS();
 	setTimeout(() => {
 		changeSlide("instant")
 		isScrolling = false;
@@ -128,23 +130,34 @@ addEventListener("load", function(){
 	
 });
 
+function slideScrollTo(options) {
+	slideTarget.y = options.top || slideTarget.y;
+	slideTarget.x = options.left || slideTarget.x;
+	if (options.behavior === 'instant') {
+		scrollTo({ top: options.top, left: options.left, behavior: 'instant' });
+	}
+}
+
 function changeSlide(mode, forceId) {
 	
 	if (forceId === slideId) return 0;
-	slideId = forceId+1 || slideId+1;
+	slideId = forceId+1 || slideId+1; // Go refaire avec un slide instant smooth custom
 	let behavior = mode || 'smooth';
 	slideId--;
-	let trueSlideId = slideId;
 	slideId = clamp(0,slideId,slides.length-1);
-	if (trueSlideId === slideId) isScrolling = true;
-	if (getComputedStyle(slides[slideId]).position.toLowerCase() === 'sticky') {
-		if (!slideId) {
-			scrollTo({ top: 2000, left:0, behavior: behavior });
+	if (lastSlideId === slideId) return 0;
+	if (mode !== 'smooth') {
+		if (getComputedStyle(slides[slideId]).position.toLowerCase() === 'sticky') {
+			if (!slideId) {
+				slideScrollTo({ top: 2000, left:0, behavior: behavior });
+			} else {
+				slideScrollTo({ top: slideTarget.y+slides[slideId-1].getBoundingClientRect().bottom, left:0, behavior: behavior });
+			}
 		} else {
-			scrollTo({ top: window.scrollY+slides[slideId-1].getBoundingClientRect().bottom, left:0, behavior: behavior });
+			slideScrollTo({
+				top: (lastSlideId < slideId || slides[slideId].getBoundingClientRect().top > 0) ? slideTarget.y+slides[slideId].getBoundingClientRect().top : slideTarget.y+slides[slideId].getBoundingClientRect().bottom-window.innerHeight, 
+				left:0, behavior: behavior });
 		}
-	} else {
-		scrollTo({ top: window.scrollY+slides[slideId].getBoundingClientRect().top, left:0, behavior: behavior });
 	}
 	const lastPointer = document.getElementById(`slidejs-body-pointer-${lastSlideId}`);
 	const pointer = document.getElementById(`slidejs-body-pointer-${slideId}`);
@@ -196,19 +209,26 @@ function changeHSlide(i, forceId) {
 	
 }
 
-function scrollUp() {
-	
-	if (isScrolling) return 0;
-	slideId--;
-	changeSlide();
+function scrollUp(delta) {
+	let rect = slides[slideId].getBoundingClientRect();
+	if (rect.top - delta > 0) {
+		slideId--;
+		changeSlide();
+	} else {
+		slideScrollTo({ top: slideTarget.y+(delta || -20), left:0});
+	}
 	
 }
 
-function scrollDown() {
+function scrollDown(delta) {
 	
-	if (isScrolling) return 0;
-	slideId++;
-	changeSlide();
+	let rect = slides[slideId].getBoundingClientRect();
+	if (rect.height + rect.top - delta < window.innerHeight) {
+		slideId++;
+		changeSlide();
+	} else {
+		slideScrollTo({ top: slideTarget.y+(delta || 20), left:0});
+	}
 	
 }
 
@@ -249,13 +269,13 @@ function touchMove(id, x, y) {
 			touchResult = 0;
 			selectedHSlide[id].state = 0;
 			if (selectedHSlide[id]) selectedHSlide[id].style.transform = `translateX(${parseInt(selectedHSlide[id].lastX)+(x - touchesFirstPos[id].x)}px)`;
-			scrollTo({ left: 0, behavior: "instant" });
+			slideScrollTo({ left: 0, behavior: "instant" });
 			if ((x - touchesFirstPos[id].x < -window.innerWidth/2) || (x - touchesLastPos[id].x < -window.innerWidth/100))
 				selectedHSlide[id].state = 1;
 			else if ((x - touchesFirstPos[id].x > window.innerWidth/2) || (x - touchesLastPos[id].x > window.innerWidth/100))
 				selectedHSlide[id].state = -1;
 		} else {
-			scrollTo({ top: lastScrollPos.y + (touchesFirstPos[id].y - y), behavior: "instant" });
+			slideScrollTo({ top: lastScrollPos.y + (touchesFirstPos[id].y - y), behavior: "instant" });
 			touchResult = 0;
 			if ((y - touchesFirstPos[id].y < -window.innerHeight/2) || (y - touchesLastPos[id].y < -window.innerHeight/100))
 				touchResult = 1;
@@ -274,16 +294,44 @@ function touchEnd() {
 		if (item && item.active)
 			changeHSlide(horizontalSlides.indexOf(item));
 	});
-	if (touchResult === 0)
-		changeSlide();
+	if (touchResult === 0) {
+		let rect = slides[slideId].getBoundingClientRect();
+		if (rect.top + 20 > 0 || rect.height + rect.top - 20 < window.innerHeight) {
+			changeSlide();
+		}
+	}
 	if (touchResult === 1)
-		scrollDown();
+		slideId++;
+		changeSlide();
 	if (touchResult === -1)
-		scrollUp();
+		slideId--;
+		changeSlide();
 	if (touchState == 1) isScrolling = false;
 	touchState = -2;
 	
 }
+
+
+
+
+function updateSlideJS() {
+	let bodyRect = document.body.getBoundingClientRect();
+	let rect = slides[slideId].getBoundingClientRect();
+	let topClamp = (rect.top - bodyRect.top);
+	if (getComputedStyle(slides[slideId]).position.toLowerCase() === 'sticky')
+		if (!slideId)
+			topClamp = 2000;
+		else
+			topClamp = slideTarget.y+slides[slideId-1].getBoundingClientRect().bottom;
+	slideTarget.y = clamp(topClamp, slideTarget.y, ((rect.bottom-window.innerHeight) - bodyRect.top));
+	scrollTo({top: window.scrollY + (slideTarget.y-window.scrollY)/12, left: window.scrollX + (slideTarget.x-window.scrollX)/12, behavior:'instant'})
+	window.requestAnimationFrame(updateSlideJS);
+};
+
+
+
+
+
 
 addEventListener("scrollend", function(){
 	
@@ -293,9 +341,9 @@ addEventListener("scrollend", function(){
 
 window.addEventListener("wheel", (event) => { 
 	if (event.deltaY < 0) {
-		scrollUp();
+		scrollUp(event.deltaY);
 	} else {
-		scrollDown();
+		scrollDown(event.deltaY);
 	}
 });
 
@@ -308,9 +356,9 @@ let touchState = -2;
 
 window.addEventListener("keydown", (event) => {
 	if (event.key === 'ArrowUp')
-		scrollUp();
+		scrollUp(-50);
 	if (event.key === 'ArrowDown')
-		scrollDown();
+		scrollDown(50);
 	
 	if (slides[slideId].getElementsByClassName("slidejs-horizontal").length === 1) {
 		let item = slides[slideId].getElementsByClassName("slidejs-horizontal")[0];
