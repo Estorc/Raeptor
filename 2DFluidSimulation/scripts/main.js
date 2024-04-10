@@ -245,14 +245,14 @@ class Particle {
 	bounceX(x) {
 		
 		this.x = x;
-		this.direction.x = Math.cos(screenAngle)*this.mass-this.direction.x;
+		this.direction.x = this.mass-this.direction.x;
 		
 	}
 	
 	bounceY(y) {
 		
 		this.y = y;
-		this.direction.y = Math.sin(screenAngle)*this.mass-this.direction.y;
+		this.direction.y = this.mass-this.direction.y;
 		
 	}
 	
@@ -330,11 +330,11 @@ function init() {
 function update() {
 	
 	let ratio = Math.ceil(window.devicePixelRatio);
-	canvas.width = document.body.clientWidth * ratio;
-	canvas.height = document.body.clientHeight * ratio;
-	canvas.style.width = `${document.body.clientWidth}px`;
-	canvas.style.height = `${document.body.clientHeight}px`;
-    canvas.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	canvas.style.width = `${window.innerWidth}px`;
+	canvas.style.height = `${window.innerHeight}px`;
+    //canvas.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
 	
 	if(!lastCalledTime) {
 		lastCalledTime = Date.now();
@@ -352,7 +352,7 @@ function update() {
 	ctx.fillRect(0,0,canvas.width,canvas.height)
 	
 	let color = 0;
-	for (const item of particles.sort((a,b) => b.y - 	a.y)) {
+	for (const item of particles.sort((a,b) => b.y - a.y)) {
 		
 		color += 0.1;
 		

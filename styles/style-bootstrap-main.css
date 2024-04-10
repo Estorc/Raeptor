@@ -8025,7 +8025,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(125, 125, 125, var(--bs-text-opacity)) !important;
 }
 
 .text-secondary {
@@ -10958,4 +10958,29 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+}
+
+
+.btstrp-image {
+
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+
+}
+
+.btstrp-image-container {
+  display: flex;
+  position: relative;
+  height:200px;
+}
+
+
+.engine-icon {
+
+  position: relative;
+  bottom: 20px;
+  height: 48px;
+  filter: invert(76%) sepia(5%) saturate(902%) hue-rotate(2deg) brightness(85%) contrast(84%);
+
 }
