@@ -44,4 +44,4 @@ function updateIfSlideJS() {
 };
 
 
-if (ScrollXEventSlideJS) updateIfSlideJS();
+if (typeof ScrollXEventSlideJS !== 'undefined') updateIfSlideJS();
