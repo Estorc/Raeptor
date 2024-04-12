@@ -40,3 +40,51 @@
 	background-color:#6070b0;
 	
 }
+
+
+
+
+
+
+
+@media (max-height:450px) {
+
+	.buttons a {
+			
+		padding:6px 6px;
+		
+		
+	}
+
+	.buttons .icon-button {
+		
+		padding:6px;
+		
+		
+	}
+
+}
+
+@media (max-width:440px) {
+
+	.buttons {
+		
+		display:flex;
+		gap:5px;
+		
+	}
+	.buttons a {
+		
+		padding:10px 10px;
+		
+		
+	}
+
+	.buttons .icon-button {
+		
+		padding:10px;
+		
+		
+	}
+
+}

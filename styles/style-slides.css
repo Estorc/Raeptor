@@ -53,8 +53,8 @@
 
 .showcase-slide iframe {
 
-	width: 40vw;
-	height: calc((40vw / 1920) * 1080);
+	width: 80vw;
+	height: calc((80vw / 1920) * 1080);
 
 }
 
@@ -78,6 +78,13 @@
 
 @media (min-aspect-ratio:1/1) {
 	
+	.showcase-slide iframe {
+
+		width: 40vw;
+		height: calc((40vw / 1920) * 1080);
+	
+	}
+
 	.showcase-slide img {
 		
 		max-width:35%;
@@ -124,41 +131,17 @@
 		
 	}
 	
-	.showcase-slide .buttons a {
-		
-		padding:6px 6px;
-		
-		
-	}
-	
-	.showcase-slide .buttons .icon-button {
-		
-		padding:6px;
-		
-		
-	}
-	
 }
 
-@media (max-width:440px) {
+@media (max-width:330px) {
 	
-	.showcase-slide .buttons {
-		
-		display:flex;
-		gap:5px;
-		
-	}
-	.showcase-slide .buttons a {
-		
-		padding:10px 10px;
-		
-		
-	}
+	.showcase-slide .text {
 	
-	.showcase-slide .buttons .icon-button {
-		
-		padding:10px;
-		
+		margin: 0 0;
+		padding:1%;
+		width: 100%;
+		max-width:100%;
+		max-height:100%;
 		
 	}
 	
