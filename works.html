@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="styles/style-main.css">
   <link rel="stylesheet" href="styles/style-menu.css">
+  <link rel="stylesheet" href="styles/style-buttons.css">
   <link rel="stylesheet" href="styles/style-works.css">
   <link rel="stylesheet" href="styles/style-scrollbar.css">
   <link rel="icon" href="images/RaptorProdIcon.webp">
-  <script src="scripts/script.js"></script>
   
   <meta property="og:image" content="https://github.com/Estorc/RAPTOR-PRODUCTION/blob/main/images/RaptorProd.webp?raw=true">
   <meta property="og:description" content="Le site officiel de RÆPTOR.">
@@ -43,74 +43,118 @@
 	<div>		
 	<div id="works">
 
+		<div id="activeWorkBlur"></div>
+
 		<div class="frame-work">
-			<a href="2DFluidSimulation">
-				<img src="images/FluidSimulation.webp" alt="2D Fluid Simulation">
-				<div class="text">
-					<h2>2D Fluid Simulation</h2>
-					<h3>Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.</h3>
+			<img src="images/FluidSimulation.webp" alt="2D Fluid Simulation">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>2D Fluid Simulation</h2>
+				<h3>Une simulation de fluide en JS pure. Aucune librairie ou framework n'ont été utilisés.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./2DFluidSimulation/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./2DFluidSimulation/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 		<div class="frame-work">
-			<a href="3DSoftBody">
-				<img src="images/SoftBodySimulation.webp" alt="3D Soft Body">
-				<div class="text">
-					<h2>3D Soft Body</h2> 
-					<h3>Une simulation de Soft Body réalisé avec la librairie Three.JS.</h3>
+			<img src="images/SoftBodySimulation.webp" alt="3D Soft Body">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>3D Soft Body</h2> 
+				<h3>Une simulation de Soft Body réalisé avec la librairie Three.JS.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./3DSoftBody/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./3DSoftBody/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 		<div class="frame-work">
-			<a href="YGHAG">
-			  <img src="images/Genos.webp" alt="Paper Professeur Genos Simulator">
-				<div class="text">
-					<h2>Paper Professeur Genos Simulator</h2> 
-					<h3>Un combat parodique contre un antagoniste mêlant plusieurs personnages fictifs. Le jeu reprend le système de combat de Undertale.</h3>
+			<img src="images/Genos.webp" alt="Paper Professeur Genos Simulator">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>Paper Professeur Genos Simulator</h2> 
+				<h3>Un combat parodique contre un antagoniste mêlant plusieurs personnages fictifs. Le jeu reprend le système de combat de Undertale.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./YGHAG/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./YGHAG/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 		<div class="frame-work">
-			<a href="ITHOTKK">
-			  <img src="images/KingKong.webp" alt="King Kong Simulator">
-				<div class="text">
-					<h2>King Kong Simulator</h2> 
-					<h3>Un combat parodique contre King Kong (Un personnage crée par Jadusable parodiant Link Goron de Zelda Majora's Mask). Le jeu reprend le système de combat de Undertale.</h3>
+			<img src="images/KingKong.webp" alt="King Kong Simulator">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>King Kong Simulator</h2> 
+				<h3>Un combat parodique contre King Kong (Un personnage crée par Jadusable parodiant Link Goron de Zelda Majora's Mask). Le jeu reprend le système de combat de Undertale.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./ITHOTKK/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./ITHOTKK/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 		<div class="frame-work">
-			<a href="OldProjects/The%20Dark%20Storm">
-			  <img src="images/TDS.webp" alt="The Dark Storm">
-				<div class="text">
-					<h2>The Dark Storm</h2> 
-					<h3>Un vieux jeu inachevé. Il s'inspire des jeux RPG/Hack 'n' Slash et propose un vaste monde de Dark Fantasy à explorer.</h3>
+			<img src="images/TDS.webp" alt="The Dark Storm">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>The Dark Storm</h2> 
+				<h3>Un vieux jeu inachevé. Il s'inspire des jeux RPG/Hack 'n' Slash et propose un vaste monde de Dark Fantasy à explorer.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./OldProjects/The%20Dark%20Storm/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./OldProjects/The%20Dark%20Storm/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 		<div class="frame-work">
-			<a href="OldProjects/Oujnish%20Game">
-			  <img src="images/OG1.webp" alt="Oujnish Game 1">
-				<div class="text">
-					<h2>Oujnish Game 1</h2> 
-					<h3>Un vieux jeu. Il est assez archaïque dans ses contrôles, mais reste un projet intéressant à explorer, bien que bien moins impressionnant que son successeur.</h3>
+			<img src="images/OG1.webp" alt="Oujnish Game 1">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>Oujnish Game 1</h2> 
+				<h3>Un vieux jeu. Il est assez archaïque dans ses contrôles, mais reste un projet intéressant à explorer, bien que bien moins impressionnant que son successeur.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./OldProjects/Oujnish%20Game/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./OldProjects/Oujnish%20Game/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 		<div class="frame-work">
-			<a href="3DSoftBodyPureJS">
-			  <img src="images/SoftBodySimulation2.webp" alt="3D Soft Body PureJS">
-				<div class="text">
-					<h2>3D Soft Body PureJS</h2> 
-					<h3>Une simulation de Soft Body réalisé sans librairies en utilisant les canvas 2D du JS.</h3>
+			<img src="images/SoftBodySimulation2.webp" alt="3D Soft Body PureJS">
+			<div class="text">
+				<div class="diamond-bg"></div>
+				<h2>3D Soft Body PureJS</h2> 
+				<h3>Une simulation de Soft Body réalisé sans librairies en utilisant les canvas 2D du JS.</h3>
+				<hr class="radial-gradient">
+				<div class="buttons">
+					<a href="./3DSoftBodyPureJS/"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+					<a href="./3DSoftBodyPureJS/">En savoir plus</a>
+					<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
 				</div>
-			</a>
+				<i class="material-symbols-outlined close-button">close</i>
+			</div>
 		</div>
 		
 	</div>
@@ -124,7 +168,8 @@
 	</footer>
 </div>
 
-
+<script src="scripts/script.js"></script>
+<script src="scripts/works.js"></script>
 </body>
 
 </html>

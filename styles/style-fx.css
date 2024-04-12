@@ -4,6 +4,7 @@
 @import url("StyleFX/animations.css");
 @import url("StyleFX/background.css");
 @import url("StyleFX/horizontal-rule.css");
+@import url("StyleFX/popups.css");
 
 .zero-opacity {
 	
@@ -22,6 +23,9 @@
 .force-bottom {
 	position:absolute;
 	bottom:0;
+}
+.centered {
+	text-align: center;
 }
 
 .material-symbols-outlined, .unselectable {

@@ -146,18 +146,17 @@ function changeSlide(mode, forceId) {
 	slideId--;
 	slideId = clamp(0,slideId,slides.length-1);
 	if (lastSlideId === slideId) return 0;
-	if (mode !== 'smooth') {
-		if (getComputedStyle(slides[slideId]).position.toLowerCase() === 'sticky') {
-			if (!slideId) {
-				slideScrollTo({ top: 2000, left:0, behavior: behavior });
-			} else {
-				slideScrollTo({ top: slideTarget.y+slides[slideId-1].getBoundingClientRect().bottom, left:0, behavior: behavior });
-			}
+	if (getComputedStyle(slides[slideId]).position.toLowerCase() === 'sticky') {
+		if (!slideId) {
+			slideScrollTo({ top: 2000, left:0, behavior: behavior });
 		} else {
+			slideScrollTo({ top: slideTarget.y+slides[slideId-1].getBoundingClientRect().bottom, left:0, behavior: behavior });
+		}
+	}
+	if (mode !== 'smooth') {
 			slideScrollTo({
 				top: (lastSlideId < slideId || slides[slideId].getBoundingClientRect().top > 0) ? slideTarget.y+slides[slideId].getBoundingClientRect().top : slideTarget.y+slides[slideId].getBoundingClientRect().bottom-window.innerHeight, 
 				left:0, behavior: behavior });
-		}
 	}
 	const lastPointer = document.getElementById(`slidejs-body-pointer-${lastSlideId}`);
 	const pointer = document.getElementById(`slidejs-body-pointer-${slideId}`);
@@ -237,14 +236,13 @@ function touchStart(id, x, y) {
 	touchesFirstPos[id] = {x:x,y:y};
 	touchesLastPos[id] = {x:x,y:y};
 	touchResult = -2;
+	selectedHSlide[id] = null;
 	for (let item of horizontalSlides) {
 		let rect = item.getBoundingClientRect();
 		if (rect.top < y && rect.bottom > y && rect.left < x && rect.right > x) {
 			selectedHSlide[id] = item;
 			item.state = 0;
 			item.lastX = rect.x;
-		} else {
-			selectedHSlide[id] = null;
 		}
 	}
 	lastScrollPos = {x:window.scrollX,y:window.scrollY};
@@ -255,9 +253,10 @@ function touchMove(id, x, y) {
 	
 	if (SlideJSpauseSlide) return 0;
 	if (touchState == -1) {
-		if (Math.abs((touchesFirstPos[id].x - x)) > Math.abs((touchesFirstPos[id].y - y)))
+		if (Math.abs((touchesFirstPos[id].x - x)) > Math.abs((touchesFirstPos[id].y - y))){
+			console.log(selectedHSlide[id]);
 			touchState = 1;
-		else
+		} else
 			touchState = 0;
 	} else {
 		document.body.style["user-select"] = "none";
@@ -323,8 +322,9 @@ function updateSlideJS() {
 			topClamp = 2000;
 		else
 			topClamp = slideTarget.y+slides[slideId-1].getBoundingClientRect().bottom;
-	slideTarget.y = clamp(topClamp, slideTarget.y, ((rect.bottom-window.innerHeight) - bodyRect.top));
-	scrollTo({top: window.scrollY + (slideTarget.y-window.scrollY)/12, left: window.scrollX + (slideTarget.x-window.scrollX)/12, behavior:'instant'})
+	if (touchState < 0) slideTarget.y = clamp(topClamp, slideTarget.y, ((rect.bottom-window.innerHeight) - bodyRect.top));
+	window.scrollY += (slideTarget.y-window.scrollY)/12
+	scrollTo({top: window.scrollY, left: window.scrollX + (slideTarget.x-window.scrollX)/12, behavior:'instant'})
 	window.requestAnimationFrame(updateSlideJS);
 };
 
