@@ -1,8 +1,8 @@
 const workDivs = document.getElementsByClassName("frame-work");
 
 function onMouseWorkUpdate(e) {
-    e.currentTarget.style.setProperty('--mouseX', `${(e.offsetX/100-1)/1000}`);
-    e.currentTarget.style.setProperty('--mouseY', `${(e.offsetY/100-1)/1000}`);
+    e.currentTarget.style.setProperty('--mouseX', `${(e.offsetX/(e.currentTarget.clientWidth/2)-1)/1000}`);
+    e.currentTarget.style.setProperty('--mouseY', `${(e.offsetY/(e.currentTarget.clientHeight/2)-1)/1000}`);
 };
 
 function onAnimationEndWork(e) {

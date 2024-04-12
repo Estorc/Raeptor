@@ -83,3 +83,16 @@ function updateIfSlideJS() {
 
 
 if (typeof ScrollXEventSlideJS !== 'undefined') updateIfSlideJS();
+
+
+
+function onMouseD3DUpdate(e) {
+    e.currentTarget.style.setProperty('--mouseX', `${(e.offsetX/(e.currentTarget.clientWidth/2)-1)/5000}`);
+    e.currentTarget.style.setProperty('--mouseY', `${(e.offsetY/(e.currentTarget.clientHeight/2)-1)/5000}`);
+};
+
+
+const d3dDivs = document.getElementsByClassName("d3d-hover");
+for (const d3dDiv of d3dDivs) {
+    d3dDiv.addEventListener('mousemove', onMouseD3DUpdate, false);
+}

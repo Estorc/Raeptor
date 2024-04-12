@@ -185,8 +185,8 @@ function changeHSlide(i, forceId) {
 			item.setAttribute('slideId', 0);
 			isScrolling = false;
 		}
-		if (item.getAttribute('slideLength') <= item.getAttribute('slideId')) {
-			item.setAttribute('slideId', item.getAttribute('slideLength')-1);
+		if (eval(item.getAttribute('slideLength')) <= eval(item.getAttribute('slideId'))) {
+			item.setAttribute('slideId', eval(item.getAttribute('slideLength'))-1);
 			isScrolling = false;
 		}
 		if (isScrolling)
@@ -254,7 +254,6 @@ function touchMove(id, x, y) {
 	if (SlideJSpauseSlide) return 0;
 	if (touchState == -1) {
 		if (Math.abs((touchesFirstPos[id].x - x)) > Math.abs((touchesFirstPos[id].y - y))){
-			console.log(selectedHSlide[id]);
 			touchState = 1;
 		} else
 			touchState = 0;

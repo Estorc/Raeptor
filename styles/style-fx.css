@@ -28,6 +28,24 @@
 	text-align: center;
 }
 
+
+.d3d-hover {
+	--mouseX:0;
+	--mouseY:0;
+	transition-duration: 0.2s;
+}
+
+.d3d-hover:hover {
+
+	transform:	scale(110%,110%) matrix3d(
+		1, 0, 0, var(--mouseX), 0, 
+		1, 0, var(--mouseY), 0, 0, 
+		1, 0, 0, 0, 0, 
+		1);
+	filter:grayscale(0.2)brightness(1.2);
+
+}
+
 .material-symbols-outlined, .unselectable {
 
 	display: inline-block;
