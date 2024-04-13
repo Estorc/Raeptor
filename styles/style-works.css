@@ -152,6 +152,7 @@
 
 #activeWorkBlur {
 
+	pointer-events: none;
 	display: none;
 	position: fixed;
 	left: 0;
