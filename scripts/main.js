@@ -956,8 +956,7 @@ function update() {
 	document.getElementById('museum-starting-text').style.opacity = (Math.sin(timer/50)+1)/2-operand*2;
 	if (windowChangeAsked && !loopBreak) {
 		if (!SlideJSpauseSlide) {
-			scrollTo({ top: 2000, left:0, behavior: 'smooth' });
-			isScrolling = true;
+			changeSlide("smooth", 0);
 			SlideJSpauseSlide = true;
 			document.getElementById(`slidejs-body-pointer-0`).parentNode.style.transform = "translateX(100px)";
 			document.getElementById(`slidejs-body-pointer-0`).parentNode.style.transition = "0.5s ease-in-out";
