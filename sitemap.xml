@@ -1,46 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://estorc.github.io/Raeptor/</loc>
+        <loc>https://raeptor.com/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/about</loc>
+        <loc>https://raeptor.com/about</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/works</loc>
+        <loc>https://raeptor.com/works</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/Museum/</loc>
+        <loc>https://raeptor.com/Museum/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/2DFluidSimulation/</loc>
+        <loc>https://raeptor.com/2DFluidSimulation/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/3DSoftBody/</loc>
+        <loc>https://raeptor.com/3DSoftBody/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/YGHAG/</loc>
+        <loc>https://raeptor.com/YGHAG/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/ITHOTKK/</loc>
+        <loc>https://raeptor.com/ITHOTKK/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://estorc.github.io/Raeptor/3DSoftBodyPureJS/</loc>
+        <loc>https://raeptor.com/3DSoftBodyPureJS/</loc>
         <lastmod>2024-04-03T14:32:37+00:00</lastmod>
         <priority>0.64</priority>
     </url>
