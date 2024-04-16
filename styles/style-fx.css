@@ -32,7 +32,7 @@
 .d3d-hover {
 	--mouseX:0;
 	--mouseY:0;
-	transition-duration: 0.2s;
+	/*transition-duration: 0.2s;*/
 }
 
 .d3d-hover:hover {
