@@ -36,3 +36,11 @@
 	background-image:attr(bg-image);
 	
 }
+
+.starry-sky {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100dvw;
+	height: 100dvh;
+}

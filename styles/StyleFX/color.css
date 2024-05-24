@@ -1,0 +1,15 @@
+.color-hover-200ms {
+  transition: color 200ms;
+}
+
+.white-hover:hover {
+	color: white;
+}
+
+.white {
+	color: white;
+}
+
+.grey {
+	color: grey;
+}

@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "anidbjs": "^2.4.4",
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "electron": "^30.0.6",
+    "ffmetadata": "^1.7.0",
+    "fs": "^0.0.1-security",
+    "open": "^10.1.0",
+    "openurl": "^1.1.1",
+    "socket.io": "^4.7.5",
+    "xml-js": "^1.6.11"
+  }
+}
