@@ -1,0 +1,28 @@
+.fullpannel {
+	position: relative;
+	margin: auto;
+	width: 80%;
+	height: 80%;
+	border-radius: 40px;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 40px;
+	background-color: #000000a0;
+}
+
+
+.rounded-circle {
+	border-radius: 800px;
+}
+
+.scrolling-div {
+	overflow-y: scroll;
+}
+
+.hover-white-border {
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.hover-white-border:hover {
+	box-shadow: 0px 0px 0px 10px white;
+}

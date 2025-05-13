@@ -1,0 +1,19 @@
+<div class='feather-cards-pretty-fullcard-blurred-background' [style.backgroundImage]="'url(' + image + ')'"></div>
+<div>
+    <div class='feather-cards-pretty-fullcard-content'>
+        <ng-content *ngIf="customContent"></ng-content>
+        <ng-container *ngIf="!customContent">
+            <img [src]="image" [alt]="imageAlt"/>
+            <div class="feather-cards-pretty-fullcard-text">
+                <h2>{{ title }}</h2>
+                <h3>{{ description }}</h3>
+                <hr class="radial-gradient">
+                <div class="buttons">
+                    <a [href]="link"><i class="material-symbols-outlined">play_arrow</i>Jouer</a>
+                    <a [href]="link">En savoir plus</a>
+                    <a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

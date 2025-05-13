@@ -1,0 +1,329 @@
+#works {
+
+	position: relative;
+	width: 80%;
+	margin: 100px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+
+.frame-work {
+	--mouseX:0;
+	--mouseY:0;
+	--primary-color: #aaa;
+	--secondary-color: #111111;
+	position:relative;
+	margin:2vw;
+	border-radius: 5px;
+	width: 230px;
+	height: 230px;
+	transition-duration: 0.2s;
+	/*-webkit-animation: 1s appear1;
+	animation: 1s appear1;*/
+
+}
+
+@-moz-document url-prefix() {
+ 
+    .frame-work { transition-duration: 0s; }
+ 
+}
+
+.frame-work h2 {
+
+	position: relative;
+	text-align:center;
+	color:#eee;
+	transition: 0.5s 0.1s;
+	font-size: 22px;	
+	margin: 10 0;
+	z-index: 1;
+
+}
+
+.frame-work h3 {
+
+	position: relative;
+	color:#ccc;
+	transition: 0.5s 0.1s;
+	text-align: center;
+	font-size: 18px;
+	margin: 10 0;
+	z-index: 1;
+
+}
+
+.frame-work img {
+	
+	position:relative;
+	top:0px;
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+	vertical-align: bottom;
+	width:100%;
+	
+}
+
+.frame-work .text {
+
+	transition-duration: 0.5s;
+	transition-delay: 1.2s;
+	transition-property: transform;
+	position:absolute;
+	padding: 0;
+	transform-origin: left;
+	padding: 50px;
+	left:100%;
+	transform:scale(0%,100%);
+	bottom: 0;
+	top: 0;
+	background:var(--secondary-color);
+	width: 50vw;
+
+}
+
+.frame-work:hover:not(.activeWork) {
+
+	cursor: pointer;
+	transform:	scale(110%,110%) matrix3d(
+					1, 0, 0, var(--mouseX), 0, 
+					1, 0, var(--mouseY), 0, 0, 
+					1, 0, 0, 0, 0, 
+					1);
+	filter:grayscale(0.2)brightness(1.5);
+
+}
+
+/* .frame-work:hover .text {
+
+	color:#fff;
+	background:#111;
+	transform:scale(100%,100%);
+
+} */
+
+@keyframes disapearWork {
+	0% { width: 230px;margin:2vw; }
+	100% { width: 0px;margin:0; }
+  }
+
+@keyframes selectWorkMove {
+	0% { left:var(--originX);top:var(--originY);width:230px; }
+	100% { left:5vw;top:calc( (100dvh - 30vw) / 2 );width:30vw; }
+  }
+
+@keyframes selectWorkRotate {
+  0% { transform: scale(100%,100%);filter: brightness(1); }
+  25% { transform: scale(0%,100%);filter: brightness(0); }
+  50% { transform: scale(-100%,100%);filter: brightness(1.1); }
+  75% { transform: scale(0%,100%);filter: brightness(0); }
+  100% { transform: scale(100%,100%);filter: brightness(1.2); }
+}
+
+
+.close-button {
+
+	position: absolute;
+	top:20px;
+	right: 20px;
+	transition-duration: 0.15s;
+	z-index: 2;
+
+}
+
+.close-button:hover {
+
+	cursor: pointer;
+	transform: scale(1.2);
+
+}
+
+.activeWork {
+
+	position: fixed;
+	backdrop-filter: blur(8px);
+	/*animation: 1s selectWorkMove, 1s selectWorkRotate;*/
+	filter: brightness(1.2);
+	top: calc( (100dvh - 30vw) / 2 );
+	left: 5vw;
+	width: 30vw;
+	height: auto;
+	z-index: 2;
+	margin:0;
+
+}
+
+#activeWorkBlur {
+
+	pointer-events: none;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition-duration: 0.5s;
+	opacity: 0;
+	backdrop-filter: blur(3px);
+	z-index: 1;
+
+}
+
+@keyframes diamondBgAnim {
+	0% { background-position: 0% 0; }
+	100% { background-position: 0% 120px; }
+  }
+
+.diamond-bg {
+
+	position: absolute;
+	width: 60px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	animation: 1s linear infinite diamondBgAnim;
+	animation: 1s linear 1s infinite diamondBgAnim;
+	background: linear-gradient(135deg, var(--primary-color) 25%, transparent 25%),
+		linear-gradient(225deg, var(--primary-color) 25%, transparent 25%),
+		linear-gradient(315deg, var(--primary-color) 25%, transparent 25%),
+		linear-gradient(45deg, var(--primary-color) 25%, transparent 25%);
+	background-size: 120px 120px;
+	background-color: transparent;
+
+}
+
+
+.diamond-bg::before {
+
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	animation: 1s linear 1s infinite diamondBgAnim;
+	background: linear-gradient(135deg, var(--primary-color) 25%, transparent 25%),
+		linear-gradient(225deg, var(--primary-color) 25%, transparent 25%),
+		linear-gradient(315deg, var(--primary-color) 25%, transparent 25%),
+		linear-gradient(45deg, var(--primary-color) 25%, transparent 25%);
+	background-size: 120px 120px;
+	background-color: transparent;
+
+}
+
+.activeWorkDesc .text {
+	transform:scale(100%,100%);
+}
+
+.endWork {
+
+	position: absolute;
+	animation: 1s reverse selectWorkMove, 1s reverse selectWorkRotate;
+	filter: brightness(1.2);
+	top: var(--originY);
+	left: var(--originX);
+	width: 230px;
+	z-index: 1;
+	margin:0;
+
+}
+
+
+.frame-work .text .buttons {
+	
+	position: absolute;
+	margin: 0 auto;
+	bottom: calc(30px + 2vw);
+	right: calc(30px + 2vw);
+
+}
+
+@media (max-aspect-ratio:1/1) {
+	
+	@keyframes disapearWork {
+		0% { width: 230px;margin:2vw; }
+		100% { width: 0px;margin:0; }
+	  }
+	
+	@keyframes selectWorkMove {
+		0% { left:var(--originX);top:var(--originY);width:230px; }
+		100% { left:calc(50% - (40vh / 2));top:5vh;width:40vh; }
+	  }
+	
+	@keyframes selectWorkRotate {
+	  0% { transform: scale(100%,100%);filter: brightness(1); }
+	  25% { transform: scale(0%,100%);filter: brightness(0); }
+	  50% { transform: scale(-100%,100%);filter: brightness(1.1); }
+	  75% { transform: scale(0%,100%);filter: brightness(0); }
+	  100% { transform: scale(100%,100%);filter: brightness(1.2); }
+	}
+
+	.activeWork {
+	
+		position: fixed;
+		backdrop-filter: blur(8px);
+		/*animation: 1s selectWorkMove, 1s selectWorkRotate;*/
+		filter: brightness(1.2);
+		top: 5vh;
+		left: calc(50% - (40vh / 2));
+		width: 40vh;
+		height: auto;
+		z-index: 2;
+		margin:0 auto;
+	
+	}
+
+
+	.frame-work .text {
+
+		transition-duration: 0.5s;
+		transition-delay: 1.2s;
+		transition-property: transform;
+		position:absolute;
+		padding: 0;
+		padding-top: 60px;
+		transform-origin: top;
+		left:0;
+		top:100%;
+		transform:scale(100%,0%);
+		bottom: 0;
+		background:var(--secondary-color);
+		width: 40vh;
+		height: calc(50vh - 60px);
+	
+	}
+
+	.activeWorkDesc .text {
+		transform:scale(100%,100%);
+	}
+
+
+
+	@keyframes diamondBgAnim {
+		0% { background-position: 0 0; }
+		100% { background-position: 120px 0; }
+	  }
+
+
+	.diamond-bg {
+
+		width: 100%;
+		height: 60px;
+	
+	}
+
+
+	.frame-work:hover:not(.activeWork) {
+
+		cursor: pointer;
+		transform:	none;
+		filter:grayscale(0.2)brightness(1.5);
+	
+	}
+	
+	
+	
+}

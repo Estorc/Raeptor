@@ -1,0 +1,70 @@
+/*hr.radial-gradient-line {
+	
+	overflow:visible;
+	display: flex;
+	clear: both;
+	height: 0;
+	margin: 40px 0 80px;
+	padding: 0;
+	border: 0;
+	text-align: center;
+	font-size: 60px;
+	line-height: 1;
+	
+}
+
+hr.radial-gradient-line:after {
+	
+	content: "\273D \273D \273D";
+	height: 0px;			
+	letter-spacing: 1em;
+	color: #aaa;
+	
+}*/
+
+hr.large {
+	
+	overflow:visible;
+	display: flex;
+	clear: both;
+	height: 0;
+	padding: 0;
+	border: 0;
+	font-size: 60px;
+	
+}
+
+hr.large:after {
+	
+	content: "";
+	height: 2px;
+	width: 100%;
+	background-color: white;
+	
+}
+
+
+
+hr.radial-gradient {
+	
+	overflow:visible;
+	display: flex;
+	clear: both;
+	height: 0;
+	padding: 0;
+	border: 0;
+	font-size: 60px;
+	
+}
+
+
+
+hr.radial-gradient:after {
+	
+	content: "";
+	height: 2px;
+	width: 100%;
+	background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);
+	
+}

@@ -1,0 +1,17 @@
+:host {
+
+	display: block;
+    unicode-bidi: isolate;
+    white-space: initial;
+	
+}
+
+:host.feather-slides-fullslide {
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+.feather-slides-container-horizontal > .feather-slides-content > :host {
+    display: inline-block;
+}

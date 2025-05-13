@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=PT+Sans+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100&display=swap');
+@import url("StyleFX/animations.css");
+@import url("StyleFX/background.css");
+@import url("StyleFX/horizontal-rule.css");
+@import url("StyleFX/popups.css");
+@import url("StyleFX/color.css");
+@import url("StyleFX/f3d.css");
+
+.zero-opacity {
+	
+	opacity: 0;
+	
+}
+
+.inline {
+	display: inline-block;
+}
+
+.show {
+	visibility: visible;
+	opacity: 1;
+}
+.hide {
+	visibility: hidden;
+	opacity: 0;
+}
+.force-bottom {
+	position:absolute;
+	bottom:0;
+}
+.centered {
+	text-align: center;
+}
+
+
+@media (max-width: 1000px) {
+	
+	.hide-phone {
+		display: none !important;
+	}
+	
+}

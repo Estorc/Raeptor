@@ -1,0 +1,123 @@
+<main>
+	<feather-f3d-core-container>
+		<feather-slides-container-vertical style="height: 100dvh;">
+			<feather-slides-slide id="page">
+				<feather-misc-tesseract></feather-misc-tesseract>
+			</feather-slides-slide>
+			<feather-slides-slide [x]="500" [y]="500" [z]="1000" class='black-background feather-slides-fullslide'>
+				<feather-slides-container-horizontal>
+					<feather-slides-slide class="feather-slides-fullslide" *ngFor="let card of [
+						{title: 'Paper Professeur Genos Simulator', image: 'assets/images/Genos.webp', imageAlt: 'Genos Artwork', description: 'Un combat parodique contre un antagoniste mêlant plusieurs personnages fictifs. Le jeu reprend le système de combat de Undertale.', link: './works/You-gonna-have-a-Genophobia/'}, 
+						{title: 'King Kong Simulator', image: 'assets/images/KingKong.webp', imageAlt: 'King Kong Artwork', description: 'Un combat parodique contre King Kong (Un personnage crée par Jadusable parodiant Link Goron de Zelda Majora\'s Mask). Le jeu reprend le système de combat de Undertale.', link: './works/In-the-hall-of-the-King-Kong/'}, 
+						{title: '3D Soft Body PureJS', image: 'assets/images/SoftBodySimulation2.webp', imageAlt: 'Soft Body Simulation', description: 'Une simulation de Soft Body réalisé sans librairies en utilisant les canvas 2D du JS.', link: './works/3DSoftBodyPureJS/'}, 
+						{title: '2D Fluid Simulation', image: 'assets/images/FluidSimulation.webp', imageAlt: 'Fluid Simulation', description: 'Une simulation de fluide en JS pure. Aucune librairie ou framework n\'ont été utilisés.', link: './works/2DFluidSimulation/'},
+					]">
+						<feather-cards-pretty-fullcard [image]="card.image" [image-alt]="card.imageAlt" [title]="card.title" [description]="card.description" [link]="card.link">
+
+						</feather-cards-pretty-fullcard>
+					</feather-slides-slide>
+				</feather-slides-container-horizontal>
+			</feather-slides-slide>
+
+
+
+
+
+
+			<feather-slides-slide [x]="20" [y]="0" [z]="1400" class='black-background feather-slides-fullslide'>
+				<feather-slides-container-horizontal>
+					<feather-slides-slide class='feather-slides-fullslide'>
+						<feather-cards-pretty-fullcard [image]="'assets/images/ASSATT-bg.webp'" [custom-content]="true">
+							<div class="feather-cards-pretty-fullcard-text centered">
+								<h2>A Short Story Across The Time</h2>
+								<h3>« Dans les méandres du temps demeure un puissant pouvoir qui saurait abolir les plus tristes vérités de l'existence. Mais qu'adviendrait-il si l'avarice insatiable de l'homme venait à plonger cet interstice d'espoir dans un profond néant d'affliction ?... » - Un voyageur perdu</h3>
+								<hr class="radial-gradient">
+								<h3>Le plus grand fantasme de l'humanité est entre vos mains, vous maitrisez l'espace et le temps. Tout vous est possible, mais serez vous en mesure de resister à l'étouffante solitude que promet un tel pouvoir ?</h3>
+								<h3>Vous devrez répondre en votre sens à ce grand débat du bien et du mal, à mesure que vos actions affectent l'univers tout entier, amenant chaos et désolation malgré la bonté de votre intention. Serez-vous en mesure de réparer la trame du temps, ou succomberez-vous à la folie ?</h3>
+								<h3>Toutes ces réponses se trouvent dans A Short Story Across The Time.</h3>
+							</div>
+						</feather-cards-pretty-fullcard>
+					</feather-slides-slide>
+				</feather-slides-container-horizontal>
+			</feather-slides-slide>
+
+
+
+
+
+			
+			<feather-slides-slide [x]="1200" [y]="0" [z]="1600" class='black-background feather-slides-fullslide'>
+				<feather-slides-container-horizontal>
+					<feather-slides-slide class='feather-slides-fullslide' *ngFor="let card of [
+						{text: 'Mon défi, dessiner une fois par jour pendant 6 mois. - 2024', image: 'assets/images/drawing-bg.webp', alt: ''},
+						{text: 'Senku x Outer Wilds - 18 Décembre 2023', image: 'assets/images/drawings/Senku_Nomai.webp', alt: 'Senku x Outer Wilds Artwork'},
+						{text: 'Solanum x Wilhelm - 22 Décembre 2023', image: 'assets/images/drawings/SolanumxWilhelm.webp', alt: 'Solanum x Wilhelm Artwork'},
+						{text: 'Nia - 26 Décembre 2023 (Couleurs 19 Janvier 2024)', image: 'assets/images/drawings/Nia_2_Couleur.webp', alt: 'Nia Artwork'},
+						{text: 'Nia - 28 Décembre 2023', image: 'assets/images/drawings/Nia4.webp', alt: 'Nia Artwork'},
+						{text: 'Kamina - 7 Janvier 2024', image: 'assets/images/drawings/Kamina_3.webp', alt: 'Kamina Artwork'},
+						{text: 'Simon vs Anti-Spirale - 7 Janvier 2024', image: 'assets/images/drawings/Simon.webp', alt: 'Simon vs Anti-Spirale Artwork'},
+						{text: 'Giovanni - 31 Janvier 2024', image: 'assets/images/drawings/Giovanni2.webp', alt: 'Giovanni Artwork'},
+						{text: 'Seele - 12 Février 2024', image: 'assets/images/drawings/Seele7.webp', alt: 'Seele Artwork'},
+						{text: 'Aponia x Ori - 18 Février 2024', image: 'assets/images/drawings/Aponia.webp', alt: 'Aponia x Ori Artwork'},
+						{text: 'Yae Miko - 27 Février 2024', image: 'assets/images/drawings/Yae_Miko.webp', alt: 'Yae Miko Artwork'},
+						{text: 'Honoka Kosaka - 29 Février 2024', image: 'assets/images/drawings/Honoka_Kosaka_1.webp', alt: 'Honoka Kosaka Artwork'},
+						{text: 'Honoka Kosaka - 1er Mars 2024', image: 'assets/images/drawings/Honoka_Kosaka_3.webp', alt: 'Honoka Kosaka Artwork'},
+						{text: 'Kamina - 2 Mars 2024', image: 'assets/images/drawings/Kamina_4.webp', alt: 'Kamina Artwork'},
+						{text: 'Clara - 5 Avril 2024', image: 'assets/images/drawings/Clara2.webp', alt: 'Clara Artwork'},
+						{text: 'Essai personnage original - 8 Avril 2024', image: 'assets/images/drawings/Illustration2.webp', alt: 'Essai'},
+						{text: 'Mari - 13 Avril 2024', image: 'assets/images/drawings/Mari.webp', alt: 'Mari Artwork'},
+						{text: 'Nia - 11 Mai 2024', image: 'assets/images/drawings/Nia10.webp', alt: 'Nia Artwork'},
+						{text: 'Essai personnage original - 15 Mai 2024', image: 'assets/images/drawings/Illustration5.webp', alt: 'Essai'},
+						{text: 'Nia - 16 Mai 2024', image: 'assets/images/drawings/Nia11.webp', alt: 'Nia Artwork'},
+					]; let i = index">
+						<feather-cards-pretty-fullcard [image]="card.image" [custom-content]="true">
+							<img *ngIf="i > 0" class='feather-cards-pretty-fullcard-large-img f3d-hover' [src]="card.image" [alt]="card.alt"/>
+							<div class="feather-cards-pretty-fullcard-text feather-cards-pretty-fullcard-small-padding centered">
+								<h2><i class="material-symbols-outlined">navigate_next</i>  {{ card.text }}  <i class="material-symbols-outlined">navigate_before</i></h2>
+							</div>
+						</feather-cards-pretty-fullcard>
+					</feather-slides-slide>
+				</feather-slides-container-horizontal>
+			</feather-slides-slide>
+
+
+
+
+
+			<feather-slides-slide [x]="500" [y]="250" [z]="3200" class='black-background feather-slides-fullslide'>
+				<feather-slides-container-horizontal>
+
+					<feather-slides-slide class='feather-slides-fullslide'>
+						<feather-cards-pretty-fullcard [image]="'assets/images/analyse-bg.webp'" [custom-content]="true">
+							<div class="feather-cards-pretty-fullcard-text centered">
+								<h2>Analyses</h2>
+								<h3>« Si tu plonges ton regard longtemps dans l’abîme, l’abîme te regarde aussi. », Nietzsche,<br>Par delà le Bien et le Mal, 1886.</h3>
+								<hr class="radial-gradient">
+								<h3>Ce que j'aime plus que tout dans cette citation, c'est la capacité de Nietzsche à véhiculer un message si profond en si peu de mots.</h3>
+								<h3>Pour les curieux, l'abîme fait référence à une multitude de concept, mais un thème central ici est l'idée de malencontreusement engendrer quelque chose de plus mauvais en essayant de prévenir un mal.<br>C'est en se battant ne pas devenir ce que l'on redoute que l'on risque le plus d'être consumé par ce qu'on caractérise comme le mal.</h3>
+								<h3>C'est comme ça que je le vois du moins.</h3>
+							</div>
+						</feather-cards-pretty-fullcard>
+					</feather-slides-slide>
+					<feather-slides-slide class='feather-slides-fullslide'>
+						<feather-cards-pretty-fullcard [image]="'assets/images/undertale.webp'" [custom-content]="true">
+							<div class="feather-cards-pretty-fullcard-text centered">
+								<h2>UNDERTALE, une ode à la vie</h2>
+								<iframe src="https://www.youtube-nocookie.com/embed/ICBZVp5OiTw?si=fTu7ATFnvyaMK4ZS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								<hr class="radial-gradient">
+								<div class="buttons">
+									<a href="https://www.youtube.com/watch?v=ICBZVp5OiTw"><i class="material-symbols-outlined">play_arrow</i>Visionner</a>
+									<a href="javascript:void(0)" onclick="copyURLToClipboard.call(this, 'play-button')" class="icon-button"><i class="material-symbols-outlined">link</i></a>
+								</div>
+							</div>
+						</feather-cards-pretty-fullcard>
+					</feather-slides-slide>
+
+				</feather-slides-container-horizontal>
+			</feather-slides-slide>
+
+
+			
+		</feather-slides-container-vertical>
+	</feather-f3d-core-container>
+</main>
