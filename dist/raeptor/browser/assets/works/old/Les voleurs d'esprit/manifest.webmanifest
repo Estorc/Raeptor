@@ -1,0 +1,7 @@
+{
+    "name": "Les voleurs d'esprit",
+    "short_name": "LVDE",
+    "description": "Sample RPG XP game",
+    "display": "fullscreen",
+    "scope": "/"
+}
