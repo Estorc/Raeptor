@@ -1,0 +1,17 @@
+:host {
+
+	display: block;
+    unicode-bidi: isolate;
+    white-space: initial;
+	
+}
+
+:host.raeptor-slides-fullslide {
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+.raeptor-slides-container-horizontal > .raeptor-slides-content > :host {
+    display: inline-block;
+}

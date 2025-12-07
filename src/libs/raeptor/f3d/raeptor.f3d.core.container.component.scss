@@ -1,0 +1,12 @@
+@media (min-width: 650px) {
+    raeptor-f3d-core-container {
+        display: block;
+        unicode-bidi: isolate;
+        position: relative;
+        perspective: 800px;
+    }
+
+    raeptor-f3d-core-container * {
+        transform-style: preserve-3d;
+    }
+}

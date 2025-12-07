@@ -37,7 +37,7 @@ export class WorkComponent implements OnInit {
       }
     }
     while (subUrl);
-    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.pageUrl);
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`${this.pageUrl}/index.html`);
   }
 
   @HostListener('window:message', ['$event'])

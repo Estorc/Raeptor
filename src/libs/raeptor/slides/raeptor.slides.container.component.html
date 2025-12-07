@@ -1,0 +1,11 @@
+<div #content class="raeptor-slides-content">
+    <ng-content></ng-content>
+</div>
+<div class="raeptor-slides-navigation" [class.vertical]="vertical" [class.horizontal]="!vertical">
+    <div class="raeptor-slides-navigation-container">
+        <a href="#" class="raeptor-slides-navigation-dot" *ngFor="let slide of slides; let i = index"
+        [class.active]="i === slideIndex"
+        (click)="selectSlide(i); $event.preventDefault()">
+        </a>
+    </div>
+</div>

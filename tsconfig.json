@@ -19,7 +19,7 @@
     "module": "ES2022",
     "baseUrl": "./src",
     "paths": {
-      "@feather/*": ["libs/feather/*"]
+      "@raeptor/*": ["libs/raeptor/*"]
     },
   },
   "angularCompilerOptions": {
