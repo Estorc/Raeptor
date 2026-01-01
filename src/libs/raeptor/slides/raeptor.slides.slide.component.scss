@@ -3,6 +3,7 @@
 	display: block;
     unicode-bidi: isolate;
     white-space: initial;
+	transform-style: inherit;
 	
 }
 
@@ -12,6 +13,6 @@
 	height:100%;
 }
 
-.raeptor-slides-container-horizontal > .raeptor-slides-content > :host {
+.raeptor-slides-container-horizontal > .raeptor-slides-content > div > :host {
     display: inline-block;
 }

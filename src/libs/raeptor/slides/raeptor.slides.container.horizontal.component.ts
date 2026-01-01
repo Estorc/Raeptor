@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { HostBinding } from '@angular/core';
 import { RaeptorSlidesContainerComponent } from './raeptor.slides.container.component';
 import * as RaeptorTypes from '@raeptor/raeptor.types';
+import { RaeptorF3DCoreContainerComponent } from '@raeptor/f3d/raeptor.f3d.core.container.component';
 
 @Component({
   selector: 'raeptor-slides-container-horizontal',
-  imports: [NgFor],
+  imports: [CommonModule],
   templateUrl: './raeptor.slides.container.component.html',
-  styleUrl: './raeptor.slides.container.component.scss'
+  styleUrl: './raeptor.slides.container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RaeptorSlidesContainerHorizontalComponent extends RaeptorSlidesContainerComponent {
   @HostBinding('class.raeptor-slides-container-horizontal') addInternalClass = true;

@@ -1,7 +1,68 @@
 <div class="f3d-scene">
     <div class="f3d-shaking">
         <div #cube class="f3d-cube">
-            <ng-content></ng-content>
+            <!-- Vertices -->
+            <div class="f3d-cube-vertices">
+                <div class="f3d-cube-front-top-left-vertex"></div>
+                <div class="f3d-cube-front-top-right-vertex"></div>
+                <div class="f3d-cube-front-bottom-left-vertex"></div>
+                <div class="f3d-cube-front-bottom-right-vertex"></div>
+                <div class="f3d-cube-back-top-left-vertex"></div>
+                <div class="f3d-cube-back-top-right-vertex"></div>
+                <div class="f3d-cube-back-bottom-left-vertex"></div>
+                <div class="f3d-cube-back-bottom-right-vertex"></div>
+            </div>
+
+            <!-- Edges -->
+            <div class="f3d-cube-edges">
+                <div class="f3d-cube-front-top-edge"></div>
+                <div class="f3d-cube-front-bottom-edge"></div>
+                <div class="f3d-cube-front-left-edge"></div>
+                <div class="f3d-cube-front-right-edge"></div>
+                <div class="f3d-cube-back-top-edge"></div>
+                <div class="f3d-cube-back-bottom-edge"></div>
+                <div class="f3d-cube-back-left-edge"></div>
+                <div class="f3d-cube-back-right-edge"></div>
+                
+                <div class="f3d-cube-top-left-edge"></div>
+                <div class="f3d-cube-top-right-edge"></div>
+                <div class="f3d-cube-bottom-left-edge"></div>
+                <div class="f3d-cube-bottom-right-edge"></div>
+            </div>
+
+            <!-- Faces -->
+            <div class="f3d-cube-face f3d-cube-front"> 
+                <div class="content">
+                <ng-container *ngTemplateOutlet="currentFaces['front']; context: { go: go.bind(this) }"></ng-container>
+                </div>
+            </div>
+            <div class="f3d-cube-face f3d-cube-top">
+                <div class="content">
+                <ng-container *ngTemplateOutlet="currentFaces['top']; context: { go: go.bind(this) }"></ng-container>
+                </div>
+            </div>
+            <div class="f3d-cube-face f3d-cube-right"> 
+                <div class="content">
+                <ng-container *ngTemplateOutlet="currentFaces['right']; context: { go: go.bind(this) }"></ng-container>
+                </div>
+            </div>
+            <div class="f3d-cube-face f3d-cube-left"> 
+                <div class="content">
+                <ng-container *ngTemplateOutlet="currentFaces['left']; context: { go: go.bind(this) }"></ng-container>
+                </div>
+            </div>
+            <div class="f3d-cube-face f3d-cube-bottom">
+                <div class="content">
+                <ng-container *ngTemplateOutlet="currentFaces['bottom']; context: { go: go.bind(this) }"></ng-container>
+                </div>
+            </div>
+            <div class="f3d-cube-face f3d-cube-back"> 
+                <div class="content">
+                <ng-container *ngTemplateOutlet="currentFaces['back']; context: { go: go.bind(this) }"></ng-container>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<ng-content></ng-content>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="556847193827155246" datatype="html">
+        <source>A Short Story Across The Time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10654027061058045" datatype="html">
+        <source>« Dans les méandres du temps demeure un puissant pouvoir qui saurait abolir les plus tristes vérités de l&apos;existence. Mais qu&apos;adviendrait-il si l&apos;avarice insatiable de l&apos;homme venait à plonger cet interstice d&apos;espoir dans un profond néant d&apos;affliction ?... » - Un voyageur perdu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="280298827717135638" datatype="html">
+        <source>Le plus grand fantasme de l&apos;humanité est entre vos mains, vous maitrisez l&apos;espace et le temps. Tout vous est possible, mais serez vous en mesure de resister à l&apos;étouffante solitude que promet un tel pouvoir ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6700221385896029097" datatype="html">
+        <source>Vous devrez répondre en votre sens à ce grand débat du bien et du mal, à mesure que vos actions affectent l&apos;univers tout entier, amenant chaos et désolation malgré la bonté de votre intention. Serez-vous en mesure de réparer la trame du temps, ou succomberez-vous à la folie ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1516910868020956745" datatype="html">
+        <source>Toutes ces réponses se trouvent dans A Short Story Across The Time.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2993653099944188590" datatype="html">
+        <source>Analyses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4475110205386833794" datatype="html">
+        <source>« Si tu plonges ton regard longtemps dans l’abîme, l’abîme te regarde aussi. », Nietzsche,<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Par delà le Bien et le Mal, 1886.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6678974728144607605" datatype="html">
+        <source>Ce que j&apos;aime plus que tout dans cette citation, c&apos;est la capacité de Nietzsche à véhiculer un message si profond en si peu de mots.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1711236973510753573" datatype="html">
+        <source>Pour les curieux, l&apos;abîme fait référence à une multitude de concept, mais un thème central ici est l&apos;idée de malencontreusement engendrer quelque chose de plus mauvais en essayant de prévenir un mal.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>C&apos;est en se battant ne pas devenir ce que l&apos;on redoute que l&apos;on risque le plus d&apos;être consumé par ce qu&apos;on caractérise comme le mal.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8442073861936833850" datatype="html">
+        <source>C&apos;est comme ça que je le vois du moins.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4137149022246083383" datatype="html">
+        <source>UNDERTALE, une ode à la vie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ title }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/libs/raeptor/cards/raeptor.cards.pretty-fullcard.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/libs/raeptor/cards/raeptor.cards.pretty-fullcard.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="542064258472302863" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-symbols-outlined&quot;&gt;"/>play_arrow<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Jouer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/libs/raeptor/cards/raeptor.cards.pretty-fullcard.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3116793945166734904" datatype="html">
+        <source>En savoir plus</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/libs/raeptor/cards/raeptor.cards.pretty-fullcard.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1849670307423930303" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-symbols-outlined&quot;&gt;"/>link<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/libs/raeptor/cards/raeptor.cards.pretty-fullcard.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,356 @@
+{
+  "home": {
+    "slides": {
+      "raeptorcogs": {
+        "title": "RæptorCogs",
+        "description": "RaeptorCogs is a cross-platform C++ graphics framework using OpenGL and planned for supporting both WebGL and Vulkan.\nThe philosophy behind RaeptorCogs is to provide a beginner-friendly API while allowing advanced users to customize and extend the framework as needed. Because I always found graphics programming and game development to be quite complex and too far from my design preferences, I wanted to create a framework that simplifies common tasks while still being powerful enough for more experienced developers. RaeptorCogs is about giving developers the tools they need without overwhelming them with unnecessary complexity and preserving a huge degree of flexibility."
+      },
+      "projects": {
+        "ppg": {
+          "title": "Paper Professeur Genos Simulator",
+          "description": "A parody battle against an antagonist mixing multiple fictional characters. The game uses Undertale's combat system."
+        }, 
+        "kkong": {
+          "title": "King Kong Simulator",
+          "description": "A parody battle against King Kong (A character created by Jadusable parodying Link Goron from Zelda Majora's Mask). The game uses Undertale's combat system."
+        },
+        "softBody3d": {
+          "title": "3D Soft Body PureJS",
+          "description": "A Soft Body simulation made without libraries using JS 2D canvas."
+        },
+        "fluidSimulation": {
+          "title": "2D Fluid Simulation",
+          "description": "A fluid simulation in pure JS. No libraries or frameworks were used."
+        }
+      },
+      "drawings": {
+        "challenge6months": {
+          "text": "A series of drawings made daily for 6 months to improve my digital drawing skills."
+        },
+        "senkuOuterWilds": {
+          "text": "Senku x Outer Wilds - December 18, 2023",
+          "alt": "Senku x Outer Wilds Artwork"
+        },
+        "solanumWilhelm": {
+          "text": "Solanum x Wilhelm - December 22, 2023",
+          "alt": "Solanum x Wilhelm Artwork"
+        },
+        "nia1": {
+          "text": "Nia - December 26, 2023 (Colors January 19, 2024)",
+          "alt": "Nia Artwork"
+        },
+        "nia2": {
+          "text": "Nia - December 28, 2023",
+          "alt": "Nia Artwork"
+        },
+        "kamina1": {
+          "text": "Kamina - January 7, 2024",
+          "alt": "Kamina Artwork"
+        },
+        "simonAntiSpiral": {
+          "text": "Simon vs Anti-Spiral - January 7, 2024",
+          "alt": "Simon vs Anti-Spiral Artwork"
+        },
+        "giovanni": {
+          "text": "Giovanni - January 31, 2024",
+          "alt": "Giovanni Artwork"
+        },
+        "seele": {
+          "text": "Seele - February 12, 2024",
+          "alt": "Seele Artwork"
+        },
+        "aponiaOri": {
+          "text": "Aponia x Ori - February 18, 2024",
+          "alt": "Aponia x Ori Artwork"
+        },
+        "yaeMiko": {
+          "text": "Yae Miko - February 27, 2024",
+          "alt": "Yae Miko Artwork"
+        },
+        "honokaKosaka1": {
+          "text": "Honoka Kosaka - February 29, 2024",
+          "alt": "Honoka Kosaka Artwork"
+        },
+        "honokaKosaka2": {
+          "text": "Honoka Kosaka - March 1, 2024",
+          "alt": "Honoka Kosaka Artwork"
+        },
+        "kamina2": {
+          "text": "Kamina - March 2, 2024",
+          "alt": "Kamina Artwork"
+        },
+        "clara": {
+          "text": "Clara - April 5, 2024",
+          "alt": "Clara Artwork"
+        },
+        "originalChar1": {
+          "text": "Original character attempt - April 8, 2024",
+          "alt": "Attempt"
+        },
+        "mari": {
+          "text": "Mari - April 13, 2024",
+          "alt": "Mari Artwork"
+        },
+        "nia3": {
+          "text": "Nia - May 11, 2024",
+          "alt": "Nia Artwork"
+        },
+        "originalChar2": {
+          "text": "Original character attempt - May 15, 2024",
+          "alt": "Attempt"
+        },
+        "nia4": {
+          "text": "Nia - May 16, 2024",
+          "alt": "Nia Artwork"
+        }
+      },
+      "assatt": {
+        "title": "A Short Story Across The Time",
+        "description": "“In the depths of time dwells a powerful force that could abolish the saddest truths of existence. But what would happen if mankind's insatiable greed came to plunge this glimpse of hope into a deep abyss of suffering?...” - A lost traveler",
+        "content": "The greatest fantasy of humanity is in your hands, you master space and time. Everything is possible for you, but will you be able to resist the suffocating loneliness that such power promises?\n\nYou must answer in your own way this great debate of good and evil, as your actions affect the entire universe, bringing chaos and desolation despite the goodness of your intention. Will you be able to repair the fabric of time, or will you succumb to madness?\n\nAll these answers are found in A Short Story Across The Time."
+      },
+      "analysis": {
+        "title": "Analyses",
+        "description": "“If you gaze long into the abyss, the abyss will gaze back into you.”, Nietzsche,\nBeyond Good and Evil, 1886.",
+        "content": "What I love most about this quote is Nietzsche's ability to convey such a profound message in so few words.\n\nFor the curious, the abyss refers to a multitude of concepts, but a central theme here is the idea of inadvertently creating something worse by trying to prevent evil.\nIt is in fighting not to become what we fear that we risk most being consumed by what we characterize as evil.\n\nThat's how I see things anyway.",
+        "undertale": {
+          "title": "UNDERTALE, an ode to life"
+        }
+      }
+    }
+  },
+  "common": {
+    "play": "Play",
+    "play-video-short": "Watch",
+    "play-video": "Watch the video",
+    "learn-more": "Learn more",
+    "credits": "Website developed by Estorc.\nRAEPTOR and its subdomains are affiliated with N.A.G. CORPORATION",
+    "language": {
+      "short": "EN",
+      "flag": "🇬🇧"
+    },
+    "quotes": {
+      "double": {
+        "start": "“",
+        "end": "”"
+      },
+      "single": {
+        "start": "‘",
+        "end": "’"
+      }
+    },
+    "see-here": "See here"
+  },
+  "about": {
+    "start": "Start",
+    "skillsAndInterests": {
+      "title": "Skills and Interests",
+      "description": "A brief overview of my skills and interests in various fields.\nIn short: Passionate, self-taught and jack-of-all-trades, I have been training for almost 10 years in the fields of digital technology and audiovisual. In 2023, I started a computer science degree at the University of Le Mans to structure my knowledge and go further in what I already do out of passion. Curious by nature, I have explored several disciplines, both technical and creative, over time. Thus, I have developed a diverse set of skills that I continue to evolve through my projects."
+    },
+    "links": {
+      "title": "Links",
+      "github": {
+        "title": "GitHub",
+        "description": "This is where I list my public projects."
+      },
+      "raeptor": {
+        "title": "Ræptor",
+        "description": "My web space where I showcase my technical demos and my profile."
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "My professional profile where I share my experiences and network with other professionals."
+      }
+    },
+    "notableProjects": {
+      "title": "Notable Projects",
+      "jenkasNightmare": {
+        "description": "Translation of Jenka's Nightmare, a famouse Cave Story fan game."
+      },
+      "plugins": {
+        "description": "Development of RPG Maker MZ/MV/VX Ace/XP plugins for individuals."
+      },
+      "applications": {
+        "description": "Development of applications for individuals."
+      },
+      "analysis": {
+        "description": "Three-part analysis of Undertale."
+      },
+      "raeptorcogs": {
+        "description": "Creation of RæptorCogs, a cross-platform C++ graphics framework using OpenGL, WebGL and Vulkan."
+      }
+    },
+    "experiences": {
+      "title": "Experiences",
+      "mcdo": {
+        "position": "Crew Member",
+        "description": "Worked as a versatile crew member at McDonald's, gaining experience in customer service, teamwork, and fast-paced environments."
+      },
+      "romhacking": {
+        "position": "ROM Hacking Competitor",
+        "description": "Participated in ROM Hacking competitions, showcasing skills in game modification, creativity, and problem-solving. (<a href=\"https://romhacking.com/\">https://romhacking.com/</a>)"
+      },
+      "24hcode": {
+        "position": "24h Code Competitor",
+        "description": "Took part in the 24h Code competition organized by Haum, demonstrating coding skills and the ability to work under pressure. (<a href=\"https://www.linkedin.com/feed/update/urn:li:activity:7183071108936441856/\">https://www.linkedin.com/</a>)"
+      },
+      "freelance": {
+        "position": "Freelance Developer",
+        "description": "Development of applications and RPG Maker plugins for individuals."
+      },
+      "university": {
+        "position": "Computer Science Student",
+        "description": "Pursuing a degree in computer science at the University of Le Mans to deepen my knowledge and skills in the field."
+      }
+    },
+    "creatorDescription": "Creator of “A Short Story Across The Time” and “RæptorCogs” · Co-Founder of N.A.G. Corporation",
+    "skills": {
+      "arts": {
+        "title": "Arts",
+        "gamedev": {
+          "title": "Game Development",
+          "description": "I develop games as a hobby, using my programming skills to create engaging experiences. I enjoy designing game mechanics, creating assets, and implementing gameplay features."
+        },
+        "fxpostproduction": {
+          "title": "FX / Post-Production",
+          "description": "I have experience in visual effects and post-production techniques, including compositing, color grading, and motion graphics. I use software such as Adobe After Effects and DaVinci Resolve to enhance video content."
+        },
+        "writing": {
+          "title": "Writing",
+          "description": "I enjoy writing as a creative outlet, whether it's for storytelling, technical documentation, or personal expression. I have experience in crafting narratives, developing characters, and structuring content effectively."
+        },
+        "pixelart": {
+          "title": "Pixel Art",
+          "description": "I create pixel art as a form of digital art, using limited color palettes and resolution to produce retro-style graphics. I enjoy the challenge of conveying detail and emotion within the constraints of pixel art."
+        },
+        "drawing": {
+          "title": "Drawing",
+          "description": "I practice digital drawing to express my creativity and improve my artistic skills. I use software such as Adobe Photoshop and Procreate to create illustrations, character designs, and concept art."
+        },
+        "music": {
+          "title": "Music",
+          "description": "I have a passion for music and play violin. I also try my hand at music composition and sound design using digital audio workstations like FL Studio and LMMS."
+        }
+      },
+      "sciences": {
+        "title": "Sciences",
+        "description": "<i>“ Science is elegant ”</i>",
+        "mathematics": {
+          "title": "Mathematics",
+          "description": "Mathematics is the language of the universe. It allows us to understand and model complex phenomena, from the smallest particles to the largest structures in the cosmos.",
+          "linearAlgebra": {
+            "title": "Linear Algebra",
+            "description": "I have a strong foundation in linear algebra, which is essential for understanding computer graphics, machine learning, and data analysis. I am proficient in concepts such as vectors, matrices, transformations, and eigenvalues."
+          }
+        },
+        "physics": {
+          "title": "Physics",
+          "description": "Physics is the study of the fundamental laws that govern the behavior of matter and energy in the universe. It provides insights into the nature of reality and helps us develop new technologies.",
+          "mechanics": {
+            "title": "Mechanics",
+            "description": "I have a solid understanding of classical mechanics, including Newton's laws of motion, kinematics, and dynamics. This knowledge is crucial for simulating realistic movements and interactions in computer graphics and game development."
+          },
+          "fluids": {
+            "title": "Fluids",
+            "description": "I am familiar with fluid dynamics, which is essential for simulating realistic water, air, and other fluid behaviors in computer graphics. I understand concepts such as viscosity, turbulence, and flow patterns."
+          },
+          "optics": {
+            "title": "Optics",
+            "description": "I have studied optics, which is the branch of physics that deals with the behavior and properties of light. This knowledge is important for understanding how light interacts with surfaces, which is crucial for realistic rendering in computer graphics."
+          }
+        },
+        "philosophy": {
+          "title": "Philosophy",
+          "description": "I kind of love philosophy. It allows me to explore fundamental questions about existence, knowledge, and ethics, which in turn enriches my understanding of the world and informs my creative work."
+        }
+      },
+      "it": {
+        "title": "Computer Science",
+        "web": {
+          "title": "Web Fullstack",
+          "description": "I've heard that our profession will be replaced by AI, so I decided to become better than it."
+        },
+        "hpc": {
+          "title": "HPC High Performance Computing",
+          "description": "Passionate about optimization and low-level programming."
+        },
+        "graphics": {
+          "title": "2D/3D Graphics",
+          "description": "One day I read that we didn't have enough time in one life to learn Vulkan. So I decided to prove it wrong, and I started learning Vulkan."
+        }
+      }
+    },
+    "instructions": {
+      "default": {
+        "title": "Select an icon",
+        "description": "To view details, select an icon."
+      },
+      "html5": {
+        "description": "HTML5 is the standard markup language used to create web pages. It allows structuring content and integrating multimedia elements."
+      },
+      "css3": {
+        "description": "CSS3 is the latest version of the Cascading Style Sheets language, used to describe the presentation of HTML documents. It allows control over layout, colors, and fonts."
+      },
+      "js": {
+        "description": "JavaScript is a versatile programming language primarily used for web development. It enables dynamic interactions on web pages and is also used server-side with environments like Node.js."
+      },
+      "nodejs": {
+        "description": "Node.js is a server-side JavaScript runtime environment that allows the creation of scalable web applications. It uses a non-blocking event-driven model, making it efficient for real-time applications."
+      },
+      "git": {
+        "description": "Git is a distributed version control system used to track changes in source code during software development. It allows multiple developers to collaborate effectively on a project."
+      },
+      "npm": {
+        "description": "npm (Node Package Manager) is the default package manager for the Node.js environment. It allows developers to install, share, and manage JavaScript libraries and tools."
+      },
+      "github": {
+        "description": "GitHub is a collaborative development platform that uses Git for version control. It allows developers to share code, collaborate on projects, and manage versions."
+      },
+      "angular": {
+        "description": "Angular is an open-source web development framework maintained by Google. It enables the creation of dynamic and interactive web applications using TypeScript."
+      },
+      "windows": {
+        "description": "Windows is an operating system developed by Microsoft. It is widely used on personal computers and offers a user-friendly graphical interface."
+      },
+      "linux": {
+        "description": "Linux is an open-source operating system based on the Linux kernel. It is known for its stability, security, and flexibility, and is widely used in servers and embedded systems."
+      },
+      "cpp": {
+        "description": "C++ is a versatile programming language that supports both object-oriented and procedural programming. It is widely used for system software, game development, and high-performance applications."
+      },
+      "clang": {
+        "title": "C language",
+        "description": "C is a powerful general-purpose programming language that provides low-level access to memory and system resources. It is widely used for system programming, embedded systems, and performance-critical applications."
+      },
+      "opengl": {
+        "description": "OpenGL (Open Graphics Library) is a widely used 2D and 3D graphics rendering API for developing graphical applications, including video games and simulations."
+      },
+      "vulkan": {
+        "description": "Vulkan is a low-level graphics and compute rendering API that offers more direct control over graphics hardware. It is designed to provide high performance and better energy efficiency."
+      },
+      "rpgmaker": {
+        "description": "RPG Maker is a series of game development tools that allow users to create their own role-playing games (RPGs) without requiring advanced programming skills."
+      },
+      "godot": {
+        "description": "Godot is an open-source game engine that enables developers to create 2D and 3D games. It offers a user-friendly interface and an integrated scripting language called GDScript."
+      },
+      "gamemaker": {
+        "description": "GameMaker is a game engine that allows developers to create 2D games with a user-friendly interface and an integrated scripting language called GML (GameMaker Language)."
+      },
+      "raeptorcogs": {
+        "description": "RæptorCogs is a cross-platform C++ graphics framework using OpenGL and designed to support both WebGL and Vulkan."
+      }
+    }
+  },
+  "header": {
+    "menu": {
+      "home": "HOME",
+      "about": "ABOUT ME",
+      "works": "WORKS",
+      "museum": "INTERACTIVE VIEW"
+    }
+  },
+  "museum": {
+    "enterHintText": "Press [Space] to enter the interactive view."
+  }
+}

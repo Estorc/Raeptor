@@ -1,0 +1,30 @@
+.black-background {
+	
+	background-color:black;
+	
+}
+
+.dark-radial-background {
+	
+	background: radial-gradient(#111 50%, #000);
+	
+}
+
+.fixed-background {
+	
+	position: absolute;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.starry-sky {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100dvw;
+	height: 100dvh;
+}

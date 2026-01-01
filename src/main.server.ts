@@ -1,7 +1,7 @@
-import { bootstrapApplication } from '@angular/platform-browser';
+import { bootstrapApplication, BootstrapContext } from '@angular/platform-browser';
 import { MainComponent } from './app/main/main.component';
 import { config } from './app/app.config.server';
 
-const bootstrap = () => bootstrapApplication(MainComponent, config);
+const bootstrap = (context: BootstrapContext) => bootstrapApplication(MainComponent, config, context);
 
 export default bootstrap;

@@ -19,6 +19,20 @@
     text-align: center;
     display: block;
     animation: blinking 2s alternate-reverse infinite;
+    transition: 0.3s ease-in-out;
+}
+
+
+:host > footer {
+    transition: 0.3s ease-in-out;
+}
+
+:host > #museum-starting-text.hidden {
+    transform: translateY(50dvh);
+}
+
+:host > footer.hidden {
+    transform: translateY(50dvh);
 }
 
 @keyframes blinking {

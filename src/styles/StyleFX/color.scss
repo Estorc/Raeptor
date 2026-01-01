@@ -1,0 +1,31 @@
+.color-hover-200ms {
+  transition: color 200ms;
+}
+
+.color-hover-200ms svg {
+  transition: fill 200ms !important;
+}
+
+.white-hover:hover {
+	color: white;
+}
+
+.white-hover svg:hover {
+	fill: white !important;
+}
+
+.white {
+	color: white;
+}
+.white svg {
+	fill: white !important;
+}
+
+.grey {
+	cursor: help;
+	color: #bcbcbc;
+}
+
+.grey svg {
+	fill: #bcbcbc !important;
+}

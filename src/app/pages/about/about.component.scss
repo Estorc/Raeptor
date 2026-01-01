@@ -1,10 +1,146 @@
 :host {
     animation: appear2 0.5s ease-in-out;
 }
+
 main {
     overflow: hidden;
 }
+
+/*
+#page::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:
+	radial-gradient(closest-side, #909090, #000000 0.5em) 
+			0/ 1.5em 1.5em,
+	linear-gradient(#000000 20%, #3a3a3a 50%, #000000 80%) 
+			0/ 1.5em 1.5em,
+	linear-gradient(90deg, #000000 20%, #3a3a3a 50%, #000000 80%) 
+			0/ 1.5em 1.5em,
+	radial-gradient(circle at var(--cursorX) var(--cursorY), #7c7c7c, #000000 40em) no-repeat;
+	background-blend-mode: screen;
+	filter: contrast(21) brightness(0.2);
+	z-index: -1;
+}
+*/
+
+#page::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("assets/images/background.webp");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	filter: brightness(0.1) blur(6px);
+	z-index: -2;
+}
+
+#page::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:
+	radial-gradient(closest-side, #909090, #000000 0.5em) 
+			0/ 1.5em 1.5em,
+	radial-gradient(circle at var(--cursorX) var(--cursorY), #535353, #000000 40em) no-repeat;
+	background-blend-mode: screen;
+	filter: contrast(21) brightness(0.25);
+	mix-blend-mode: screen;
+	z-index: -1;
+}
+
+#page {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+	pointer-events: none;
+}
+
+#cube-instructions {
+	position: relative;
+	width:0;
+	height:80%;
+	left: 10%;
+	background-color: rgba(44, 44, 44, 0.5);
+	border-radius: 20px;
+	border: 0px solid grey;
+	margin-left: 0;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	transition: 0.3s ease-in-out;
+	padding: 0px;
+}
+
+@media screen and (min-width: 1200px) {
+	#cube-instructions.active {
+		width:30%;
+		height:80%;
+		left: 0;
+		margin-left: 10%;
+		border: 2px solid grey;
+		padding: 20px;
+	}
+}
+
 * {
     user-drag: none; 
     -webkit-user-drag: none;
+}
+
+.fullpannel {
+	position: relative;
+	margin: auto;
+	width: 80%;
+	height: 80%;
+	border-radius: 40px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.fullheight {
+	height: 100%;
+}
+
+.take-top {
+	height: 90%;
+	top: 45%;
+}
+
+.take-bottom {
+	height: 90%;
+	top: 55%;
+}
+
+.take-left {
+	width: 90%;
+	right: 5%;
+}
+
+.take-right {
+	width: 90%;
+	left: 5%;
+}
+
+.scrolling-div {
+	overflow-y: auto;
+}
+
+.date {
+	font-size: 0.8em;
+	font-weight: bold;
 }

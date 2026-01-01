@@ -1,0 +1,135 @@
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.button-overrides((
+	outlined-outline-width: 2px,
+	outlined-outline-color: white,
+	outlined-label-text-color: white,
+	outlined-horizontal-padding: 35px,
+	outlined-label-text-font: 'PT Sans Narrow',
+	outlined-label-text-weight: 700,
+	outlined-label-text-size: 16px,
+	outlined-ripple-color: rgb(209, 218, 255),
+	outlined-state-layer-color: transparent, // Remove default state layer
+	outlined-hover-state-layer-opacity: white, // Use my own hover effect
+  ));
+}
+
+a.mat-mdc-outlined-button {
+	padding: 26px var(--mat-outlined-button-horizontal-padding, 24px);
+	background-color: #5060c0;
+	text-shadow: 0 0 3px black;
+	transition: 150ms ease-in-out;
+}
+a.mat-mdc-outlined-button:hover {
+	text-shadow: 0 0 0px transparent;
+	border: 2px solid #5060c0;
+	background-color: white;
+	color: #5060c0;
+	//transform: scale(1.1);
+}
+
+a.icon-button {
+	padding: 26px;
+	width: 0px;
+	min-width: 0px;
+}
+
+.buttons {
+	
+	display:flex;
+	gap:10px;
+	
+}
+
+
+/*
+.buttons a {
+	text-shadow:none;
+	color:white;
+	background-color:#5060c0;
+
+	position:relative;
+	text-shadow:0 0 3px black;
+	font-weight: bold;
+	border-radius:100px;
+	border:2px solid white;
+	padding:15px 35px;
+	background-color:#5060c0;
+	color: white;
+	text-decoration: none;
+	transition:150ms ease-in-out;
+	
+}
+
+
+
+.buttons a:hover {
+	
+	border:2px solid #5060c0;
+	background-color:white;
+	color: #5060c0;
+	transform: scale(1.1);
+	
+}
+
+.buttons .icon-button {
+
+	position:relative;
+	text-shadow:0 0 3px black;
+	font-weight: bold;
+	border-radius:100px;
+	border:2px solid white;
+	padding: 15px;
+	background-color:#6070b0;
+	
+}
+*/
+
+
+
+
+
+
+
+@media (max-height:450px) {
+
+	.buttons a {
+			
+		padding:6px 6px;
+		
+		
+	}
+
+	.buttons .icon-button {
+		
+		padding:6px;
+		
+		
+	}
+
+}
+
+@media (max-width:440px) {
+
+	.buttons {
+		
+		display:flex;
+		gap:5px;
+		
+	}
+	.buttons a {
+		
+		padding:10px 10px;
+		
+		
+	}
+
+	.buttons .icon-button {
+		
+		padding:10px;
+		
+		
+	}
+
+}

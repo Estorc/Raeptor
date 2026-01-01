@@ -11,20 +11,10 @@ import { RaeptorF3DCoreContainerComponent } from '@raeptor/f3d/raeptor.f3d.core.
 })
 export class RaeptorSlidesSlideComponent {
   constructor(private injector: Injector, private renderer : Renderer2, protected elementRef: ElementRef<HTMLElement>) {}
-  private d3dScene : RaeptorF3DCoreContainerComponent | null = null;
   private rect : DOMRect | null = null;
 
-  ngOnInit() {
-    this.d3dScene = this.injector.get(RaeptorF3DCoreContainerComponent, null);
-  }
-
   ngAfterViewInit() {
-    setTimeout(() => {
-      if (this.d3dScene) this.renderer.setStyle(this.d3dScene?.nativeElement, 'perspective', 'none');
-      if (this.elementRef.nativeElement && this.elementRef.nativeElement.getBoundingClientRect)
-        this.rect = this.elementRef.nativeElement.getBoundingClientRect();
-      if (this.d3dScene) this.renderer.removeStyle(this.d3dScene?.nativeElement, 'perspective');
-    });
+    (this.elementRef.nativeElement as any).__ngComponent = this;
   }
   @HostBinding('class.raeptor-slides-slide') addInternalClass = true;
   @Input('x') public x : number = 0;
@@ -46,6 +36,10 @@ export class RaeptorSlidesSlideComponent {
 
   public getRect() : DOMRect | null {
     return this.rect;
+  }
+
+  public setRect(rect : DOMRect) {
+    this.rect = rect;
   }
 
   public get nativeElement() : HTMLElement {

@@ -1,23 +1,30 @@
-import { Component, HostBinding, Injector, Optional, Renderer2 } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, HostBinding, Inject, Injector, Input, Optional, PLATFORM_ID, Renderer2, ɵDirectiveDef } from '@angular/core';
+import { CommonModule, isPlatformBrowser, NgFor, NgIf } from '@angular/common';
 import { NgZone, ContentChildren, HostListener, ElementRef, QueryList, ChangeDetectorRef, ViewChild, AfterViewInit } from '@angular/core';
 import { RaeptorSlidesSlideComponent } from './raeptor.slides.slide.component';
 import { RaeptorF3DCoreContainerComponent } from '@raeptor/f3d/raeptor.f3d.core.container.component';
 import * as RaeptorTypes from '@raeptor/raeptor.types';
+import { request } from 'http';
+import { take } from 'rxjs';
 
 @Component({
-  imports: [NgFor],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './raeptor.slides.container.component.html',
   styleUrl: './raeptor.slides.container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RaeptorSlidesContainerComponent implements AfterViewInit {
-  constructor(private injector: Injector, protected zone : NgZone, private renderer : Renderer2, protected cdr : ChangeDetectorRef, protected elementRef : ElementRef) {}
-  @ContentChildren(RaeptorSlidesSlideComponent, { descendants: false }) slides!: QueryList<RaeptorSlidesSlideComponent>;
-  @ViewChild('content', { static: true }) content!: ElementRef<HTMLElement>;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private injector: Injector, protected zone : NgZone, private renderer : Renderer2, protected cdr : ChangeDetectorRef, protected elementRef : ElementRef) {}
+  @ViewChild('content', { static: false }) content!: ElementRef<HTMLElement>;
+  @ViewChild('navigation', { static: false }) private navigation!: ElementRef<HTMLElement>;
 
-  private d3dScene : RaeptorF3DCoreContainerComponent | null = null;
+  @Input('3d') public use3d : boolean = false;
+  public slides : RaeptorSlidesSlideComponent[] = [];
+  private d3dScene : HTMLElement | null = null;
   protected vertical : boolean = false;
   protected isFocused : boolean = false;
+  protected isDisabled : boolean = false;
   protected position : RaeptorTypes.Vector3 = [0, 0, 0];
   protected scrollPosition : RaeptorTypes.Vector3 = [0, 0, 0];
   protected animationActive: boolean = false;
@@ -28,24 +35,54 @@ export class RaeptorSlidesContainerComponent implements AfterViewInit {
 
   private mousePosition : RaeptorTypes.Vector2 = [0, 0];
 
-  ngOnInit() {
-    this.d3dScene = this.injector.get(RaeptorF3DCoreContainerComponent, null);
+
+  onResize(event: UIEvent) {
+      this.renderer.setStyle(this.d3dScene, 'transform', 'translate3d(0px,0px,0px)');
+      this.renderer.setStyle(this.content.nativeElement, 'perspective', 'none');
+
+      void this.content.nativeElement.offsetWidth;
+
+      this.rect = this.content.nativeElement.getBoundingClientRect();
+      for (let slide of this.slides) {
+        // Force slide to update its rect
+        const slideRect = slide.nativeElement.getBoundingClientRect();
+        slide.setRect(slideRect);
+      }
+
+      if (this.use3d) {
+        this.renderer.addClass(this.elementRef.nativeElement, 'use3d');
+        this.renderer.setStyle(this.content.nativeElement, 'perspective', '1000px');
+        this.renderer.setStyle(this.d3dScene, 'transform-style', 'preserve-3d');
+      }
+      
+      this.updateProgress();
+      this.renderer.setStyle(this.d3dScene, 'transform', `translate3d(${-this.scrollPosition[0]}px,${-this.scrollPosition[1]}px, ${-this.scrollPosition[2]}px)`);
+      
   }
 
   ngAfterViewInit() {
-    this.renderer.setStyle(this.content.nativeElement, 'transform', `translate3d(0px, 0px, 0px)`);
+    this.d3dScene = this.content.nativeElement.firstChild as HTMLElement | null;
+    if (!this.d3dScene) {
+      console.error('D3D Scene element not found!');
+      return;
+    }
+    const slideElements = [
+      ...this.d3dScene.querySelectorAll(':scope > raeptor-slides-slide')
+    ];
 
-    setTimeout(() => {
-      if (this.d3dScene) this.renderer.setStyle(this.d3dScene?.nativeElement, 'perspective', 'none');
-      if (this.content.nativeElement && this.content.nativeElement.getBoundingClientRect)
-        this.rect = this.content.nativeElement.getBoundingClientRect();
-      if (this.d3dScene) this.renderer.removeStyle(this.d3dScene?.nativeElement, 'perspective');
-    });
+    this.slides = slideElements
+      .map(el => (el as any).__ngComponent)
+      .filter(c => c != null);
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.onResize(new UIEvent('resize'));
+    }
 
     this.zone.runOutsideAngular(() => {
       if (typeof window !== 'undefined') {
         let lastTouchX : number = 0;
         let lastTouchY : number = 0;
+        window.addEventListener('resize', this.onResize.bind(this), { passive: true });
         window.addEventListener('mousemove', (e) => {
           this.mousePosition[0] = e.clientX;
           this.mousePosition[1] = e.clientY;
@@ -88,16 +125,34 @@ export class RaeptorSlidesContainerComponent implements AfterViewInit {
   private checkFocus() : void {
     const rect = this.elementRef.nativeElement.getBoundingClientRect();
     this.isFocused =
-      this.mousePosition[0] >= rect.left &&
+      (this.mousePosition[0] >= rect.left &&
       this.mousePosition[0] <= rect.right &&
       this.mousePosition[1] >= rect.top &&
-      this.mousePosition[1] <= rect.bottom;
+      this.mousePosition[1] <= rect.bottom) && !this.isDisabled;
   };
 
-  protected selectSlide(i: number) {
+  public selectSlide(i: number) {
     this.slideProgress = i;
     this.updateProgress();
     this.startScrollAnimation();
+  }
+
+  public disable() : void {
+    this.renderer.setStyle(this.content.nativeElement, 'pointer-events', 'none');
+    this.isDisabled = true;
+  }
+
+  public enable() : void {
+    this.renderer.removeStyle(this.content.nativeElement, 'pointer-events');
+    this.isDisabled = false;
+  }
+
+  public hideNavigation() : void {
+    this.renderer.addClass(this.navigation.nativeElement, 'hidden');
+  }
+
+  public showNavigation() : void {
+    this.renderer.removeClass(this.navigation.nativeElement, 'hidden');
   }
 
   protected updateProgress() : void {
@@ -105,8 +160,8 @@ export class RaeptorSlidesContainerComponent implements AfterViewInit {
     let indexA : number = Math.floor(this.slideProgress);
     let indexB : number = Math.ceil(this.slideProgress);
 
-    const slideA = this.slides.get(indexA);
-    const slideB = this.slides.get(indexB);
+    const slideA = this.slides[indexA];
+    const slideB = this.slides[indexB];
     if (!slideA || !slideB) {
       console.error('Slide not found!');
       return;
@@ -132,6 +187,8 @@ export class RaeptorSlidesContainerComponent implements AfterViewInit {
     const xB : number = rectB.left - contentRect.left;
     const yB : number = rectB.top - contentRect.top;
     const zB : number = ZdataB ? parseFloat(ZdataB) : 0;
+
+    console.log(rectA.left, rectA.top, rectB.left, rectB.top);
 
     if (indexA !== indexB) {
 
@@ -180,7 +237,7 @@ export class RaeptorSlidesContainerComponent implements AfterViewInit {
       this.animationActive = false;
       return;
     }
-    this.renderer.setStyle(this.content.nativeElement, 'transform', `translate3d(${-this.scrollPosition[0]}px,${-this.scrollPosition[1]}px, ${-this.scrollPosition[2]}px)`);
+    this.renderer.setStyle(this.d3dScene, 'transform', `translate3d(${-this.scrollPosition[0]}px,${-this.scrollPosition[1]}px, ${-this.scrollPosition[2]}px)`);
     
     const scrollEvent = new Event('scroll', {
       bubbles: true,       // Allow event to bubble

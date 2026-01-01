@@ -1,0 +1,41 @@
+@use "./StyleFX/animations";
+@use "./StyleFX/background";
+@use "./StyleFX/horizontal-rule";
+@use "./StyleFX/popups";
+@use "./StyleFX/color";
+@use "./StyleFX/f3d";
+
+.zero-opacity {
+	
+	opacity: 0;
+	
+}
+
+.inline {
+	display: inline-block;
+}
+
+.show {
+	visibility: visible;
+	opacity: 1;
+}
+.hide {
+	visibility: hidden;
+	opacity: 0;
+}
+.force-bottom {
+	position:absolute;
+	bottom:0;
+}
+.centered {
+	text-align: center;
+}
+
+
+@media (max-width: 1000px) {
+	
+	.hide-phone {
+		display: none !important;
+	}
+	
+}

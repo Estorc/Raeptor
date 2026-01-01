@@ -1,0 +1,263 @@
+@keyframes f3d-shaking {
+	0% { 
+		transform: rotateX(0deg) rotateY(-3deg)  rotateZ(0deg);
+	}
+	25% {
+		transform: rotateX(-2deg) rotateY(1deg)  rotateZ(-1deg);
+	}
+	50% {
+		transform: rotateX(3deg) rotateY(0deg)  rotateZ(2deg);
+	}
+	75% {
+		transform: rotateX(-3deg) rotateY(-2deg)  rotateZ(-3deg);
+	}
+	100% {
+		transform: rotateX(1deg) rotateY(3deg)  rotateZ(0deg);
+	}
+}
+
+@keyframes f3d-cube-appear {
+	0% { 
+		transform: translateZ(calc(var(--f3d-cube-height) / 2 * -1)) rotateX(-200deg) rotateY(-90deg)  rotateZ(300deg) scale3d(0,0,0);
+	}
+	100% {
+		transform: translateZ(calc(var(--f3d-cube-height) / 2 * -1)) rotateX(0deg) rotateY(0deg)  rotateZ(0deg) scale3d(1,1,1);
+	}
+}
+
+:root {
+	--f3d-cube-height: 70dvh;
+	--f3d-cube-width: 70dvh;
+	--f3d-extrude-length: calc(var(--f3d-cube-height) * 1.07 + 5dvh);
+}
+@media screen and (max-width: 80dvh) {
+	:root {
+		--f3d-cube-height: 85dvw;
+		--f3d-cube-width: 85dvw;
+		--f3d-extrude-length: calc(var(--f3d-cube-height) * 1.07 + 5dvh);
+	}
+}
+
+raeptor-f3d-cube {
+	position: relative;
+	height: var(--f3d-cube-height);
+    width: var(--f3d-cube-width);
+}
+
+.f3d-scene {
+	height: var(--f3d-cube-height);
+    width: var(--f3d-cube-width);
+    position: relative;
+	perspective: calc(var(--f3d-cube-height) * 4);
+}
+
+.f3d-shaking {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	animation: f3d-shaking 5s ease-in-out alternate infinite;
+	transform-style: preserve-3d;
+}
+
+.f3d-cube {
+	--m11: 1;
+	--m12: 0;
+	--m13: 0;
+	--m21: 0;
+	--m22: 1;
+	--m23: 0;
+	--m31: 0;
+	--m32: 0;
+	--m33: 1;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	animation: f3d-cube-appear 1s ease-in-out;
+	transform: translateZ(calc(var(--f3d-cube-height) / 2 * -1)) matrix3d(var(--m11), var(--m12), var(--m13), 0, var(--m21), var(--m22), var(--m23), 0, var(--m31), var(--m32), var(--m33), 0, 0, 0, 0, 1);
+
+	font-family: "Geo", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: larger;
+}
+
+.f3d-cube p, .f3d-cube h4, .f3d-cube h5, .f3d-cube h6 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+.f3d-cube-face {
+	transform-style: preserve-3d;
+	position: absolute;
+	width: var(--f3d-cube-width);
+	height: var(--f3d-cube-height);
+	background: rgb(23,0,36,0.5);
+	box-sizing: border-box;
+	background: linear-gradient(45deg, rgba(23,0,36,0.5) 0%, rgba(50,50,77,0.5) 35%, rgba(166, 190, 159, 0.5) 72%, rgba(114,122,124,0.5) 100%);
+	transform: translateZ(0);
+	pointer-events: none;
+}
+
+.f3d-cube-face .content > div {
+	backface-visibility: hidden;
+	pointer-events: all;
+}
+
+.f3d-cube-face-top::before,
+.f3d-cube-face-bottom::before,
+.f3d-cube-face-left::before,
+.f3d-cube-face-right::before {
+	content: "";
+	position: absolute;
+	margin: auto;
+	width: 0%;
+	height: 10%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: white;
+	transition: width 0.3s ease-in-out;
+}
+
+.f3d-cube-face-top:hover::before,
+.f3d-cube-face-bottom:hover::before,
+.f3d-cube-face-left:hover::before,
+.f3d-cube-face-right:hover::before {
+	width: 100%;
+}
+
+.f3d-cube-face-top h2,
+.f3d-cube-face-left h2,
+.f3d-cube-face-right h2,
+.f3d-cube-face-bottom h2 {
+	margin: 0;
+	padding: 0;
+}
+
+.f3d-cube-face-top,
+.f3d-cube-face-left,
+.f3d-cube-face-right,
+.f3d-cube-face-bottom {
+	z-index: 1;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 8%;
+	transform: translateZ(0.1px);
+	transform-origin: calc(var(--f3d-cube-width) / 2) calc(var(--f3d-cube-height) / 2);
+	cursor: pointer;
+	font-size: x-large;
+}
+
+.f3d-cube-face-left {
+    transform: rotate(-90deg) translateZ(0.1px);
+}
+
+.f3d-cube-face-right {
+    transform: rotate(90deg) translateZ(0.1px);
+}
+
+.f3d-cube-face-bottom {
+	transform: rotate(180deg) translateZ(0.1px);
+}
+
+.f3d-cube-face-bottom h2 {
+	transform: rotate(180deg) translateZ(0.1px);
+}
+.f3d-cube-face-bottom h2::before {
+	top: 0;
+	bottom: auto;
+}
+
+/* Faces */
+
+.f3d-cube-front  { transform: rotateY(  0deg) translateZ(calc(var(--f3d-extrude-length) / 2)); }
+.f3d-cube-right  { transform: rotateY( 90deg) translateZ(calc(var(--f3d-extrude-length) / 2)); }
+.f3d-cube-back   { transform: rotateY(180deg) translateZ(calc(var(--f3d-extrude-length) / 2)); }
+.f3d-cube-left   { transform: rotateY(-90deg) translateZ(calc(var(--f3d-extrude-length) / 2)); }
+.f3d-cube-top    { transform: rotateX( 90deg) translateZ(calc(var(--f3d-extrude-length) / 2)); }
+.f3d-cube-bottom { transform: rotateX(-90deg) translateZ(calc(var(--f3d-extrude-length) / 2)); }
+
+.f3d-cube-face .content {
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	transform-style: preserve-3d;
+}
+
+.twist-0 {
+	transform: rotateZ(  0deg);
+}
+.twist-90 {
+	transform: rotateZ( 90deg);
+}
+.twist--90 {
+	transform: rotateZ(-90deg);
+}
+.twist-180 {
+	transform: rotateZ(180deg);
+}
+
+/* Edges */
+
+.f3d-cube-edges {
+	transform-style: preserve-3d;
+}
+
+.f3d-cube-edges div {
+	transform-style: preserve-3d;
+	position: absolute;
+	width: var(--f3d-cube-width);
+	height: 8dvh;
+	margin: calc( (var(--f3d-cube-height) - 8dvh) / 2 ) 0;
+	background: rgb(23,0,36,0.5);
+	box-sizing: border-box;
+	background: linear-gradient(45deg, rgba(23,0,36,0.5) 0%, rgba(50,50,77,0.5) 35%, rgba(166, 190, 159, 0.5) 72%, rgba(114,122,124,0.5) 100%);
+}
+
+.f3d-cube-front-top-edge { transform: rotateX( 45deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-front-bottom-edge { transform: rotateX(-45deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-front-left-edge { transform: rotateY(-45deg) rotateZ(90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-front-right-edge { transform: rotateY( 45deg) rotateZ(90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-back-top-edge { transform: rotateX( 135deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-back-bottom-edge { transform: rotateX(-135deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-back-left-edge { transform: rotateY(-135deg) rotateZ(90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-back-right-edge { transform: rotateY( 135deg) rotateZ(90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-top-left-edge { transform: rotateZ(45deg) rotateY(-90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-top-right-edge { transform: rotateZ(-45deg) rotateY( 90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-bottom-left-edge { transform: rotateZ(-45deg) rotateY(-90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+.f3d-cube-bottom-right-edge { transform: rotateZ( 45deg) rotateY( 90deg) translateZ(calc(var(--f3d-extrude-length) / 1.5)) ; }
+
+/* Vertices */
+
+.f3d-cube-vertices {
+	transform-style: preserve-3d;
+}
+
+.f3d-cube-vertices div {
+	transform-style: preserve-3d;
+	position: absolute;
+	width: 10dvh;
+	height: 10dvh;
+	margin: calc( (var(--f3d-cube-height) - 10dvh) / 2 ) calc( (var(--f3d-cube-width) - 10dvh) / 2 );
+	background: rgb(23,0,36,0.5);
+	background: linear-gradient(45deg, rgba(23,0,36,0.5) 0%, rgba(50,50,77,0.5) 35%, rgba(166, 190, 159, 0.5) 72%, rgba(114,122,124,0.5) 100%);
+	box-sizing: border-box;
+	/* Crop in triangular shape since vertices are triangular */
+	clip-path: polygon(55% 0%, 20% 75%, 95% 75%);
+}
+
+.f3d-cube-front-top-left-vertex { transform: rotate3d(1, -1, 0, 55deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(15deg) ; }
+.f3d-cube-front-top-right-vertex { transform: rotate3d(1, 1, 0, 55deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(105deg) ; }
+.f3d-cube-front-bottom-left-vertex { transform: rotate3d(-1, -1, 0, 55deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(-75deg) ; }
+.f3d-cube-front-bottom-right-vertex { transform: rotate3d(-1, 1, 0, 55deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(-167.5deg) ; }
+.f3d-cube-back-top-left-vertex { transform: rotate3d(1, -1, 0, 125deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(195deg) ; }
+.f3d-cube-back-top-right-vertex { transform: rotate3d(1, 1, 0, 125deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(285deg) ; }
+.f3d-cube-back-bottom-left-vertex { transform: rotate3d(-1, -1, 0, 125deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(105deg) ; }
+.f3d-cube-back-bottom-right-vertex { transform: rotate3d(-1, 1, 0, 125deg) translateZ(calc(var(--f3d-extrude-length) / 1.255)) rotateZ(13.5deg) ; }

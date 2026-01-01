@@ -1,122 +1,282 @@
 <main>
-	<raeptor-misc-tesseract-background-effects-starry-sky></raeptor-misc-tesseract-background-effects-starry-sky>
-	<raeptor-f3d-cube>
-		<div class="f3d-cube-face f3d-cube-front"> 
-
-			<div class="f3d-cube-face-top"> 
-				<h2>Compétences et intérets</h2>
-			</div>
-			<div class="f3d-cube-face-left"> 
-				<h2>Liens</h2>
-			</div>
-			<div class="f3d-cube-face-right"> 
-				<h2>Projets notables</h2>
-			</div>
-			<div class="f3d-cube-face-bottom"> 
-				<h2>Expériences</h2>
-			</div>
-
-			<div class="centered fullpannel">
-				<img class="large-icon rounded-circle hover-white-border" src="assets/images/estorc.webp" alt="..." />
-				<h1>
-					Loup
-					<span class="text-primary">"Estorc"</span> Picault
-				</h1>
-				<h2>
-					Indépendant et passionné · Créateur de "A Short Story Across The Time" · Co-Fondateur de la N.A.G. Corporation ·
-					<a href="mailto:nag.raptorprod&#64;gmail.com">nag.raptorprod&#64;gmail.com</a>
-				</h2>
-				<p>Je suis un développeur autodidacte passionné par l'audiovisuel et les vieilles technologies. Je programme depuis mon plus jeune âge, par passion et dans l'envie de réaliser des projets mêlant dessin, musique et interactivité. <br><br>J'ai toujours aimé chercher et expérimenter dans divers domaines pour trouver des réponses, d'où mon grand intérêt pour les Mathématiques et la Philosophie.</p>
-				<div class="social-icons">
-					<a class="md-icon grey white-hover color-hover-200ms" href="https://www.linkedin.com/in/loup-picault-55a7a2256/"><i class="fab fa-linkedin-in"></i></a>
-					<a class="md-icon grey white-hover color-hover-200ms" href="https://github.com/Estorc"><i class="fab fa-github"></i></a>
-					<a class="md-icon grey white-hover color-hover-200ms" href="https://twitter.com/EstorcNag"><i class="fab fa-twitter"></i></a>
+	<div id="page" class="dark-radial-background">
+		<raeptor-f3d-cube #cube [main]="'about.start'">
+			<raeptor-f3d-cube-face [id]="'about.start'" [up]="'about.skillsAndInterests.title'" [left]="'about.links.title'" [right]="'about.notableProjects.title'" [down]="'about.experiences.title'">
+				<div class="centered scrolling-div fullpannel">
+					<a href="https://linkedin.com/in/loup-picault/"><img class="large-icon rounded-circle hover-white-border" src="assets/images/estorc.webp" alt="..." /></a>
+					<h1>
+						Loup <span class="text-primary">{{ 'common.quotes.double.start' | translate }}Estorc{{ 'common.quotes.double.end' | translate }}</span> Picault
+					</h1>
+					<h2 [innerHTML]="'about.creatorDescription' | translate"></h2>
+					<!--
+					<p>Je suis un développeur autodidacte passionné par l'audiovisuel et les vieilles technologies. Je programme depuis mon plus jeune âge, par passion et dans l'envie de réaliser des projets mêlant dessin, musique et interactivité. <br><br>J'ai toujours aimé chercher et expérimenter dans divers domaines pour trouver des réponses, d'où mon grand intérêt pour les Mathématiques et la Philosophie.</p>
+					-->
+					<div class="social-icons">
+						<a class="md-icon white-hover color-hover-200ms" href="https://www.linkedin.com/in/loup-picault/"><i class="fab fa-linkedin-in"></i></a>
+						<a class="md-icon white-hover color-hover-200ms" href="https://github.com/Estorc"><i class="fab fa-github"></i></a>
+						<a class="md-icon white-hover color-hover-200ms" href="https://twitter.com/EstorcNag"><i class="fab fa-twitter"></i></a>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="f3d-cube-face f3d-cube-top">
-			<div class="centered fullpannel scrolling-div">
-				<h2>Compétences et intérets</h2>
-				
-				<h3>Développement</h3>
-				<div>Fullstack Logiciel Web</div>
-				<p>La programmation n'est pas tant une passion en soi, mais elle sert de passerelle vers les plus grands rêves.</p>
-				<div>
-					<span class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-html5"></i></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-css3-alt"></i></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-js-square"></i></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-node-js"></i></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-wordpress"></i></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-npm"></i></span>
+			</raeptor-f3d-cube-face>
+
+			<raeptor-f3d-cube-face [id]="'about.skillsAndInterests.title'" [down]="'about.start'" [right]="'about.skills.arts.title'" [left]="'about.skills.sciences.title'" [up]="'about.skills.it.title'">
+				<div class="centered scrolling-div fullpannel">
+					<h2 [innerHTML]="'about.skillsAndInterests.title' | translate"></h2>
+					<p [innerHTML]="'about.skillsAndInterests.description' | translate"></p>
 				</div>
+			</raeptor-f3d-cube-face>
 
-				<h3>Mathématiques</h3>
-				<div>Géométrie Euclidienne Calculus</div>
-				<p>Nourrit une passion pour les chiffres. Vous savez, <img style="filter:invert()" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cdc91da4c99377dd51c6178f427ec0892bbb5591">.</p>
-				<img style="width: 50%;" src="assets/images/mandelbrotSet.webp" alt="Fractale de Mandelbrot">
-				
-				<h3>Développement de physiques</h3>
-				<div>Fluide Collision Gravité Attraction</div>
-				<p>Les fluides, les solides et Newton.</p>
-				<img style="width: 50%;" src="assets/images/fluids.png" alt="Fluides">
-
-				<h3>Développement de jeu</h3>
-				<div>Game Designer Game Developer</div>
-				<p>Je fais partie de ceux qui y voit un autre art.</p>
-				<div class="list-inline dev-icons">
-					<span class="md-icon grey white-hover color-hover-200ms"><img class="engine-icon" src="assets/images/icon_monochrome_light.svg"></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><img class="engine-icon" src="assets/images/GAMEMAKER-2.png"></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><img class="engine-icon" src="assets/images/unity-logo-black-and-white.png"></span>
-					<span class="md-icon grey white-hover color-hover-200ms"><img class="engine-icon" src="assets/images/unreal-engine-icon-2048x2048-2xrze4w8.png"></span>
+			<raeptor-f3d-cube-face [id]="'about.notableProjects.title'" [left]="'about.start'">
+				<div class="centered fullpannel scrolling-div fullheight">
+					<h1 [innerHTML]="'about.notableProjects.title' | translate"></h1>
+					<p><span [innerHTML]="'about.notableProjects.jenkasNightmare.description' | translate"></span> · <a href="https://estorc.github.io/Jenkas-Nightmare-TradFR/">{{ 'common.see-here' | translate }}</a> · <span class="date">2022–2023</span></p>
+					<p><span [innerHTML]="'about.notableProjects.plugins.description' | translate"></span> · <span class="date">2015–2023</span></p>
+					<p><span [innerHTML]="'about.notableProjects.applications.description' | translate"></span> · <span class="date">2017–2023</span></p>
+					<p><span [innerHTML]="'about.notableProjects.analysis.description' | translate"></span> · <a href="https://www.youtube.com/watch?v=ICBZVp5OiTw">{{ 'common.see-here' | translate }}</a> · <span class="date">2023</span></p>
+					<p><span [innerHTML]="'about.notableProjects.raeptorcogs.description' | translate"></span> · <a href="https://github.com/Estorc/RaeptorCogs">{{ 'common.see-here' | translate }}</a> · <span class="date">2023</span></p>
 				</div>
+			</raeptor-f3d-cube-face>
 
-				<h3>Montage Vidéo</h3>
-				<div>FX Post Production</div>
-				<p>J'ai fait divers montage pour ma chaîne Youtube et pour mes jeux vidéos.</p>
-				<img style="width: 50%;" src="assets/images/montage.png" alt="Montage">
+			<raeptor-f3d-cube-face [id]="'about.links.title'" [right]="'about.start'">
+				<div class="centered fullpannel scrolling-div fullheight">
+					<h1 [innerHTML]="'about.links.title' | translate"></h1>
+					<h2 [innerHTML]="'about.links.github.title' | translate"></h2>
+					<p><a href="https://github.com/Estorc">https://github.com/Estorc</a> — <span [innerHTML]="'about.links.github.description' | translate"></span></p>
+					<h2 [innerHTML]="'about.links.raeptor.title' | translate"></h2>
+					<p><a href="https://raeptor.com">https://raeptor.com</a> — <span [innerHTML]="'about.links.raeptor.description' | translate"></span></p>
+					<h2 [innerHTML]="'about.links.linkedin.title' | translate"></h2>
+					<p><a href="https://www.linkedin.com/in/loup-picault/">https://www.linkedin.com/in/loup-picault/</a> — <span [innerHTML]="'about.links.linkedin.description' | translate"></span></p>
+				</div>
+			</raeptor-f3d-cube-face>
 
-				<h3>Philosophie</h3>
-				<div>Réflexion Théorie Débat</div>
-				<p>J'aime penser...<br> « Si tu plonges ton regard longtemps dans l’abîme, l’abîme te regarde aussi. », Nietzsche,<br>Par delà le Bien et le Mal, 1886.</p>
+			<raeptor-f3d-cube-face [id]="'about.experiences.title'" [up]="'about.start'">
+				<div class="centered fullpannel scrolling-div fullwidth take-bottom">
+					<h1 [innerHTML]="'about.experiences.title' | translate"></h1>
+					<h2><span [innerHTML]="'about.experiences.mcdo.position' | translate"></span> · <span class="date">2025</span></h2>
+					<p><span [innerHTML]="'about.experiences.mcdo.description' | translate"></span></p>
+					<h2><span [innerHTML]="'about.experiences.romhacking.position' | translate"></span> · <span class="date">2024</span></h2>
+					<p><span [innerHTML]="'about.experiences.romhacking.description' | translate"></span></p>
+					<h2><span [innerHTML]="'about.experiences.24hcode.position' | translate"></span> · <span class="date">2024</span></h2>
+					<p><span [innerHTML]="'about.experiences.24hcode.description' | translate"></span></p>
+					<h2><span [innerHTML]="'about.experiences.university.position' | translate"></span> · <span class="date">2023–2026</span></h2>
+					<p><span [innerHTML]="'about.experiences.university.description' | translate"></span></p>
+				</div>
+			</raeptor-f3d-cube-face>
+
+			<raeptor-f3d-cube-face [callOnFocus]="activeInstructions.bind(this)" [callOnLeave]="desactiveInstructions.bind(this)" [id]="'about.skills.it.title'" [down]="'about.skillsAndInterests.title'">
+				<div class="centered scrolling-div fullpannel fullwidth take-top">
+					<h1 [innerHTML]="'about.skills.it.title' | translate"></h1>
+					<h2 [innerHTML]="'about.skills.it.web.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.it.web.description' | translate"></p>
+					<div>
+						<span (mouseenter)="expand('html5')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-html5"></i></span>
+						<span (mouseenter)="expand('css3')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-css3-alt"></i></span>
+						<span (mouseenter)="expand('js')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-js-square"></i></span>
+						<span (mouseenter)="expand('nodejs')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-node-js"></i></span>
+						<span (mouseenter)="expand('git')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fa-brands fa-git-alt"></i></span>
+						<span (mouseenter)="expand('npm')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fab fa-npm"></i></span>
+						<span (mouseenter)="expand('github')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fa-brands fa-github"></i></span>
+						<span (mouseenter)="expand('angular')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fa-brands fa-angular"></i></span>
+					</div>
+					<h2 [innerHTML]="'about.skills.it.hpc.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.it.hpc.description' | translate"></p>
+					<div>
+						<span (mouseenter)="expand('windows')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fa-brands fa-windows"></i></span>
+						<span (mouseenter)="expand('linux')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><i class="fa-brands fa-linux"></i></span>
+						<span (mouseenter)="expand('cpp')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="cpp" class="custom-icon"></mat-icon></span>
+						<span (mouseenter)="expand('clang')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="clang" class="custom-icon"></mat-icon></span>
+					</div>
+					<h2 [innerHTML]="'about.skills.it.graphics.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.it.graphics.description' | translate"></p>
+					<div>
+						<span (mouseenter)="expand('vulkan')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="vulkan" class="custom-icon"></mat-icon></span>
+						<span (mouseenter)="expand('opengl')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="opengl" class="custom-icon"></mat-icon></span>
+					</div>
+					<raeptor-cards-image-simple src="assets/images/vulkanIsHard.png" alt="Vulkan is hard comment" author="br2646" date="November 2025" origin="https://youtu.be/PW1JRhi8Asw"/>
+				</div>
+			</raeptor-f3d-cube-face>
+			<raeptor-f3d-cube-face [id]="'about.skills.sciences.title'" [right]="'about.skillsAndInterests.title'">
+				<div class="centered scrolling-div fullpannel fullheight take-left">
+					<h1 [innerHTML]="'about.skills.sciences.title' | translate"></h1>
+					<p [innerHTML]="'about.skills.sciences.description' | translate"></p>
+					
+					<h2 [innerHTML]="'about.skills.sciences.mathematics.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.sciences.mathematics.description' | translate"></p>
+
+					<h3 [innerHTML]="'about.skills.sciences.mathematics.linearAlgebra.title' | translate"></h3>
+					<p [innerHTML]="'about.skills.sciences.mathematics.linearAlgebra.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/linear-algebra.svg" alt="Linear Algebra" author="3blue1brown" date="August 7th 2016" origin="https://www.3blue1brown.com/"/>
+
+					<h2 [innerHTML]="'about.skills.sciences.physics.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.sciences.physics.description' | translate"></p>
+
+					<h3 [innerHTML]="'about.skills.sciences.physics.mechanics.title' | translate"></h3>
+					<p [innerHTML]="'about.skills.sciences.physics.mechanics.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/mecanics.webp" alt="Mecanics" author="Bill Rodella" date="July 20th 2016" origin="https://www.behance.net/gallery/40857231/Newtons-Three-Laws-of-Motion-Infographic"/>
+
+					<h3 [innerHTML]="'about.skills.sciences.physics.fluids.title' | translate"></h3>
+					<p [innerHTML]="'about.skills.sciences.physics.fluids.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/FluidSimulation.webp" alt="Fluids" author="Estorc" date="June 2019" origin="raeptor.com"/>
+
+					<h3 [innerHTML]="'about.skills.sciences.physics.optics.title' | translate"></h3>
+					<p [innerHTML]="'about.skills.sciences.physics.optics.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/lighting_textured.png" alt="Optics" author="Joey de Vries" date="June 2014" origin="https://learnopengl.com/"/>
+
+					<h2 [innerHTML]="'about.skills.sciences.philosophy.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.sciences.philosophy.description' | translate"></p>
+				</div>
+			</raeptor-f3d-cube-face>
+			<raeptor-f3d-cube-face [callOnFocus]="activeInstructions.bind(this)" [callOnLeave]="desactiveInstructions.bind(this)" [id]="'about.skills.arts.title'" [left]="'about.skillsAndInterests.title'">
+				<div class="centered scrolling-div fullpannel fullheight take-right">
+					<h1 [innerHTML]="'about.skills.arts.title' | translate"></h1>
+
+					<h2 [innerHTML]="'about.skills.arts.gamedev.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.arts.gamedev.description' | translate"></p>
+					<div>
+						<span (mouseenter)="expand('godot')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="godot" class="custom-icon"></mat-icon></span>
+						<span (mouseenter)="expand('gamemaker')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="gamemaker" class="custom-icon"></mat-icon></span>
+						<span (mouseenter)="expand('rpgmaker')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="rpgmaker" class="custom-icon"></mat-icon></span>
+						<span (mouseenter)="expand('raeptorcogs')" (mouseleave)="expand('default')" class="md-icon grey white-hover color-hover-200ms"><mat-icon svgIcon="raeptorcogs" class="custom-icon"></mat-icon></span>
+					</div>
+
+					<h2 [innerHTML]="'about.skills.arts.fxpostproduction.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.arts.fxpostproduction.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/montage.png" alt="Post Production" author="Estorc" date="2023" origin="https://www.youtube.com/watch?v=x-xH7m6OrJU"/>
+
+					<h2 [innerHTML]="'about.skills.arts.writing.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.arts.writing.description' | translate"></p>
 				
-				<h3>Dessin Digital</h3>
-				<div>Pixel Art Composition Artwork</div>
-				<img style="width: 50%;" src="assets/images/drawings/Clara2.webp" alt="Montage">
+					<h2 [innerHTML]="'about.skills.arts.pixelart.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.arts.pixelart.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/celestePixelArt.png" alt="Pixel Art" author="Estorc" date="2025" origin="raeptor.com"/>
 
-				<h3>Écriture</h3>
-				<div>Analyse Essai</div>
-				<h3>Violon</h3>
-				<img style="width: 50%;" src="assets/images/violin.jpg" alt="Violin">
-			</div>
+					<h2 [innerHTML]="'about.skills.arts.drawing.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.arts.drawing.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/drawings/Clara2.webp" alt="Montage" author="Estorc" date="2024" origin="raeptor.com"/>
+
+					<h2 [innerHTML]="'about.skills.arts.music.title' | translate"></h2>
+					<p [innerHTML]="'about.skills.arts.music.description' | translate"></p>
+					<raeptor-cards-image-simple src="assets/images/violin.jpg" alt="Violin" author="Pexels" date="March 27th 2016" origin="https://pixabay.com/"/>
+
+				</div>
+			</raeptor-f3d-cube-face>
+		</raeptor-f3d-cube>
+		<div #cubeInstructions id="cube-instructions" class="centered">
+			<ng-container [ngTemplateOutlet]="cubeInstructionsTemplate">
+			</ng-container>
 		</div>
-		<div class="f3d-cube-face f3d-cube-right"> 
-			<div class="centered fullpannel">
-				<h2>Projets notables</h2>
-				<h3 class="inline">Traduction de Jenka's Nightmare (Modification du code en ASM 8086)</h3><span> · <a href="https://estorc.github.io/Jenkas-Nightmare-TradFR/">Voir ici</a> · 2022-2023</span>
-				<h3 class="inline">Développement de "plugins" RPG Maker MZ/MV/VX Ace/XP pour particuliers</h3><span> · 2015-2023</span>
-				<h3 class="inline">Développement d'applications pour des particuliers</h3><span> · 2017-2023</span>
-				<h3 class="inline">Analyse en trois parties de Undertale</h3><span> · <a href="https://www.youtube.com/watch?v=ICBZVp5OiTw">Voir ici</a> · 2023</span>
-			</div>
-		</div>
-		<div class="f3d-cube-face f3d-cube-left"> 
-			<div class="centered fullpannel">
-				<h2>Liens</h2>
-				<h3>Github</h3>
-				<div><a href="https://github.com/Estorc">https://github.com/Estorc</a> - C'est ici que je répertorie mes projets publics.</div>
-				<h3>Ræptor</h3>
-				<div><a href="https://raeptor.com">https://raeptor.com</a> - Mon espace web où j'affiche mes démos techniques et mon profil.</div>
-				<h3>Raptor Production</h3>
-				<div><a href="https://blog.raeptor.com">https://blog.raeptor.com</a> - Mon blog. J'y publie occasionnellement des articles sur mes travaux.</div>
-			</div>
-		</div>
-		<div class="f3d-cube-face f3d-cube-bottom">
-			<div class="centered fullpannel">
-				<h2>Expériences</h2>
-				<h3 class="inline">Équipier polyvalent à McDonald's</h3><span> · 2022</span>
-				<h3 class="inline">Compétition de ROM Hacking (<a href="https://romhacking.com/">https://romhacking.com/</a>)</h3><span> · 2024</span>
-				<h3 class="inline">24h du code (Sujet du Haum) (<a href="https://www.linkedin.com/feed/update/urn:li:activity:7183071108936441856/">https://www.linkedin.com/</a>)</h3><span> · 2024</span>
-			</div>
-		</div>
-		<div class="f3d-cube-face f3d-cube-back"> </div>
-	</raeptor-f3d-cube>
+	</div>
 </main>
+
+<ng-template cube-instructions="default">
+	<h3 [innerHTML]="'about.instructions.default.title' | translate"></h3>
+	<p [innerHTML]="'about.instructions.default.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="html5">
+	<h3>HTML5</h3>
+	<span class="md-icon"><i class="fab fa-html5"></i></span>
+	<p [innerHTML]="'about.instructions.html5.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="css3">
+	<h3>CSS3</h3>
+	<span class="md-icon"><i class="fab fa-css3-alt"></i></span>
+	<p [innerHTML]="'about.instructions.css3.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="js">
+	<h3>JavaScript</h3>
+	<span class="md-icon"><i class="fab fa-js-square"></i></span>
+	<p [innerHTML]="'about.instructions.js.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="nodejs">
+	<h3>Node.js</h3>
+	<span class="md-icon"><i class="fab fa-node-js"></i></span>
+	<p [innerHTML]="'about.instructions.nodejs.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="git">
+	<h3>Git</h3>
+	<span class="md-icon"><i class="fa-brands fa-git-alt"></i></span>
+	<p [innerHTML]="'about.instructions.git.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="npm">
+	<h3>NPM</h3>
+	<span class="md-icon"><i class="fab fa-npm"></i></span>
+	<p [innerHTML]="'about.instructions.npm.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="github">
+	<h3>GitHub</h3>
+	<span class="md-icon"><i class="fa-brands fa-github"></i></span>
+	<p [innerHTML]="'about.instructions.github.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="angular">
+	<h3>Angular</h3>
+	<span class="md-icon"><i class="fa-brands fa-angular"></i></span>
+	<p [innerHTML]="'about.instructions.angular.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="windows">
+	<h3>Windows</h3>
+	<span class="md-icon"><i class="fa-brands fa-windows"></i></span>
+	<p [innerHTML]="'about.instructions.windows.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="linux">
+	<h3>Linux</h3>
+	<span class="md-icon"><i class="fa-brands fa-linux"></i></span>
+	<p [innerHTML]="'about.instructions.linux.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="cpp">
+	<h3>C++</h3>
+	<span class="md-icon"><mat-icon svgIcon="cpp" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.cpp.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="clang">
+	<h3 [innerHTML]="'about.instructions.clang.title' | translate"></h3>
+	<span class="md-icon"><mat-icon svgIcon="clang" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.clang.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="godot">
+	<h3>Godot Engine</h3>
+	<span class="md-icon"><mat-icon svgIcon="godot" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.godot.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="gamemaker">
+	<h3>GameMaker Studio</h3>
+	<span class="md-icon"><mat-icon svgIcon="gamemaker" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.gamemaker.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="rpgmaker">
+	<h3>RPG MAKER</h3>
+	<span class="md-icon"><mat-icon svgIcon="rpgmaker" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.rpgmaker.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="raeptorcogs">
+	<h3>RæptorCogs</h3>
+	<span class="md-icon"><mat-icon svgIcon="raeptorcogs" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.raeptorcogs.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="vulkan">
+	<h3>Vulkan</h3>
+	<span class="md-icon"><mat-icon svgIcon="vulkan" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.vulkan.description' | translate"></p>
+</ng-template>
+
+<ng-template cube-instructions="opengl">
+	<h3>OpenGL</h3>
+	<span class="md-icon"><mat-icon svgIcon="opengl" class="custom-icon"></mat-icon></span>
+	<p [innerHTML]="'about.instructions.opengl.description' | translate"></p>
+</ng-template>

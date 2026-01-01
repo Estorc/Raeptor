@@ -4,8 +4,8 @@
 }
 .md-icon > * {
 	position: relative;
-	height: 50px;
-	width: auto;
+    height: 50px !important;
+    width: auto !important;
 }
 
 .large-icon {
@@ -16,4 +16,8 @@
 	position: relative;
 	height: 150px;
 	width: auto;
+}
+
+.custom-icon svg {
+	fill: rgb(255, 255, 255); 
 }

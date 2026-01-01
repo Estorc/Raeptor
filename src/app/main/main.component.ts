@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
+import { RaeptorServicesCursorPositionStyleVariable } from '@raeptor/services/global/raeptor.services.cursor.position.style.variable';
 
 @Component({
   selector: 'raeptor-main-page',
@@ -9,4 +10,8 @@ import { HeaderComponent } from "../header/header.component";
   imports: [RouterOutlet, HeaderComponent],
   standalone: true,
 })
-export class MainComponent {}
+export class MainComponent {
+  constructor(private cursor: RaeptorServicesCursorPositionStyleVariable) {
+    
+  }
+}

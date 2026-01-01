@@ -1,7 +1,10 @@
 <div #content class="raeptor-slides-content">
-    <ng-content></ng-content>
+    <div>
+        <ng-content></ng-content>
+    </div>
 </div>
-<div class="raeptor-slides-navigation" [class.vertical]="vertical" [class.horizontal]="!vertical">
+
+<div #navigation class="raeptor-slides-navigation" [class.vertical]="vertical" [class.horizontal]="!vertical">
     <div class="raeptor-slides-navigation-container">
         <a href="#" class="raeptor-slides-navigation-dot" *ngFor="let slide of slides; let i = index"
         [class.active]="i === slideIndex"

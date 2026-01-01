@@ -2,6 +2,7 @@ raeptor-cards-pretty-fullcard {
 	display: block;
     unicode-bidi: isolate;
     position: relative;
+	transform-style: inherit;
 }
 
 raeptor-cards-pretty-fullcard, raeptor-cards-pretty-fullcard > div {
@@ -11,13 +12,12 @@ raeptor-cards-pretty-fullcard, raeptor-cards-pretty-fullcard > div {
     background-size: cover;
     width: 100%;
     height: 100%;
+	transform-style: inherit;
 }
 
 raeptor-cards-pretty-fullcard .raeptor-cards-pretty-fullcard-blurred-background {
-	filter: opacity(0.5);
-	@media (min-width: 650px) {
-    	filter: blur(10px);
-	}
+	filter: opacity(0.5) blur(5px);
+	transform-style: inherit;
 }
 
 raeptor-cards-pretty-fullcard .raeptor-cards-pretty-fullcard-content {
@@ -32,8 +32,13 @@ raeptor-cards-pretty-fullcard .raeptor-cards-pretty-fullcard-content {
 	justify-content:center;
 	text-shadow:2px 2px 3px #000000a0;
 	flex-wrap: wrap;
+	transform: translateZ(0px);
 	@media (min-width: 650px) {
-    	transform: translateZ(500px) scale(0.4);
+    	transform: translateZ(500px) scale3d(0.525, 0.525, 1.0);
+		contain: paint layout;
+		isolation: isolate;
+		backface-visibility: hidden;
+  		-webkit-backface-visibility: hidden;
 	}
 	
 }

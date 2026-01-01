@@ -1,0 +1,11 @@
+.rounded-circle {
+	border-radius: 800px;
+}
+
+.hover-white-border {
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.hover-white-border:hover {
+	box-shadow: 0px 0px 0px 10px white;
+}
